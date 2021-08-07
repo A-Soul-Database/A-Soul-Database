@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>As db - An Unofficial A-SOUL Live DataBase</title>
+    <!-- MDUI CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
+      integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw"
+      crossorigin="anonymous"
+    />
+    <link
+    rel="stylesheet"
+    href="extra/adjust.css"
+  />
+  </head>
+  <body class="mdui-drawer-body-left">
+    <div class="toolbar mdui-toolbar"><button class="drawer mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons" mdui-drawer="{target: '#left-drawer'}">menu</i></button><a class="headline" href="/">A-Soul Database</a><div class="title">首页</div></div>
+    <!-- 抽屉 -->
+        <div class="mdui-drawer" id="left-drawer">
+            <ul class="mdui-list" mdui-collapse="{accordion: true}" id="drawer">
+            </ul>
+        </div>
+        <!-- photo banner -->
+        <div class="mdui-container">
+        <div class="mdui-row-xs-3 mdui-row-sm-4 mdui-row-md-5 mdui-row-lg-6 mdui-row-xl-7 mdui-grid-list" id="photo-banner">
+        </div>
+        </div>
+        <div id="toolbar" style="float: right;margin: 3em;">
+        <h1>
+          二创切片的有力助手,免费且开源.
+        </h1>
+        <div id="toolkit"></div>
+      </div>
+      <!-- MDUI JavaScript -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"
+      integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A"
+      crossorigin="anonymous"
+    ></script>
+    <script src="extra/main.ts"></script>
+    <script>
+       bannerPhoto();drawer();toolkit();
+    </script>
+  </body>
+</html>

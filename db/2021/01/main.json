@@ -1,0 +1,730 @@
+[{
+    "date":"1-2",
+    "time":"20:00",
+    "liveRoom":"B",
+    "bv":"BV1ey4y1U7Qk",
+    "title":"【A-SOUL】贝拉 1.2新年首播【完整录播】",
+    "scene":["christmas"],
+    "type":["game","dance"],
+    "staff":["B"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[
+                ["舞力全开","1-13:00"]
+            ]
+        },
+        {
+            "name":"song",
+            "item":[]
+        },
+        {
+            "name":"dance",
+            "item":[
+                ["rings","1-17:21"],["rings","1-27:43"],
+                ["Con Altura","1-35:12"],["Bangarang","1-51:04"],
+                ["Fancy","1-54:42"],["My New Swag","2-00:42"],
+                ["Kill This Love","2-09:37"],["Ugly Beauty","2-16:48"],
+                ["Bad Guy","2-26:57"],["Baby Shark","2-36:02"],
+                ["I Am The Best","2-44:26"],["Old Town Road (Remix)","2-55:00"],
+                ["Hip","2-63:06"]
+            ]
+        }
+    ],
+    "skin":[{
+        "B":["official"]
+    }],
+    "platform":"B",
+    "tags":["拉姐练舞最多练过18小时"]
+},{
+    "date":"1-3",
+    "time":"20:00",
+    "liveRoom":"A",
+    "bv":"BV1nX4y1K7ZP",
+    "title":"【A-SOUL】向晚/嘉然 1.3 直播录像【弹幕】",
+    "scene":["liveroom"],
+    "type":["game","dance","song"],
+    "staff":["A","D"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[
+                ["舞力全开","1-19:16"]
+            ]
+        },
+        {
+            "name":"song",
+            "item":[
+                ["爱你","2-35:53"]
+            ]
+        },
+        {
+            "name":"dance",
+            "item":[
+            ["太陽系デスコ","1-09:40"],["Baby Shark","1-21:37"],["Vodovorot","1-29:04"],
+            ["Bad Guy","1-33:53"],["Bubble Pop!","1-39:02"],["Cheap Thrills","1-46:34"],
+            ["Sugar","2-02:40"],["Kill This Love","2-11:01"],["Soy Yo","2-19:08"],
+            ["Never Gonna Give You Up","2-23:53"],["Tik Tok","2-29:20"],["Despacito","2-41:57"],
+            ["What is love?","2-53:53"],["Dolphin","2-61:01"]
+            ]
+        }
+    ],
+    "skin":[{
+        "D":["official"],
+        "A":["official"]
+    }],
+    "platform":"B",
+    "tags":[]
+},{
+    "date":"1-6",
+    "time":"20:00",
+    "liveRoom":"D",
+    "bv":"BV17K4y1W7db",
+    "title":"【A-SOUL】嘉然/向晚 1.6 直播录像【弹幕】",
+    "scene":["christmas"],
+    "type":["game","dance","chat"],
+    "staff":["A","D"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[["胡闹厨房","1-26:30"]]
+        },
+        {
+            "name":"song",
+            "item":[]
+        },
+        {
+            "name":"dance",
+            "item":[
+                ["B With U","1-06:02"],["太陽系デスコ","1-17:05"],["今好きになる。","2-35:00"],
+                ["Quiet","2-65:58"]
+            ]
+        }
+    ],
+    "skin":[{
+        "D":["official"],
+        "A":["official"]
+    }],
+    "platform":"B",
+    "tags":[]
+},{
+    "date":"1-7",
+    "time":"20:00",
+    "liveRoom":"B",
+    "bv":"BV16r4y1T7Kq",
+    "title":"【A-SOUL】贝拉舞蹈室/向晚 1.7 直播录像【弹幕】",
+    "scene":["classroom"],
+    "type":["dance"],
+    "staff":["A","B"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[]
+        },
+        {
+            "name":"song",
+            "item":[]
+        },
+        {
+            "name":"dance",
+            "item":[
+                ["Quiet","1-06:20"],["Marine Dreamin","1-43:36"],["벌써 12시","2-27:30"],["기대해","2-60:00"]
+            ]
+        }
+    ],
+    "skin":[{
+        "B":["official"],
+        "A":["official"]
+    }],
+    "platform":"B",
+    "tags":["向晚全年运动量","学了三年3D的泰坦尼克号","看猫猫","拉姐尽职尽责","拉姐觊觎珈乐"]
+},{
+    "date":"1-8",
+    "time":"20:00",
+    "liveRoom":"F",
+    "bv":"BV1554y147v2",
+    "title":"【A-SOUL小剧场】第三期 期末应援加油会【完整录播/弹幕】",
+    "scene":["classroom"],
+    "type":["chat","theater","dance","song"],
+    "staff":["A","B","C","D","E"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[["配音","1-25:20"],["猜词","2-22:05"]]
+        },
+        {
+            "name":"song",
+            "item":[["爱的魔法","1-52:08"],["恋爱循环","2-09:08"]]
+        },
+        {
+            "name":"dance",
+            "item":[
+                ["Para Para Sakura","1-00:37"],["Para Para Sakura","1-04:38"],
+                ["멍청이(twit)","2-35:24"],["逝去的歌","2-57:06"]
+            ]
+        }
+    ],
+    "skin":[{
+        "A":["official"],
+        "B":["official"],
+        "C":["official"],
+        "D":["official"],
+        "E":["official"]
+    }],
+    "platform":"B",
+    "tags":["配音","月刊少女野崎君","Love Live!","猜词"]
+},{
+    "date":"1-9",
+    "time":"22:00",
+    "liveRoom":"E",
+    "bv":"BV1Np4y1x7rg",
+    "title":"【A-SOUL】乃琳 1.9 首播【完整录播】",
+    "scene":["zhijiang"],
+    "type":["chat","song"],
+    "staff":["E"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[]
+        },
+        {
+            "name":"song",
+            "item":[["夏天的风-温岚","1-01:46"],["我要你","1-41:24"],["棠梨煎雪","2-45:20"]]
+        },
+        {
+            "name":"dance",
+            "item":[]
+        }
+    ],
+    "skin":[{
+        "E":["official"]
+    }],
+    "platform":"B",
+    "tags":["乃琳首播"]
+},{
+    "date":"1-10",
+    "time":"20:00",
+    "liveRoom":"D",
+    "bv":"BV1o54y1x7ba",
+    "title":"【A-SOUL】嘉然 1.10健身环大冒险 【完整录播】",
+    "scene":["classroom"],
+    "type":["chat","game","dance","song"],
+    "staff":["D"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[["健身环大冒险","1-18:56"]]
+        },
+        {
+            "name":"song",
+            "item":[["爱的华尔兹","2-05:10"]]
+        },
+        {
+            "name":"dance",
+            "item":[["恋するフォーチュンクッキー(恋爱幸运曲奇)","1-10:24"],["恋愛デコレート","2-13:15"],
+            ["What is love?","2-46:10"],["Calc. (ft. Hatsune Miku)","2-62:30"]]
+        }
+    ],
+    "skin":[{
+        "D":["official"]
+    }],
+    "platform":"B",
+    "tags":["小的可爱捏"]
+},{
+    "date":"1-13",
+    "time":"20:00",
+    "liveRoom":"A",
+    "bv":""
+},{
+    "date":"1-14",
+    "time":"20:00",
+    "liveRoom":"B",
+    "bv":"BV17p4y1x76K",
+    "title":"【A-SOUL】贝拉日记 1.14情人节神回 直播录像【录播/弹幕】",
+    "scene":["domroom"],
+    "type":["chat","dance","song"],
+    "staff":["B"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[]
+        },
+        {
+            "name":"song",
+            "item":[["星屑ビーナス","2-60:00"]]
+        },
+        {
+            "name":"dance",
+            "item":[["라비앙로즈","1-01:47"],["love Swing","2-16:42"],["回る空うさぎ","2-48:07"]]
+        }
+    ],
+    "skin":[{
+        "B":["official","group","sport","sleep"]
+    }],
+    "platform":"B",
+    "tags":["日记情人节","贝拉表白","脸红小贝拉","反转小贝拉(物理)","拉姐教瑜伽","拉姐跳芭蕾"]
+},{
+    "date":"1-15",
+    "time":"20:00",
+    "liveRoom":"F",
+    "bv":"BV1Sv411W7uz",
+    "title":"【A-SOUL小剧场】第四期 1.15【直播录像】",
+    "scene":["classroom"],
+    "type":["dance","game","theater","song"],
+    "staff":["A","B","C","D","E"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[["你画我猜","1-17:15"]]
+        },
+        {
+            "name":"song",
+            "item":[["暖暖","1-36:16"],["十万毫升泪水","2-36:07"]]
+        },
+        {
+            "name":"dance",
+            "item":[["你要跳舞吗","1-00:28"],["爱你","1-54:48"],["B With U","2-51:11"],["Quiet","2-63:29"]]
+        }
+    ],
+    "skin":[{
+        "A":["official"],
+        "B":["official"],
+        "C":["official"],
+        "D":["official"],
+        "E":["official"]
+    }],
+    "platform":"B",
+    "tags":["珈乐歌单","团粉名称","珈乐一直都很软","乃琳超喜欢漫威"]
+},{
+    "date":"1-16",
+    "time":"19:45",
+    "liveRoom":"D",
+    "bv":"BV1Ky4y1m7ja",
+    "title":"【A-SOUL】嘉然 1.16 【直播录像】",
+    "scene":["domroom"],
+    "type":["dance","game"],
+    "staff":["D"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[["There Is No Game","1-32:42"],["运动","2-14:38"]]
+        },
+        {
+            "name":"song",
+            "item":[]
+        },
+        {
+            "name":"dance",
+            "item":[["What is love?","1-14:00"],["PiNK CAT","2-46:04"]]
+        }
+    ],
+    "skin":[{
+        "D":["official"]
+    }],
+    "platform":"B",
+    "tags":["设计专业小嘉然","口水小嘉然","超级炒蛋拳","嘉然平的","不能吃阿草","嘉然倒了!","仰卧起坐小嘉然","小嘉然的运动时间","我叫嘉然,你咧"]
+
+},{
+    "date":"1-16",
+    "time":"22:15",
+    "liveRoom":"E",
+    "bv":"BV1Zf4y1r7Re",
+    "title":"【A-SOUL】乃琳 1.16 温柔夜谈【直播录像】",
+    "scene":["zhijiang"],
+    "type":["chat","song"],
+    "staff":["E"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[]
+        },
+        {
+            "name":"song",
+            "item":[
+                ["水星记","2-05:50"],["陪我长大","2-24:08"],
+                ["水星记","2-48:54"],["忽然之间","2-23:56"]
+                ]
+        },
+        {
+            "name":"dance",
+            "item":[]
+        }
+    ],
+    "skin":[{
+        "E":"official"
+    }],
+    "platform":"B",
+    "tags":["乃琳封神了"]
+},{
+    "date":"1-17",
+    "time":"20:00",
+    "liveRoom":"A",
+    "bv":"BV1tX4y1K7pk",
+    "title":"【A-SOUL】向晚 1.17 绝地求生【直播录像】",
+    "scene":["gameroom"],
+    "type":["game"],
+    "staff":["A"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[["PUBG","1-00:00"]]
+        },
+        {
+            "name":"song",
+            "item":[]
+        },
+        {
+            "name":"dance",
+            "item":[]
+        }
+    ],
+    "skin":[{
+        "A":["official"]
+    }],
+    "platform":"B",
+    "tags":["向晚吃鸡"]
+},{
+    "date":"1-21",
+    "time":"20:00",
+    "liveRoom":"B",
+    "bv":"BV1WT4y1K7BJ",
+    "title":"【A-SOUL】贝拉 1.21 贝拉突击检查【直播录像】",
+    "scene":["gameroom","classroom","zhijiang"],
+    "type":["chat","dance","game"],
+    "staff":["A","B","D","E"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[["突击检查十项表演","1-10:06"],["运动小嘉然","2-22:29"]]
+        },
+        {
+            "name":"song",
+            "item":[]
+        },
+        {
+            "name":"dance",
+            "item":[["Quiet","1-01:54"],["한 (一)","2-63:39"]]
+        }
+    ],
+    "skin":[{
+        "A":["official"],
+        "B":["official"],
+        "D":["official"],
+        "E":["official"]
+    }],
+    "platform":"B",
+    "tags":["突击检查十项表演","嘉然","向晚","摆拍","仰卧起坐小嘉然"]
+},{
+    "date":"1-22",
+    "time":"20:00",
+    "liveRoom":"F",
+    "bv":"BV1ft4y1z7zH",
+    "title":"【A-SOUL小剧场】第五期 1.22 睡衣回【直播录像】",
+    "scene":["zhijiang"],
+    "type":["theater","chat","dance","song","game"],
+    "staff":["A","B","C","D","E","F"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[]
+        },
+        {
+            "name":"song",
+            "item":[["素颜","1-08:07"],["大白兔白又白","1-35:09"],["Fly Me To The Moon","2-61:00"]]
+        },
+        {
+            "name":"dance",
+            "item":[["내꺼야 (PICK ME)","1-43:05"],["What is love?","2-12:38"],["Dolphin","2-66:08"]]
+        }
+    ],
+    "skin":[{
+        "A":["sleep"],
+        "B":["sleep"],
+        "C":["official"],
+        "D":["official"],
+        "E":["sleep"],
+        "F":["official"]
+    }],
+    "platform":"B",
+    "tags":["害羞小向晚","晚晚家的小别墅罢了","脸红小珈乐","然然主人要求珈乐跪下","你是懒羊羊","鬼故事时间"]
+},{
+    "date":"1-23",
+    "time":"19:45",
+    "liveRoom":"D",
+    "bv":"BV1VT4y1P7Tr",
+    "title":"【A-SOUL】嘉然/贝拉 1.23 天下第一宅舞斗会【完整录播】",
+    "scene":["show"],
+    "type":["chat","dance"],
+    "staff":["B","D"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[]
+        },
+        {
+            "name":"song",
+            "item":[]
+        },
+        {
+            "name":"dance",
+            "item":[["Love Swing","1-13:15"],["PiNK CAT","1-17:40"],["뱉어 (Spit it out)","1-21:35"],
+                ["お気に召すまま","1-25:39"],["夏に去りし君を想フ","1-29:58"],["BOOO!","1-33:46"],["When We Disco","1-41:41"],
+                    ["Havana","1-43:24"],["第六感","1-44:19"],["天线宝宝","1-45:32"],["カサネテク","1-46:09"],["套马杆","1-47:31"],["酒醉的蝴蝶","1-47:43"],
+                ["LOST IN PARADISE（楽園放浪）","1-48:29"],["海澜之家","1-49:45"],["海藻舞","1-49:51"],["Price Tag","1-50:42"],["Tik Tok","1-51:45"],["ふたりのきもちのほんとのひみつ","1-52:11"],
+                    ["我真的很不错","2-10:12"],["抖肩舞","2-12:00"],["Magnet","2-18:54"],["Calc. (ft. Hatsune Miku)","2-20:44"],["虎视眈眈","2-21:16"],["Drop Pop Candy","2-21:31"],["极乐净土","2-22:46"],
+                ["桃源恋歌","2-23:25"],["劣等上等","2-23:53"],["チカっとチカ千花っ♡ -Instrumental-(书记舞)","2-25:01"],["新宝岛","2-25:25"]
+            ]
+        }
+    ],
+    "skin":[{
+        "B":["official","group","christmas"],
+        "D":["official","group","christmas"]
+    }],
+    "platform":"B",
+    "tags":["应援跳舞","拉票"]
+},{
+    "date":"1-23",
+    "time":"22:15",
+    "liveRoom":"E",
+    "bv":"BV1ty4y1p7rm",
+    "title":"【A-SOUL】乃琳 1.23 温柔夜谈【直播录像】",
+    "scene":["zhijiang"],
+    "type":["chat","song"],
+    "staff":["E"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[]
+        },
+        {
+            "name":"song",
+            "item":[["勇气","1-02:07"],["我喜欢","1-35:15"],["追光者","2-03:55"],["我喜欢","2-27:06"],["喜欢你","2-35:32"],["我多喜欢你，你会知道","2-57:44"]]
+        },
+        {
+            "name":"dance",
+            "item":[]
+        }
+    ],
+    "skin":[{
+        "E":["official"]
+    }],
+    "platform":"B",
+    "tags":["粉丝牌确认"]
+},{
+    "date":"1-24",
+    "time":"20:00",
+    "liveRoom":"A",
+    "bv":"BV16v4y1f7mS",
+    "title":"【A-SOUL】向晚 1.24 游戏回/绝地求生【直播录像】",
+    "scene":["gameroom"],
+    "type":["game"],
+    "staff":["A"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[["PUBG","1-00:00"]]
+        },
+        {
+            "name":"song",
+            "item":[]
+        },
+        {
+            "name":"dance",
+            "item":[]
+        }
+    ],
+    "skin":[{
+        "A":["official"]
+    }],
+    "platform":"B",
+    "tags":["还是没吃到鸡"]
+},{
+    "date":"1-28",
+    "time":"20:00",
+    "liveRoom":"B",
+    "bv":"BV1qr4y1K7R5",
+    "title":"【A-SOUL】贝拉的心跳大挑战 1.28【直播录像】",
+    "scene":["classroom"],
+    "type":["chat","game"],
+    "staff":["B"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[["心跳大挑战","1-05:43"]]
+        },
+        {
+            "name":"song",
+            "item":[]
+        },
+        {
+            "name":"dance",
+        "item":[["Maria","1-42:27"],["鸟之诗","2-18:15"],["蜜月Un・Deux・Trois","2-53:36"],["Señorita","2-62:00"]]
+        }
+    ],
+    "skin":[{
+        "B":["official"]
+    }],
+    "platform":"",
+    "tags":["心跳挑战","打电话挑战","折磨局","拉姐跳芭蕾"]
+},
+{
+    "date":"1-29",
+    "time":"20:00",
+    "liveRoom":"F",
+    "bv":"BV1Ht4y1B7hj",
+    "title":"【A-SOUL小剧场】第六期 1.29 导演，请指导我们！【直播录像】",
+    "scene":["classroom","singroom","filmstudio"],
+    "type":["dance","theater","song","game"],
+    "staff":["A","B","C","D","E"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[["歌唱挑战","1-14：39"],["写真大挑战","2-18:23"]]
+        },
+        {
+            "name":"song",
+            "item":[["你啊你啊","1-18:45"],["カタオモイ","1-31:44"],["当你","1-40:06"],["A Little Love","2-00:00"],["Love Lane","2-09:26"]]
+        },
+        {
+            "name":"dance",
+            "item":[["Start Dash!","1-01:02"],["Lamb","2-53:49"],["사이렌","2-64:49"],["Hip","2-64:20"]]
+        }
+    ],
+    "skin":[{
+        "A":["official"],
+        "B":["official"],
+        "C":["official"],
+        "D":["official"],
+        "E":["official"]
+    }],
+    "platform":"B",
+    "tags":["小嘉然被迫训练","喵喵小嘉然","写真大挑战","拉姐摸头"]
+},{
+    "date":"1-30",
+    "time":"19:45",
+    "liveRoom":"D",
+    "bv":"BV1Rv411Y7ih",
+    "title":"【A-SOUL】嘉然 1.30 我画你猜!【直播录像】",
+    "scene":["christmas"],
+    "type":["chat","game","dance"],
+    "staff":["D"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[
+                ["我画你们猜","1-08:36"]
+            ]
+        },
+        {
+            "name":"song",
+            "item":[
+
+            ]
+        },
+        {
+            "name":"dance",
+            "item":[
+                    ["バタフライ・グラフィティ","1-44:02"],["太陽系デスコ","2-58:23"]
+            ]
+        }
+    ],
+    "skin":[{
+        "D":["official"]
+    }],
+    "platform":"B",
+    "tags":["嘉然吃货属性开启","我画你们猜"]
+},{
+    "date":"1-30",
+    "time":"22:15",
+    "liveRoom":"E",
+    "bv":"BV1sh41117ML",
+    "title":"【A-SOUL】乃琳1.30《乃琳说神话》【直播录像】",
+    "scene":["zhijiang"],
+    "type":["chat","song"],
+    "staff":["E","D"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[
+
+            ]
+        },
+        {
+            "name":"song",
+            "item":[
+                    ["水星记","1-02:19"],["后会无期","1-24:16"],["后会无期","2-59:08"]
+
+            ]
+        },
+        {
+            "name":"dance",
+            "item":[
+                
+            ]
+        }
+    ],
+    "skin":[{
+        "D":["official"],
+        "E":["official"]
+    }],
+    "platform":"B",
+    "tags":["偷吃小嘉然","名场面"]
+},{
+    "date":"1-31",
+    "time":"20:00",
+    "liveRoom":"A",
+    "bv":"BV1Th41117Ag",
+    "title":"【A-SOUL】向晚/乃琳 1.31游戏回【直播录像】",
+    "scene":["gameroom"],
+    "type":["chat","game","song"],
+    "staff":["A","E"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[
+                ["超级马里奥派对","1-31:44"]
+            ]
+        },
+        {
+            "name":"song",
+            "item":[
+                ["有点甜","1-22:56"],["有点甜","2-64:12"]
+            ]
+        },
+        {
+            "name":"dance",
+            "item":[
+                
+            ]
+        }
+    ],
+    "skin":[{
+        "A":["official"],
+        "E":["official"]
+    }],
+    "platform":"B",
+    "tags":["钻头","名场面","害羞小向晚"]
+}
+]

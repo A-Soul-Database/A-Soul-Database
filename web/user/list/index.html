@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>List - As db</title>
+    <!-- MDUI CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
+      integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw"
+      crossorigin="anonymous"
+    />
+    <link
+    rel="stylesheet"
+    href="../extra/adjust.css"
+  />
+  </head>
+  <body class="mdui-drawer-body-left">
+    <div class="toolbar mdui-toolbar"><button class="drawer mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons" mdui-drawer="{target: '#left-drawer'}">menu</i></button><a class="headline" href="/">A-Soul Database</a><div class="title">查看</div></div>
+    <!-- 抽屉 -->
+        <div class="mdui-drawer" id="left-drawer">
+            <ul class="mdui-list" mdui-collapse="{accordion: true}" id="drawer">
+            </ul>
+        </div>
+        <!-- photo banner -->
+        <div class="mdui-container mdui-center">
+          <div id="tools" class="mdui-card mdui-shadow-10">
+            <div style="margin: 2rem;">
+              <h3>筛选</h3>
+              <div class="mdui-panel mdui-panel-popout" mdui-panel>
+                 <div class="mdui-panel-item"> <div class="mdui-panel-item-header">入镜人物</div><div class="mdui-panel-item-body" id="tools-staff"></div></div>
+                 <div class="mdui-panel-item"> <div class="mdui-panel-item-header">出场场景</div><div class="mdui-panel-item-body" id="tools-scene"></div></div>
+                 <div class="mdui-panel-item"> <div class="mdui-panel-item-header">活动</div><div class="mdui-panel-item-body" id="tools-type"></div></div>
+                 <div class="mdui-panel-item"> <div class="mdui-panel-item-header">皮肤</div><div class="mdui-panel-item-body" id="tools-skin"></div></div>
+                 <div class="mdui-panel-item"> <div class="mdui-panel-item-header">平台</div><div class="mdui-panel-item-body" id="tools-platform"></div></div>
+              </div>
+              <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-blue-100" onclick="filter();">筛选</button>
+            </div>
+          </div>
+
+          <div id="list">
+            <div class="mdui-panel mdui-panel-popout" id="listItem" mdui-panel>
+
+            </div>
+          </div>
+      </div>
+      <!-- MDUI JavaScript -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"
+      integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../extra/main.ts"></script>
+    <script src="../extra/list.ts"></script>
+    <script>
+      drawer();tools();jsons();filter();
+    </script>
+  </body>
+</html>
