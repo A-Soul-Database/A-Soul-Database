@@ -1,4 +1,6 @@
-## ASDB -- A-SOUL Live Clip Database A-SOUL 非官方直播数据库
+## ASDB -- A-SOUL Live Clip Database A-SOUL 非官方直播数据库 
+
+# Progress: Finished: 60% web, db in 2021.1,2021.2 Total:30%, Finish before 2021.9.1
 
 ### Useage 使用方法
 #### 
