@@ -16,7 +16,6 @@ var targetJson = {}
 //筛选索引
 
 //Get Json 
-//"https://cdn.jsdelivr.net/gh/peterpei1186861238/Srun3k-Boxies/main.json"
 function jsons(){
 
     function getJson(url)
@@ -30,54 +29,47 @@ function jsons(){
     function compareList(list1,list2){
         //Judge if element in list1 exsistes in list2
         var judge = false;
-        for (var item1 in list1){            
+        for (var item1 in list1){     
             if(list2.indexOf(list1[item1])>-1){
                 judge=true;
                 break;
             }
-            if(judge==false){
-                console.log(list2,list1[item1]);
+            if(list2.indexOf(list1[item1][0])>-1){
+                //For skin
+                judge=true;
+                break;
             }
         }
 
         return judge;
     }
     function initJson(){
-        if(!Object.keys(targetJson).length){getJson("https://cdn.jsdelivr.net/gh/peterpei1186861238/Srun3k-Boxies/main.json");}
-        
+        if(!Object.keys(targetJson).length){getJson("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB/db/2021/main.json");}
         //列出
-
-        var maxClip = 0;
         var list = "";
         for (var attr in targetJson ){
-            if(targetJson[attr]["clip"]>maxClip){
-                maxClip = attr["clip"];
-            }
-            //console.log(compareList(targetJson[attr]["type"],fliter["type"]));
-            
             if(!compareList(targetJson[attr]["type"],fliter["type"])){continue}
             if(!compareList(targetJson[attr]["scene"],fliter["scene"])){continue}
             if(!compareList(targetJson[attr]["staff"],fliter["staff"])){continue}
-            //if(!compareList(targetJson[attr]["skin"],fliter["skin"])){continue}
+            if(!compareList(targetJson[attr]["skin"],fliter["skin"])){continue}
             if(!compareList(targetJson[attr]["platform"],fliter["platform"])){continue}
-            //console.log(targetJson[attr]["type"]);
-            //ui
-
             list = `${list}<div class="mdui-panel-item"><div class="mdui-panel-item-header">${targetJson[attr]["title"]}</div><div class="mdui-list-item-body" id="list-item-${targetJson[attr]["bv"]}"></div></div>`
         }
         document.getElementById('listItem').innerHTML = list;
         
-        //获取信息
-        var basicInfo = {
-            "length":Object.keys(targetJson).length,
-            "maxClip":maxClip
-        }
     }
     initJson();
 }
 
 function filter(){
     //Get Checked
+    fliter = {
+        "staff":[],
+        "scene":[],
+        "skin":[],
+        "type":[],
+        "platform":[]
+    }
     function Checked(child){
         if(document.getElementById(child).children[0].checked){
             

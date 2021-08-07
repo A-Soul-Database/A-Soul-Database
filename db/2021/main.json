@@ -32,9 +32,9 @@
             ]
         }
     ],
-    "skin":[{
+    "skin":{
         "B":["official"]
-    }],
+    },
     "platform":"B",
     "tags":["拉姐练舞最多练过18小时"]
 },{
@@ -71,10 +71,10 @@
             ]
         }
     ],
-    "skin":[{
+    "skin":{
         "D":["official"],
         "A":["official"]
-    }],
+    },
     "platform":"B",
     "tags":[]
 },{
@@ -104,10 +104,10 @@
             ]
         }
     ],
-    "skin":[{
+    "skin":{
         "D":["official"],
         "A":["official"]
-    }],
+    },
     "platform":"B",
     "tags":[]
 },{
@@ -136,10 +136,10 @@
             ]
         }
     ],
-    "skin":[{
+    "skin":{
         "B":["official"],
         "A":["official"]
-    }],
+    },
     "platform":"B",
     "tags":["向晚全年运动量","学了三年3D的泰坦尼克号","看猫猫","拉姐尽职尽责","拉姐觊觎珈乐"]
 },{
@@ -169,13 +169,13 @@
             ]
         }
     ],
-    "skin":[{
+    "skin":{
         "A":["official"],
         "B":["official"],
         "C":["official"],
         "D":["official"],
         "E":["official"]
-    }],
+    },
     "platform":"B",
     "tags":["配音","月刊少女野崎君","Love Live!","猜词"]
 },{
@@ -202,9 +202,9 @@
             "item":[]
         }
     ],
-    "skin":[{
+    "skin":{
         "E":["official"]
-    }],
+    },
     "platform":"B",
     "tags":["乃琳首播"]
 },{
@@ -232,9 +232,9 @@
             ["What is love?","2-46:10"],["Calc. (ft. Hatsune Miku)","2-62:30"]]
         }
     ],
-    "skin":[{
+    "skin":{
         "D":["official"]
-    }],
+    },
     "platform":"B",
     "tags":["小的可爱捏"]
 },{
@@ -266,9 +266,9 @@
             "item":[["라비앙로즈","1-01:47"],["love Swing","2-16:42"],["回る空うさぎ","2-48:07"]]
         }
     ],
-    "skin":[{
+    "skin":{
         "B":["official","group","sport","sleep"]
-    }],
+    },
     "platform":"B",
     "tags":["日记情人节","贝拉表白","脸红小贝拉","反转小贝拉(物理)","拉姐教瑜伽","拉姐跳芭蕾"]
 },{
@@ -295,13 +295,13 @@
             "item":[["你要跳舞吗","1-00:28"],["爱你","1-54:48"],["B With U","2-51:11"],["Quiet","2-63:29"]]
         }
     ],
-    "skin":[{
+    "skin":{
         "A":["official"],
         "B":["official"],
         "C":["official"],
         "D":["official"],
         "E":["official"]
-    }],
+    },
     "platform":"B",
     "tags":["珈乐歌单","团粉名称","珈乐一直都很软","乃琳超喜欢漫威"]
 },{
@@ -328,9 +328,9 @@
             "item":[["What is love?","1-14:00"],["PiNK CAT","2-46:04"]]
         }
     ],
-    "skin":[{
+    "skin":{
         "D":["official"]
-    }],
+    },
     "platform":"B",
     "tags":["设计专业小嘉然","口水小嘉然","超级炒蛋拳","嘉然平的","不能吃阿草","嘉然倒了!","仰卧起坐小嘉然","小嘉然的运动时间","我叫嘉然,你咧"]
 
@@ -361,9 +361,9 @@
             "item":[]
         }
     ],
-    "skin":[{
+    "skin":{
         "E":"official"
-    }],
+    },
     "platform":"B",
     "tags":["乃琳封神了"]
 },{
@@ -390,9 +390,9 @@
             "item":[]
         }
     ],
-    "skin":[{
+    "skin":{
         "A":["official"]
-    }],
+    },
     "platform":"B",
     "tags":["向晚吃鸡"]
 },{
@@ -419,12 +419,12 @@
             "item":[["Quiet","1-01:54"],["한 (一)","2-63:39"]]
         }
     ],
-    "skin":[{
+    "skin":{
         "A":["official"],
         "B":["official"],
         "D":["official"],
         "E":["official"]
-    }],
+    },
     "platform":"B",
     "tags":["突击检查十项表演","嘉然","向晚","摆拍","仰卧起坐小嘉然"]
 },{
@@ -451,14 +451,14 @@
             "item":[["내꺼야 (PICK ME)","1-43:05"],["What is love?","2-12:38"],["Dolphin","2-66:08"]]
         }
     ],
-    "skin":[{
+    "skin":{
         "A":["sleep"],
         "B":["sleep"],
         "C":["official"],
         "D":["official"],
         "E":["sleep"],
         "F":["official"]
-    }],
+    },
     "platform":"B",
     "tags":["害羞小向晚","晚晚家的小别墅罢了","脸红小珈乐","然然主人要求珈乐跪下","你是懒羊羊","鬼故事时间"]
 },{
@@ -491,10 +491,10 @@
             ]
         }
     ],
-    "skin":[{
+    "skin":{
         "B":["official","group","christmas"],
         "D":["official","group","christmas"]
-    }],
+    },
     "platform":"B",
     "tags":["应援跳舞","拉票"]
 },{
@@ -521,9 +521,9 @@
             "item":[]
         }
     ],
-    "skin":[{
+    "skin":{
         "E":["official"]
-    }],
+    },
     "platform":"B",
     "tags":["粉丝牌确认"]
 },{
@@ -550,9 +550,9 @@
             "item":[]
         }
     ],
-    "skin":[{
+    "skin":{
         "A":["official"]
-    }],
+    },
     "platform":"B",
     "tags":["还是没吃到鸡"]
 },{
@@ -579,9 +579,9 @@
         "item":[["Maria","1-42:27"],["鸟之诗","2-18:15"],["蜜月Un・Deux・Trois","2-53:36"],["Señorita","2-62:00"]]
         }
     ],
-    "skin":[{
+    "skin":{
         "B":["official"]
-    }],
+    },
     "platform":"",
     "tags":["心跳挑战","打电话挑战","折磨局","拉姐跳芭蕾"]
 },
@@ -609,13 +609,13 @@
             "item":[["Start Dash!","1-01:02"],["Lamb","2-53:49"],["사이렌","2-64:49"],["Hip","2-64:20"]]
         }
     ],
-    "skin":[{
+    "skin":{
         "A":["official"],
         "B":["official"],
         "C":["official"],
         "D":["official"],
         "E":["official"]
-    }],
+    },
     "platform":"B",
     "tags":["小嘉然被迫训练","喵喵小嘉然","写真大挑战","拉姐摸头"]
 },{
@@ -648,9 +648,9 @@
             ]
         }
     ],
-    "skin":[{
+    "skin":{
         "D":["official"]
-    }],
+    },
     "platform":"B",
     "tags":["嘉然吃货属性开启","我画你们猜"]
 },{
@@ -684,10 +684,10 @@
             ]
         }
     ],
-    "skin":[{
+    "skin":{
         "D":["official"],
         "E":["official"]
-    }],
+    },
     "platform":"B",
     "tags":["偷吃小嘉然","名场面"]
 },{
@@ -720,10 +720,10 @@
             ]
         }
     ],
-    "skin":[{
+    "skin":{
         "A":["official"],
         "E":["official"]
-    }],
+    },
     "platform":"B",
     "tags":["钻头","名场面","害羞小向晚"]
 },
@@ -761,10 +761,10 @@
                 ]
             }
         ],
-        "skin":[{
+        "skin":{
             "B":["official","group"],
             "E":["official","group"]
-        }],
+        },
         "platform":"B",
         "tags":[]
     },{
@@ -804,13 +804,13 @@
                 ]
             }
         ],
-        "skin":[{
+        "skin":{
             "A":["group","year"],
             "B":["group","year"],
             "C":["group","year"],
             "D":["group","year"],
             "E":["group","year"]
-        }],
+        },
         "platform":"",
         "tags":["小年夜","flag大会","新衣服","才艺"]
     },{
@@ -845,10 +845,10 @@
                 ]
             }
         ],
-        "skin":[{
+        "skin":{
             "A":["official","sleep"],
             "D":["official"]
-        }],
+        },
         "platform":"B",
         "tags":["缩小版的嘉然","缩小版的向晚","嘉然还没有变大"]
     },{
@@ -884,9 +884,9 @@
                 ]
             }
         ],
-        "skin":[{
+        "skin":{
             "E":["official","year"]
-        }],
+        },
         "platform":"B",
         "tags":["乃琳讲故事"]
     },{
@@ -925,9 +925,9 @@
                 ]
             }
         ],
-        "skin":[{
+        "skin":{
             "C":["year"]
-        }],
+        },
         "platform":"B",
         "tags":["14号工具人是嘉然","15号工具人是乃琳"]
     },{
@@ -964,9 +964,9 @@
                 ]
             }
         ],
-        "skin":[{
+        "skin":{
             "B":["year"]
-        }],
+        },
         "platform":"B",
         "tags":["打嗝小贝拉","唱错歌的拉姐"]
     },{
@@ -1008,9 +1008,9 @@
                 ]
             }
         ],
-        "skin":[{
+        "skin":{
             "A":["year"]
-        }],
+        },
         "platform":"B",
         "tags":["恭喜恭喜唱的好悲凉","害羞小向晚","工具人贝拉","水母之歌1.0","水母就是海蜇皮","向晚小法语","向晚小西语"]
     },{
@@ -1050,10 +1050,10 @@
                 ]
             }
         ],
-        "skin":[{
+        "skin":{
             "A":["year"],
             "D":["year"]
-        }],
+        },
         "platform":"B",
         "tags":["比心小嘉然","画画小嘉然"]
     },{
@@ -1090,9 +1090,9 @@
                 ]
             }
         ],
-        "skin":[{
+        "skin":{
             "E":["year"]
-        }],
+        },
         "platform":"B",
         "tags":["工具人是嘉然"]
     },{
@@ -1124,9 +1124,9 @@
                 ]
             }
         ],
-        "skin":[{
+        "skin":{
             "E":["year"]
-        }],
+        },
         "platform":"B",
         "tags":["工具人是嘉然"]
     },{
@@ -1161,9 +1161,9 @@
                 ]
             }
         ],
-        "skin":[{
+        "skin":{
             "C":["year"]
-        }],
+        },
         "platform":"B",
         "tags":[]
     },{
@@ -1197,10 +1197,10 @@
                 ]
             }
         ],
-        "skin":[{
+        "skin":{
             "B":["year"],
             "D":["year"]
-        }],
+        },
         "platform":"B",
         "tags":[]
     },{
@@ -1230,9 +1230,9 @@
                 ]
             }
         ],
-        "skin":[{
+        "skin":{
             "E":["year"]
-        }],
+        },
         "platform":"B",
         "tags":[]
     },{
@@ -1269,13 +1269,13 @@
                 ]
             }
         ],
-        "skin":[{
+        "skin":{
             "A":["year"],
             "B":["year"],
             "C":["year"],
             "D":["year"],
             "E":["year"]
-        }],
+        },
         "platform":"B",
         "tags":["五个阿草","不守Furry道的","俯卧撑小嘉然","集体健身","跑步小向晚","跑步小乃琳","跑步小嘉然","跑步小珈乐","跑步小贝拉"]
         },{
@@ -1307,9 +1307,9 @@
                     ]
                 }
             ],
-            "skin":[{
+            "skin":{
                     "C":["year"]
-            }],
+            },
             "platform":"B",
             "tags":[]
         },{
@@ -1342,9 +1342,9 @@
                     ]
                 }
             ],
-            "skin":[{
+            "skin":{
                     "E":["year"]
-            }],
+            },
             "platform":"B",
             "tags":[]
         },{
@@ -1376,9 +1376,9 @@
                     ]
                 }
             ],
-            "skin":[{
+            "skin":{
                     "B":["year"]
-            }],
+            },
             "platform":"B",
             "tags":[]
         },{
@@ -1410,9 +1410,9 @@
                     ]
                 }
             ],
-            "skin":[{
+            "skin":{
                     "D":["year"]
-            }],
+            },
             "platform":"B",
             "tags":["细说贝拉房间","珈乐的卡通袜子","细说洗澡"]
         },{
@@ -1450,13 +1450,13 @@
                     ]
                 }
             ],
-            "skin":[{
+            "skin":{
                 "A":["year","group"],
                 "B":["year","group"],
                 "C":["year","group"],
                 "D":["year","group"],
                 "E":["year","group"]
-            }],
+            },
             "platform":"B",
             "tags":["尬活盘点","拉姐专业热身","晚晚是真的铸币啊"]
             },{
@@ -1495,13 +1495,13 @@
                         ]
                     }
                 ],
-                "skin":[{
+                "skin":{
                     "A":["year","group"],
                     "B":["year","group"],
                     "C":["year","group"],
                     "D":["year","group"],
                     "E":["year","group"]
-                }],
+                },
                 "platform":"B",
                 "tags":["这下大聪明了"]
                 },{
@@ -1535,10 +1535,10 @@
                             ]
                         }
                     ],
-                    "skin":[{
+                    "skin":{
                         "A":["year"],
                         "D":["year"]
-                    }],
+                    },
                     "platform":"B",
                     "tags":["俩小的混响拉满"]
                     }
