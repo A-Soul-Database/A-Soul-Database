@@ -18,7 +18,9 @@ var targetJson = {}
 //Get Json 
 //"https://cdn.jsdelivr.net/gh/peterpei1186861238/Srun3k-Boxies/main.json"
 function jsons(){
-    function getJson(url){
+
+    function getJson(url)
+    {
         var xhr = new XMLHttpRequest();
         xhr.open("GET",url,false);
         xhr.send(null);
@@ -27,11 +29,18 @@ function jsons(){
     }
     function compareList(list1,list2){
         //Judge if element in list1 exsistes in list2
-        for (var item1 in list1){
-            for(var item2 in list2){
-                if(list2[item2].indexOf(list1[item1])>-1){return true}else{return false}
+        var judge = false;
+        for (var item1 in list1){            
+            if(list2.indexOf(list1[item1])>-1){
+                judge=true;
+                break;
+            }
+            if(judge==false){
+                console.log(list2,list1[item1]);
             }
         }
+
+        return judge;
     }
     function initJson(){
         if(!Object.keys(targetJson).length){getJson("https://cdn.jsdelivr.net/gh/peterpei1186861238/Srun3k-Boxies/main.json");}
@@ -44,16 +53,16 @@ function jsons(){
             if(targetJson[attr]["clip"]>maxClip){
                 maxClip = attr["clip"];
             }
-            //console.log(targetJson[attr]["type"]);
-            //console.log(fliter["type"]);
+            //console.log(compareList(targetJson[attr]["type"],fliter["type"]));
+            
             if(!compareList(targetJson[attr]["type"],fliter["type"])){continue}
             if(!compareList(targetJson[attr]["scene"],fliter["scene"])){continue}
             if(!compareList(targetJson[attr]["staff"],fliter["staff"])){continue}
-            if(!compareList(targetJson[attr]["skin"],fliter["skin"])){continue}
+            //if(!compareList(targetJson[attr]["skin"],fliter["skin"])){continue}
             if(!compareList(targetJson[attr]["platform"],fliter["platform"])){continue}
             //console.log(targetJson[attr]["type"]);
-
             //ui
+
             list = `${list}<div class="mdui-panel-item"><div class="mdui-panel-item-header">${targetJson[attr]["title"]}</div><div class="mdui-list-item-body" id="list-item-${targetJson[attr]["bv"]}"></div></div>`
         }
         document.getElementById('listItem').innerHTML = list;
@@ -121,7 +130,9 @@ function tools(){
         [10,["Broom"]],
         [11,["Croom"]],
         [12,["Droom"]],
-        [13,["Eroom"]]
+        [13,["Eroom"]],
+        [14,["christmas"]],
+        [15,["liveroom"]]
     ]);
     list = "";
     for(let value of scene.values() ){

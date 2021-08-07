@@ -33,10 +33,10 @@
                 ]
             }
         ],
-        "skin":[{
+        "skin":{
             "B":["official","group"],
             "E":["official","group"]
-        }],
+        },
         "platform":"B",
         "tags":[]
     },{
@@ -76,13 +76,13 @@
                 ]
             }
         ],
-        "skin":[{
+        "skin":{
             "A":["group","year"],
             "B":["group","year"],
             "C":["group","year"],
             "D":["group","year"],
             "E":["group","year"]
-        }],
+        },
         "platform":"",
         "tags":["小年夜","flag大会","新衣服","才艺"]
     },{
@@ -117,10 +117,10 @@
                 ]
             }
         ],
-        "skin":[{
+        "skin":{
             "A":["official","sleep"],
             "D":["official"]
-        }],
+        },
         "platform":"B",
         "tags":["缩小版的嘉然","缩小版的向晚","嘉然还没有变大"]
     },{
@@ -156,9 +156,9 @@
                 ]
             }
         ],
-        "skin":[{
+        "skin":{
             "E":["official","year"]
-        }],
+        },
         "platform":"B",
         "tags":["乃琳讲故事"]
     },{
@@ -197,9 +197,9 @@
                 ]
             }
         ],
-        "skin":[{
+        "skin":{
             "C":["year"]
-        }],
+        },
         "platform":"B",
         "tags":["14号工具人是嘉然","15号工具人是乃琳"]
     },{
@@ -236,9 +236,9 @@
                 ]
             }
         ],
-        "skin":[{
+        "skin":{
             "B":["year"]
-        }],
+        },
         "platform":"B",
         "tags":["打嗝小贝拉","唱错歌的拉姐"]
     },{
@@ -280,9 +280,9 @@
                 ]
             }
         ],
-        "skin":[{
+        "skin":{
             "A":["year"]
-        }],
+        },
         "platform":"B",
         "tags":["恭喜恭喜唱的好悲凉","害羞小向晚","工具人贝拉","水母之歌1.0","水母就是海蜇皮","向晚小法语","向晚小西语"]
     },{
@@ -322,10 +322,10 @@
                 ]
             }
         ],
-        "skin":[{
+        "skin":{
             "A":["year"],
             "D":["year"]
-        }],
+        },
         "platform":"B",
         "tags":["比心小嘉然","画画小嘉然"]
     },{
@@ -362,9 +362,9 @@
                 ]
             }
         ],
-        "skin":[{
+        "skin":{
             "E":["year"]
-        }],
+        },
         "platform":"B",
         "tags":["工具人是嘉然"]
     },{
@@ -396,9 +396,9 @@
                 ]
             }
         ],
-        "skin":[{
+        "skin":{
             "E":["year"]
-        }],
+        },
         "platform":"B",
         "tags":["工具人是嘉然"]
     },{
@@ -433,9 +433,9 @@
                 ]
             }
         ],
-        "skin":[{
+        "skin":{
             "C":["year"]
-        }],
+        },
         "platform":"B",
         "tags":[]
     },{
@@ -469,10 +469,10 @@
                 ]
             }
         ],
-        "skin":[{
+        "skin":{
             "B":["year"],
             "D":["year"]
-        }],
+        },
         "platform":"B",
         "tags":[]
     },{
@@ -502,9 +502,9 @@
                 ]
             }
         ],
-        "skin":[{
+        "skin":{
             "E":["year"]
-        }],
+        },
         "platform":"B",
         "tags":[]
     },{
@@ -541,13 +541,13 @@
                 ]
             }
         ],
-        "skin":[{
+        "skin":{
             "A":["year"],
             "B":["year"],
             "C":["year"],
             "D":["year"],
             "E":["year"]
-        }],
+        },
         "platform":"B",
         "tags":["五个阿草","不守Furry道的","俯卧撑小嘉然","集体健身","跑步小向晚","跑步小乃琳","跑步小嘉然","跑步小珈乐","跑步小贝拉"]
         },{
@@ -579,9 +579,9 @@
                     ]
                 }
             ],
-            "skin":[{
+            "skin":{
                     "C":["year"]
-            }],
+            },
             "platform":"B",
             "tags":[]
         },{
@@ -614,9 +614,9 @@
                     ]
                 }
             ],
-            "skin":[{
+            "skin":{
                     "E":["year"]
-            }],
+            },
             "platform":"B",
             "tags":[]
         },{
@@ -648,9 +648,9 @@
                     ]
                 }
             ],
-            "skin":[{
+            "skin":{
                     "B":["year"]
-            }],
+            },
             "platform":"B",
             "tags":[]
         },{
@@ -682,9 +682,9 @@
                     ]
                 }
             ],
-            "skin":[{
+            "skin":{
                     "D":["year"]
-            }],
+            },
             "platform":"B",
             "tags":["细说贝拉房间","珈乐的卡通袜子","细说洗澡"]
         },{
@@ -722,13 +722,13 @@
                     ]
                 }
             ],
-            "skin":[{
+            "skin":{
                 "A":["year","group"],
                 "B":["year","group"],
                 "C":["year","group"],
                 "D":["year","group"],
                 "E":["year","group"]
-            }],
+            },
             "platform":"B",
             "tags":["尬活盘点","拉姐专业热身","晚晚是真的铸币啊"]
             },{
@@ -767,13 +767,13 @@
                         ]
                     }
                 ],
-                "skin":[{
+                "skin":{
                     "A":["year","group"],
                     "B":["year","group"],
                     "C":["year","group"],
                     "D":["year","group"],
                     "E":["year","group"]
-                }],
+                },
                 "platform":"B",
                 "tags":["这下大聪明了"]
                 },{
@@ -807,10 +807,10 @@
                             ]
                         }
                     ],
-                    "skin":[{
+                    "skin":{
                         "A":["year"],
                         "D":["year"]
-                    }],
+                    },
                     "platform":"B",
                     "tags":["俩小的混响拉满"]
                     }
