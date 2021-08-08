@@ -71,11 +71,11 @@ main.json
         }
     ],
     "skin":{
-            "A":["year"],
-            "B":["year"],
-            "C":["year"],
-            "D":["year"],
-            "E":["year"]
+            "A":["official"],
+            "B":["official"],
+            "C":["official"],
+            "D":["official"],
+            "E":["official"]
     },
     "platform":"B",
     "tags":[]
