@@ -199,7 +199,7 @@
     "bv":"BV1Uq4y1f7jd",
     "title":"【A-SOUL夜谈】第九期 5.8 你做过哪些念念不忘的梦？【直播录像】",
     "scene":["Aroom"],
-    "type":["theater","dance","game","song"],
+    "type":["dance","game","song"],
     "staff":["A","B","D","E"],
     "clip":2,
     "items":[
@@ -442,4 +442,266 @@
     },
     "platform":"B",
     "tags":["节目效果拉满"]
+},{
+    "date":"5-15",
+    "time":"20:00",
+    "liveRoom":"F",
+    "bv":"BV1UN411o7L2",
+    "title":"【A-SOUL夜谈】第十期 5.15 那些让你意想不到的事...【直播录像】",
+    "scene":["domroom"],
+    "type":["game","song"],
+    "staff":["A","B","D","E"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[
+                ["你真的了解自己的身体吗?","1-07:18"],
+                ["你可能不知道的冷知识?","1-43:21"],
+                ["自以为瞒天过海却被知道的一清二楚的事?","2-10:43"],
+                ["什么是你上了学才知道的?","2-29:38"],
+                ["你遇到过那些令人窒息的操作?","2-36:32"],
+                ["A-Soul团员不为人知的一面!","2-48:24"]
+            ]
+        },
+        {
+            "name":"song",
+            "item":[
+                ["你不知道的事","1-00:30",["A","B","D","E"]],
+                ["宁夏","2-66:42",["A","B","D","E"]]
+            ]
+        },
+        {
+            "name":"dance",
+            "item":[
+            ]
+        }
+    ],
+    "skin":{
+            "A":["sleep"],
+            "B":["sleep"],
+            "C":["sleep"],
+            "D":["chinese"],
+            "E":["sleep"]
+    },
+    "platform":"B",
+    "tags":[]
+},{
+    "date":"5-16",
+    "time":"20:00",
+    "liveRoom":"B",
+    "bv":"BV1Uh411e75j",
+    "title":"【A-SOUL游戏室】第八期 5.16 一起来玩《双人成行》吧！【直播录像】",
+    "scene":["domroom"],
+    "type":["chat","song","game"],
+    "staff":["B","E"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[
+                ["双人成行","1-08:37"]
+            ]
+        },
+        {
+            "name":"song",
+            "item":[
+                ["如果的事","1-00:30",["B","E"]],
+                ["勇气","2-66:38",["B","E"]]
+            ]
+        },
+        {
+            "name":"dance",
+            "item":[
+            ]
+        }
+    ],
+    "skin":{
+            "B":["sleep"],
+            "E":["sleep"]
+    },
+    "platform":"B",
+    "tags":[]
+},{
+    "date":"5-19",
+    "time":"20:00",
+    "liveRoom":"A",
+    "bv":"BV1SK4y197fw",
+    "title":"【A-SOUL】向晚 5.19 【520＝我爱你？】进来我给你一......【直播录像】",
+    "scene":["Aroom"],
+    "type":["chat","song"],
+    "staff":["A"],
+    "clip":1,
+    "items":[
+        {
+            "name":"game",
+            "item":[
+            ]
+        },
+        {
+            "name":"song",
+            "item":[
+                ["我又初恋了","1-22:46",["A"]],
+                ["perfect","1-39:00",["A"]],
+                ["perfect","1-44:22",["A"]]
+            ]
+        },
+        {
+            "name":"dance",
+            "item":[
+            ]
+        }
+    ],
+    "skin":{
+            "A":["sleep"]
+    },
+    "platform":"B",
+    "tags":["害羞小向晚","蓝莓南瓜裤"]
+},{
+    "date":"5-19",
+    "time":"21:10",
+    "liveRoom":"D",
+    "bv":"BV1Zq4y177nA",
+    "title":"【A-SOUL】嘉然 5.19 然然的评论区！有！什！么~【直播录像】",
+    "scene":["classroom"],
+    "type":["chat","game","song"],
+    "staff":["A"],
+    "clip":1,
+    "items":[
+        {
+            "name":"game",
+            "item":[
+                ["读评论","1-04:41"]
+            ]
+        },
+        {
+            "name":"song",
+            "item":[
+                ["爱的魔法","1-27:53",["D"]],
+                ["麋鹿森林","1-52:38",["D"]]
+            ]
+        },
+        {
+            "name":"dance",
+            "item":[
+            ]
+        }
+    ],
+    "skin":{
+            "D":["offical"]
+    },
+    "platform":"B",
+    "tags":["小的抗压"]
+},{
+    "date":"5-20",
+    "time":"20:00",
+    "liveRoom":"B",
+    "bv":"BV1664y1d7mv",
+    "title":"【A-SOUL】贝拉 5.20 来学英文歌吧~【直播录像】",
+    "scene":["domroom"],
+    "type":["chat"],
+    "staff":["B"],
+    "clip":1,
+    "items":[
+        {
+            "name":"game",
+            "item":[
+            ]
+        },
+        {
+            "name":"song",
+            "item":[
+            ]
+        },
+        {
+            "name":"dance",
+            "item":[
+            ]
+        }
+    ],
+    "skin":{
+            "B":["christmas"]
+    },
+    "platform":"B",
+    "tags":[]
+},{
+    "date":"5-20",
+    "time":"21:10",
+    "liveRoom":"E",
+    "bv":"BV1e5411u7PG",
+    "title":"【A-SOUL】乃琳 5.20 你的月亮我的心！【直播录像】",
+    "scene":["Eroom"],
+    "type":["chat","song"],
+    "staff":["B"],
+    "clip":1,
+    "items":[
+        {
+            "name":"game",
+            "item":[
+                ["你的月亮我的心","1-10:36"]
+            ]
+        },
+        {
+            "name":"song",
+            "item":[
+                ["给我一个吻","1-00:21",["E"]],
+                ["快乐老家","1-24:30",["E"]],
+                ["羞答答的玫瑰静悄悄地开","1-48:25",["E"]]
+            ]
+        },
+        {
+            "name":"dance",
+            "item":[
+            ]
+        }
+    ],
+    "skin":{
+            "E":["christmas"]
+    },
+    "platform":"B",
+    "tags":[]
+},{
+    "date":"5-21",
+    "time":"20:00",
+    "liveRoom":"F",
+    "bv":"BV1wU4y1L7Tc",
+    "title":"【A-SOUL小剧场】二十期 5.21 高情商技巧大放送【直播录像】",
+    "scene":["show"],
+    "type":["theater","dance","game","song"],
+    "staff":["A","B","D","E"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[
+                ["情商题目","1-15:30"]
+            ]
+        },
+        {
+            "name":"song",
+            "item":[
+                ["你真漂亮","1-31:00",["B"]],
+                ["小情歌","1-54:02",["A","E"]],
+                ["彩虹的微笑","2-16:38",["A"]],
+                ["忽然之间","2-59:26",["E"]],
+                ["恋爱ing","2-63:56",["A","B","E"]]
+            ]
+        },
+        {
+            "name":"dance",
+            "item":[
+                ["NoNoNo","1-08:57",["A","B","E"]],
+                ["彩虹的微笑","2-16:38",["A"]],
+                ["A Thousand Year","2-31:44",["B","E"]],
+                ["恋爱ing","2-63:56",["A","B","E"]]
+            ]
+        }
+    ],
+    "skin":{
+            "A":["group"],
+            "B":["group","official"],
+            "E":["group","official"]
+    },
+    "platform":"B",
+    "tags":["乃贝赢!"]
 }]
