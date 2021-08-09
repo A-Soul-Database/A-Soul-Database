@@ -22,15 +22,15 @@ document.getElementById('photo-banner').innerHTML = item;
 //drawer
 function drawer(){
 let drawer = new Map([
-    ["/web/user/index.html",["home","主页"]],
-    ["/web/user/skin/index.html",["skin","皮肤库"]],
-    ["/web/user/info/index.html",["about","关于"]]
+    ["home",["/web/user/index.html","主页"]],
+    ["photo",["/web/user/skin/index.html","皮肤库"]],
+    ["info",["/web/user/info/index.html","关于"]]
 ]);
 
 var item = "";
 for (let entry of drawer.entries()){
     item = `
-        ${item}                <a href="/${entry[1][0]}">
+        ${item}                <a href="${entry[1][0]}">
         <li class="mdui-list-item mdui-ripple">
           <i class="mdui-list-item-icon mdui-icon material-icons">${entry[0]}</i>
           <div class="mdui-list-item-content">${entry[1][1]}</div>

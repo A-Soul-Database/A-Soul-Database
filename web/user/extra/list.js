@@ -44,7 +44,8 @@ function jsons(){
         return judge;
     }
     function initJson(){
-        if(!Object.keys(targetJson).length){getJson("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@latest/db/2021/main.json");}
+        if(!Object.keys(targetJson).length){getJson("/db/2021/main.json");}
+        //Archive for https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@latest/db/2021/main.json
         //列出
         var list = "";
         for (var attr in targetJson ){
