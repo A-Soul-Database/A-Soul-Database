@@ -22,9 +22,9 @@ document.getElementById('photo-banner').innerHTML = item;
 //drawer
 function drawer(){
 let drawer = new Map([
-    ["home",["home","主页"]],
-    ["photo",["skin","皮肤库"]],
-    ["info",["about","关于"]]
+    ["/web/user/index.html",["home","主页"]],
+    ["/web/user/skin/index.html",["skin","皮肤库"]],
+    ["/web/user/info/index.html",["about","关于"]]
 ]);
 
 var item = "";
@@ -43,9 +43,9 @@ document.getElementById('drawer').innerHTML = item;
 //toolkit
 function toolkit(){
     let drawer = new Map([
-        [0,["/search","pink","搜索"]],
-        [1,["/list","green","查看所有"]],
-        [2,["https://github.com","purple","github"]]
+        [0,["/web/user/search/index.html","pink","搜索"]],
+        [1,["/web/user/list/index.html","green","查看所有"]],
+        [2,["https://github.com/peterpei1186861238/ASDB","purple","github"]]
     ]);
     
     var item = "";

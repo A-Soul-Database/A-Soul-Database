@@ -72,7 +72,6 @@ function filter(){
     }
     function Checked(child){
         if(document.getElementById(child).children[0].checked){
-            
             fliter[child.split("-")[1]].push(child.split("-")[2]);
             //赋值
         }

@@ -588,7 +588,7 @@
         }
     ],
     "skin":{
-            "D":["offical"]
+            "D":["official"]
     },
     "platform":"B",
     "tags":["小的抗压"]
@@ -668,7 +668,7 @@
     "title":"【A-SOUL小剧场】二十期 5.21 高情商技巧大放送【直播录像】",
     "scene":["show"],
     "type":["theater","dance","game","song"],
-    "staff":["A","B","D","E"],
+    "staff":["A","B","E"],
     "clip":2,
     "items":[
         {
@@ -704,4 +704,297 @@
     },
     "platform":"B",
     "tags":["乃贝赢!"]
+},{
+    "date":"5-22",
+    "time":"20:00",
+    "liveRoom":"F",
+    "bv":"BV1EN411Z7RU",
+    "title":"【A-SOUL夜谈】十一期 5.22 生活中的那些小确幸【直播录像】",
+    "scene":["Aroom","sky"],
+    "type":["chat","song"],
+    "staff":["A","B","D","E"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[
+                ["情商题目","1-15:30"]
+            ]
+        },
+        {
+            "name":"song",
+            "item":[
+                ["小永远","2-13:45",["A","B","E"]],
+                ["海底","2-59:00",["B","E"]]
+            ]
+        },
+        {
+            "name":"dance",
+            "item":[
+            ]
+        }
+    ],
+    "skin":{
+            "A":["sleep","group"],
+            "B":["sleep","group"],
+            "E":["sleep","group"]
+    },
+    "platform":"B",
+    "tags":["细说向晚小奶嗝","向晚泡面爱好者","怕痒小乃琳"]
+},{
+    "date":"5-26",
+    "time":"20:00",
+    "liveRoom":"A",
+    "bv":"BV1eQ4y1R7Q4",
+    "title":"【A-SOUL】向晚 5.26 直播练琴就会下雨啦下雨啦！！【直播录像】",
+    "scene":["Aroom"],
+    "type":["chat","song"],
+    "staff":["A"],
+    "clip":1,
+    "items":[
+        {
+            "name":"game",
+            "item":[
+            ]
+        },
+        {
+            "name":"song",
+            "item":[
+                ["索嗨嗨","1-03:25",["A"]],
+                ["下雨天","1-17:25",["A"]],
+                ["下雨了是我在想你","1-28:00",["A"]],
+                ["找自己","1-40:00",["A"]]
+            ]
+        },
+        {
+            "name":"dance",
+            "item":[
+            ]
+        }
+    ],
+    "skin":{
+            "A":["sleep"]
+    },
+    "platform":"B",
+    "tags":[]
+},{
+    "date":"5-26",
+    "time":"21:10",
+    "liveRoom":"E",
+    "bv":"BV1iK4y1G7oQ",
+    "title":"【A-SOUL】乃琳 5.26 Ori的寻家之旅~【直播录像】",
+    "scene":["Eroom"],
+    "type":["chat","song","game"],
+    "staff":["E"],
+    "clip":1,
+    "items":[
+        {
+            "name":"game",
+            "item":[
+                ["Ori","1-06:54"]
+            ]
+        },
+        {
+            "name":"song",
+            "item":[
+                ["当你老了","1-35:15",["E"]],
+                ["失恋阵线联盟(改词)","1-50:00",["E"]]
+            ]
+        },
+        {
+            "name":"dance",
+            "item":[]
+        }
+    ],
+    "skin":{
+            "E":["official"]
+    },
+    "platform":"B",
+    "tags":[]
+},{
+    "date":"5-27",
+    "time":"20:00",
+    "liveRoom":"B",
+    "bv":"BV1HV41177wn",
+    "title":"【A-SOUL】贝拉 5.27 目标是！成为情话大师！【直播录像】",
+    "scene":["domroom"],
+    "type":["chat","song","game"],
+    "staff":["B"],
+    "clip":1,
+    "items":[
+        {
+            "name":"game",
+            "item":[
+                ["小作文","1-12:18"],
+                ["给贝极星的小作文","1-34:25"]
+            ]
+        },
+        {
+            "name":"song",
+            "item":[
+                ["霞光","1-00:41",["B"]],
+                ["月光","1-46:38",["B"]]
+            ]
+        },
+        {
+            "name":"dance",
+            "item":[]
+        }
+    ],
+    "skin":{
+            "B":["official"]
+    },
+    "platform":"B",
+    "tags":[]
+},{
+    "date":"5-27",
+    "time":"21:10",
+    "liveRoom":"D",
+    "bv":"BV1gy4y1378u",
+    "title":"【A-SOUL】嘉然 5.27 请查收XX小嘉然！【直播录像】",
+    "scene":["classroom"],
+    "type":["chat","dance","game"],
+    "staff":["D"],
+    "clip":1,
+    "items":[
+        {
+            "name":"game",
+            "item":[
+                ["小作文","1-12:18"]
+            ]
+        },
+        {
+            "name":"song",
+            "item":[
+            ]
+        },
+        {
+            "name":"dance",
+            "item":[
+                ["恋愛デコレート","1-31:00",["D"]]
+            ]
+        }
+    ],
+    "skin":{
+            "D":["official"]
+    },
+    "platform":"B",
+    "tags":["恶魔小嘉然"]
+},{
+    "date":"5-28",
+    "time":"20:00",
+    "liveRoom":"F",
+    "bv":"BV1pq4y1j7kh",
+    "title":"【A-SOUL小剧场】二十一期 5.28 高考应援歌舞会！【直播录像】",
+    "scene":["sky"],
+    "type":["theater","dance","song"],
+    "staff":["A","B","D","E"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[
+            ]
+        },
+        {
+            "name":"song",
+            "item":[
+                ["最初的梦想","1-12:20",["A","B"]],
+                ["最美的期待","1-51:38",["E","B"]],
+                ["明天你好","2-08:20",["E","D"]],
+                ["倔强","2-35:30",["E"]],
+                ["别看我小","2-45:25",["B","D"]],
+                ["北京东路的日子","2-62:13",["A","B","D","E"]],
+                ["少年","2-67:00",["A","B","D","E"]]
+            ]
+        },
+        {
+            "name":"dance",
+            "item":[
+                ["我真的很不错","1-00:43",["A","B","D","E"]],
+                ["Cheer Up","1-36:43",["D"]],
+                ["Shake It","2-21:36",["A"]],
+                ["霍元甲","2-51:49",["B"]]
+            ]
+        }
+    ],
+    "skin":{
+            "A":["group","sleep"],
+            "B":["group","year"],
+            "D":["group","official","chinese"],
+            "E":["group"]
+    },
+    "platform":"B",
+    "tags":[]
+},{
+    "date":"5-29",
+    "time":"20:00",
+    "liveRoom":"F",
+    "bv":"BV1G5411g7nP",
+    "title":"【A-SOUL夜谈】十二期 5.29 命运之夜【直播录像】",
+    "scene":["sky"],
+    "type":["chat","song"],
+    "staff":["A","B","D","E"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[
+            ]
+        },
+        {
+            "name":"song",
+            "item":[
+                ["白羊","1-00:20",["A","B","D","E"]],
+                ["遇见","2-66:00",["A","B","D","E"]]
+            ]
+        },
+        {
+            "name":"dance",
+            "item":[
+            ]
+        }
+    ],
+    "skin":{
+            "A":["sleep","group"],
+            "B":["sleep","group"],
+            "D":["sleep","group"],
+            "E":["sleep","group"]
+    },
+    "platform":"B",
+    "tags":[]
+},{
+    "date":"5-30",
+    "time":"20:00",
+    "liveRoom":"A",
+    "bv":"BV15U4y1L7em",
+    "title":"【A-SOUL游戏室】第九期 5.30 果丹皮再续《小小梦魇》【直播录像】",
+    "scene":["Aroom"],
+    "type":["chat","game"],
+    "staff":["A","E"],
+    "clip":2,
+    "items":[
+        {
+            "name":"game",
+            "item":[
+                ["小小梦魇","1-09:15"]
+            ]
+        },
+        {
+            "name":"song",
+            "item":[
+            ]
+        },
+        {
+            "name":"dance",
+            "item":[
+            ]
+        }
+    ],
+    "skin":{
+            "A":["sleep"],
+            "E":["sleep"]
+    },
+    "platform":"B",
+    "tags":[]
 }]
