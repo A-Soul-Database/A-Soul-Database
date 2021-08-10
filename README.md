@@ -1,6 +1,6 @@
 ## ASDB -- A-SOUL Live Clip Database A-SOUL 非官方直播数据库 
 
-# Progress: Finished: 60% web, db in 2021.1,2021.2 Total:30%, Finish before 2021.9.1
+# Progress: Finished: 70% web, db in 2021.7 Total:60%, Finish before 2021.8.15
 
 ### Useage 使用方法
 #### 
@@ -33,7 +33,7 @@ main.json
 },{
     "date":"日期",
     "title":"标题",
-    "scene":"list 场景，classroom-教室 beach-沙滩 zhijiang-枝江大楼 domroom-客厅 gameroom-游戏室,show-舞台,singroom-录音室,filmstudio-摄影棚,rooftop-天台,Aroom-向晚房间,sky-天空湖,danceroom-舞蹈教室,ktv-ktv"
+    "scene":"list 场景，classroom-教室 beach-沙滩 zhijiang-枝江大楼 domroom-客厅 gameroom-游戏室,show-舞台,singroom-录音室,filmstudio-摄影棚,rooftop-天台,Aroom-向晚房间,sky-天空湖,danceroom-舞蹈教室,ktv-ktv,spaceship-Bw展会中的飞船"
     "type":"game-游戏,theater-小剧场,chat-闲聊,song-唱歌,dance-跳舞,vertical-竖屏,birthday-生日会",
     "staff":"list类型，A-ava B-bella C-carol D-Diana E-Ellen F-Furry",
     "source":"BV",

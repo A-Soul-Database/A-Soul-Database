@@ -54,7 +54,7 @@ function jsons(){
             if(!compareList(targetJson[attr]["staff"],fliter["staff"])){continue}
             if(!compareList(targetJson[attr]["skin"],fliter["skin"])){continue}
             if(!compareList(targetJson[attr]["platform"],fliter["platform"])){continue}
-            list = `${list}<div class="mdui-panel-item"><div class="mdui-panel-item-header">${targetJson[attr]["title"]}</div><div class="mdui-list-item-body" id="list-item-${targetJson[attr]["bv"]}"></div></div>`
+            list = `<div class="mdui-panel-item"><div class="mdui-panel-item-header">${targetJson[attr]["title"]}</div><div class="mdui-list-item-body" id="list-item-${targetJson[attr]["bv"]}"></div></div>${list}`
         }
         document.getElementById('listItem').innerHTML = list;
         
