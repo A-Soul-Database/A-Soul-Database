@@ -1,4 +1,4 @@
-# ![]("https://asdb.live","As Db")
+# ![Asdb](https://asdb.live/ "Asdb")
 ## ASDB -- A-SOUL Live Clip Database A-SOUL 非官方直播数据库 
 
 # Progress: Finished: 70% web, db in 2021.7 Total:60%, Finish before 2021.8.15
