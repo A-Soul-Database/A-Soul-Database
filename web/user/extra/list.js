@@ -13,6 +13,7 @@ var fliter = {
     "platform":[]
 }
 var targetJson = {}
+var thumbalJson = {}
 //筛选索引
 
 //Get Json 
@@ -24,7 +25,7 @@ function jsons(){
         xhr.open("GET",url,false);
         xhr.send(null);
         var jsonData = JSON.parse(xhr.responseText);
-        targetJson = jsonData;
+        return jsonData;
     }
     function compareList(list1,list2){
         //Judge if element in list1 exsistes in list2
@@ -44,7 +45,8 @@ function jsons(){
         return judge;
     }
     function initJson(){
-        if(!Object.keys(targetJson).length){getJson("https://asdb.live/db/2021/main.json");}
+        if(!Object.keys(targetJson).length){targetJson =getJson("https://asdb.live/db/2021/main.json");}
+        if(!Object.keys(thumbalJson).length){thumbalJson =getJson("https://asdb.live/db/2021/Cover.json");}
         //Archive for https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@latest/db/2021/main.json
         //Update for https://asdb.live/db/2021/main.json
         //列出

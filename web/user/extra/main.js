@@ -24,6 +24,10 @@ function drawer(){
 let drawer = new Map([
     ["home",["/web/user/index.html","主页"]],
     ["photo",["/web/user/skin/index.html","皮肤库"]],
+    ["format_list_bulleted",["/web/user/list/index.html","所有列表"]],
+    ["search",["/web/user/search/index.html","搜索"]],
+    ["subtitles",["/web/user/subtitles/index.html","字幕库"]],
+    ["photo_album",["/web/user/scene/index.html","场景库"]],
     ["info",["/web/user/info/index.html","关于"]]
 ]);
 
