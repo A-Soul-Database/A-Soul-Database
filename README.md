@@ -40,7 +40,7 @@ main.json
     "song":"list类型，存放歌曲",
     "tags":"list 类型，可以存放例如生日会和名场面的其他标签"
 }]
-```
+
 {
     "date":"",
     "time":"",
@@ -80,10 +80,11 @@ main.json
     "platform":"B",
     "tags":[]
 }
+```
 
 ```
 main.srt
-使用YouTube语音自动转换字幕
+使用剪映语音自动转换字幕,并替换常见错误词
 ```
 
 ````
