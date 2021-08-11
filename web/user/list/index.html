@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"/>
     <meta name="renderer" content="webkit"/>
     <meta name="force-rendering" content="webkit"/>
+    
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="referrer" content="no-refer">
     <title>List - As db</title>
@@ -47,7 +48,7 @@
             <div class="mdui-panel mdui-panel-popout" id="listItem" mdui-panel>
             </div>
             <div class="mdui-container mdui-typo">
-            <div class="mdui-row-xs-3 mdui-row-sm-4 mdui-row-md-3 mdui-row-lg-3 mdui-row-xl-5 mdui-grid-list" id="main">
+            <div class="mdui-row-xs-1 mdui-row-sm-1 mdui-row-md-3 mdui-row-lg-3 mdui-row-xl-5 mdui-grid-list" id="main" style="display: none;">
               <div id="test" class="mdui-col"><div class="mdui-card"><div class="mdui-card-media">
                 <img src="http://i1.hdslb.com/bfs/archive/42c5b5565327765ea9741c5876695599ae152853.jpg"/>
                 <div class="mdui-card-media-covered mdui-card-media-covered-top">
@@ -58,8 +59,21 @@
                   <div class="mdui-chip"><img class="mdui-chip-icon" src="https://i2.hdslb.com/bfs/face/d399d6f5cf7943a996ae96999ba3e6ae2a2988de.jpg@128w_128h_1o.webp"/><span class="mdui-chip-title">嘉然今天吃什么</span></div>
                   <div class="mdui-chip"><img class="mdui-chip-icon" src="https://i2.hdslb.com/bfs/face/668af440f8a8065743d3fa79cfa8f017905d0065.jpg@128w_128h_1o.webp"/><span class="mdui-chip-title">贝拉Kira</span></div>
                   <h6>Activity</h6>
-                  <div class="mdui-chip"><span class="mdui-chip-icon"><i class="mdui-icon material-icons">videogame_asset</i></span><span class="mdui-chip-title">Game</span></div>
-                  <button class="mdui-btn mdui-ripple">action 1</button><button class="mdui-btn mdui-ripple">action 2</button>
+                  <div class="mdui-chip" onclick="  mdui.snackbar({message: 'Such Art 32:59 \n Game2 33:10'});"><span class="mdui-chip-icon"><i class="mdui-icon material-icons">videogame_asset</i></span><span class="mdui-chip-title">Game</span></div>
+                  <div class="mdui-chip"><span class="mdui-chip-icon"><i class="mdui-icon material-icons">mic</i></span><span class="mdui-chip-title">Song</span></div>
+                  <div class="mdui-chip"><span class="mdui-chip-icon"><i class="mdui-icon material-icons">group</i></span><span class="mdui-chip-title">Chat</span></div>
+                  <div class="mdui-chip"><span class="mdui-chip-icon"><i class="mdui-icon material-icons">directions_walk</i></span><span class="mdui-chip-title">Dance</span></div>
+                  <h6>Info</h6>
+                  <div class="mdui-table-fluid">
+                    <table class="mdui-table">
+                      <thead>
+                        <tr>
+                          <th>08-11 18:50</th>
+                          <th><a href="https://www.bilibili.com/BV123456" target="_blank">BV123456</a></th>
+                        </tr>
+                      </thead>
+                    </table>
+                  </div>
               </div></div></div>
             </div>
           </div>
@@ -70,16 +84,18 @@
         <div class="mdui-dialog-title">加载中</div>
         <div class="mdui-dialog-content"><div class="mdui-spinner mdui-spinner-colorful"></div>今天也要好好吃饭捏</div>
       </div>
+      <footer><p><code>Last updated:2021-08-11 22:15 UTC+8</code></p></footer>
       <!-- MDUI JavaScript -->
     <script
       src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"
       integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A"
       crossorigin="anonymous"
     ></script>
+
     <script src="../extra/main.js"></script>
     <script src="../extra/list.js"></script>
     <script>
-      drawer();tools();filter();jsons();
+      inst.open();drawer();tools();filter();jsons();
     </script>
   </body>
 </html>
