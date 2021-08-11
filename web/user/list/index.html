@@ -44,9 +44,19 @@
 
           <div id="list">
             <div class="mdui-panel mdui-panel-popout" id="listItem" mdui-panel>
-
+            </div>
+            <div class="mdui-container">
+            <div class="mdui-row-xs-3 mdui-row-sm-4 mdui-row-md-3 mdui-row-lg-3 mdui-row-xl-5 mdui-grid-list" id="photo-banner">
+              <div id="test" class="mdui-col"><div class="mdui-card"><div class="mdui-card-media"><img src="http://i1.hdslb.com/bfs/archive/42c5b5565327765ea9741c5876695599ae152853.jpg"/><div class="mdui-card-media-covered mdui-card-media-covered-top"><div class="mdui-card-primary"><div class="mdui-card-primary-title">Title</div><div class="mdui-card-primary-subtitle">Subtitle</div></div></div></div><div class="mdui-card-actions"><div class="mdui-chip"><img class="mdui-chip-icon" src="https://i0.hdslb.com/bfs/face/566078c52b408571d8ae5e3bcdf57b2283024c27.jpg@128w_128h_1o.webp"/><span class="mdui-chip-title">向晚大魔王</span></div><button class="mdui-btn mdui-ripple">action 1</button><button class="mdui-btn mdui-ripple">action 2</button></div></div></div>
+              <div id="test" class="mdui-col"><div class="mdui-card"><div class="mdui-card-media"><img src="http://i1.hdslb.com/bfs/archive/42c5b5565327765ea9741c5876695599ae152853.jpg"/><div class="mdui-card-media-covered mdui-card-media-covered-top"><div class="mdui-card-primary"><div class="mdui-card-primary-title">Title</div><div class="mdui-card-primary-subtitle">Subtitle</div></div></div></div><div class="mdui-card-actions"><div class="mdui-chip"><img class="mdui-chip-icon" src="https://i0.hdslb.com/bfs/face/566078c52b408571d8ae5e3bcdf57b2283024c27.jpg@128w_128h_1o.webp"/><span class="mdui-chip-title">向晚大魔王</span></div><button class="mdui-btn mdui-ripple">action 1</button><button class="mdui-btn mdui-ripple">action 2</button></div></div></div>
             </div>
           </div>
+            </div>
+      </div>
+      <!----dialog-->
+      <div class="mdui-dialog" id="dialog">
+        <div class="mdui-dialog-title">加载中</div>
+        <div class="mdui-dialog-content"><div class="mdui-spinner mdui-spinner-colorful"></div>今天也要好好吃饭捏</div>
       </div>
       <!-- MDUI JavaScript -->
     <script
@@ -57,7 +67,7 @@
     <script src="../extra/main.js"></script>
     <script src="../extra/list.js"></script>
     <script>
-      drawer();tools();filter();jsons();
+      drawer();inst.open();tools();filter();jsons();
     </script>
   </body>
 </html>

@@ -44,8 +44,9 @@ function jsons(){
         return judge;
     }
     function initJson(){
-        if(!Object.keys(targetJson).length){getJson("/db/2021/main.json");}
+        if(!Object.keys(targetJson).length){getJson("https://asdb.live/db/2021/main.json");}
         //Archive for https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@latest/db/2021/main.json
+        //Update for https://asdb.live/db/2021/main.json
         //列出
         var list = "";
         for (var attr in targetJson ){
@@ -57,7 +58,8 @@ function jsons(){
             list = `<div class="mdui-panel-item"><div class="mdui-panel-item-header">${targetJson[attr]["title"]}</div><div class="mdui-list-item-body" id="list-item-${targetJson[attr]["bv"]}"></div></div>${list}`
         }
         document.getElementById('listItem').innerHTML = list;
-        
+        //去除dialog
+        inst.close();
     }
     initJson();
 }
@@ -148,7 +150,10 @@ function tools(){
         [0,["official","官方"]],
         [1,["year","新年"]],
         [2,["sleep","睡衣"]],
-        [3,["group","团服"]]
+        [3,["group","团服"]],
+        [4,["birthday","生日装扮"]],
+        [5,["sport","(拉姐)运动装"]],
+        [6,["christmas","圣诞节装扮"]]
     ]);
     list = "";
     for(let value of skin.values() ){

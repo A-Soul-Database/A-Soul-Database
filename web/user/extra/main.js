@@ -57,3 +57,18 @@ function toolkit(){
     }
     document.getElementById('toolkit').innerHTML = item;
 }
+
+var opened = false;
+var inst = new mdui.Dialog('#dialog');
+/*
+function loading(method=true){
+    //加载对话框
+    var inst =new mdui.Dialog('#dialog');
+    if (method===true){
+        inst.open();
+        opened = true;
+    }else{
+        inst.close();
+    }
+}
+*/
