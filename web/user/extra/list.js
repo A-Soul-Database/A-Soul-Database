@@ -45,9 +45,9 @@ function jsons(){
         return judge;
     }
     function initJson(){
-        if(!Object.keys(targetJson).length){targetJson =getJson("https://asdb.live/db/2021/main.json");}
-        if(!Object.keys(thumbalJson).length){thumbalJson =getJson("https://asdb.live/db/2021/Cover.json");}
-        //Archive for https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@latest/db/2021/main.json
+        if(!Object.keys(targetJson).length){targetJson =getJson("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@V1.0/db/2021/main.json");}
+        if(!Object.keys(thumbalJson).length){thumbalJson =getJson("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@V1.0/db/2021/Cover.json");}
+        //Archive for https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@V1.0/db/2021/main.json
         //Update for https://asdb.live/db/2021/main.json
         //列出
         var list = "";
