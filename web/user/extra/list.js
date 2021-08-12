@@ -61,8 +61,8 @@ function jsons(){
         return staffchip;
     }
     function initJson(){
-        if(!Object.keys(targetJson).length){targetJson =getJson("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@V1.2/db/2021/main.json");}
-        if(!Object.keys(thumbalJson).length){thumbalJson =getJson("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@V1.2/db/2021/Cover.json");}
+        if(!Object.keys(targetJson).length){targetJson =getJson("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@V1.3/db/2021/main.json");}
+        if(!Object.keys(thumbalJson).length){thumbalJson =getJson("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@V1.3/db/2021/Cover.json");}
         //Archive for https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@V1.0/db/2021/main.json
         //Update for https://asdb.live/db/2021/main.json
         //列出
@@ -77,7 +77,7 @@ function jsons(){
             if (!crossJudge){crossJudge=true;continue;}
             var bv = targetJson[attr]["bv"]
             //list = `<div id="${bv}"class="mdui-col"><div class="mdui-card" style="border-radius: 10px;"><div class="mdui-card-media"><img src="${thumbalJson[bv]}" style="height:13vw;object-fit: cover;" /><div class="mdui-card-media-covered mdui-card-media-covered-top"><div class="mdui-card-primary"><div class="mdui-card-primary-title">${targetJson[attr]["title"]}</div></div></div></div><div class="mdui-card-actions">${makeStaffChip(targetJson[attr]["staff"])}<div class="mdui-table-fluid"><table class="mdui-table"><thead><tr><th>${targetJson[attr]["date"]} ${targetJson[attr]["time"]}</th><th><a href="https://www.bilibili.com/${bv}"target="_blank">${bv}</a></th></tr></thead></table></div></div></div></div>${list}`;
-            list = `<div id="${bv}" class="mdui-col" style="transition: all 1s ease-in 1s; "><div class="mdui-card" style="border-radius: 10px;"><div class="mdui-card-media"><img src="${thumbalJson[bv]}"></div><div class="mdui-panel" style="border-radius: 10px;" mdui-panel><div class="mdui-panel-item"><div class="mdui-panel-item-header">${targetJson[attr]["title"]}<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><div class="mdui-panel-item-body">${makeStaffChip(targetJson[attr]["staff"])}<table class="mdui-table"><thead><tr><th>${targetJson[attr]["date"]} ${targetJson[attr]["time"]}</th><th><a href="https://www.bilibili.com/${bv}" target="_blank">${bv}</a></th></tr></thead></table></div></div></div></div></div>${list}`;
+            list = `<div id="${bv}" class="mdui-col mdui-shadow-10" style="transition: all 1s ease-in 1s; "><div class="mdui-card" style="border-radius: 10px;"><div class="mdui-card-media"><img src="${thumbalJson[bv]}"></div><div class="mdui-panel" style="border-radius: 10px;" mdui-panel><div class="mdui-panel-item"><div class="mdui-panel-item-header">${targetJson[attr]["title"]}<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><div class="mdui-panel-item-body">${makeStaffChip(targetJson[attr]["staff"])}<table class="mdui-table"><thead><tr><th>${targetJson[attr]["date"]} ${targetJson[attr]["time"]}</th><th><a href="https://www.bilibili.com/${bv}" target="_blank">${bv}</a></th></tr></thead></table></div></div></div></div></div>${list}`;
         }
         document.getElementById('main').innerHTML = list;
         //去除dialog
