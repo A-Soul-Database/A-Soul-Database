@@ -2,7 +2,7 @@ body {
 	font: normal 100% Helvetica, Arial, sans-serif;
 
 }
-img, object { max-width: 100%;display:flex;}
+img, object { max-width: 100%;display:flex;width:100%;}
 @media screen and (min-width: 1080px) {
     body{
         max-width: 80%;
