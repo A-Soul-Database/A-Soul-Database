@@ -1,17 +1,18 @@
 //Js for list.html
 //创建全局变量
-var build = "V1.3";
+var build = "V1.5";
 var mainJson = {};
 var fliterJson = {};
 var CoverJson = {};
 var SceneMap = {"show":"展台","domroom":"客厅","spaceship":"太空船","ktv":"ktv","sky":"天空湖","Eroom":"乃琳房间","Aroom":"向晚房间","Droom":"嘉然房间","rooftop":"天台","beach":"海滩","classroom":"教室","singroom":"录音室","danceroom":"练舞房","filmstudio":"摄影棚"};
 var skinMap = {"swim":"泳装","official":"官方","sport":"运动服(贝拉)","chinese":"古风旗袍(嘉然)","group":"团服","birthday":"生日会服装","sleep":"睡衣","chiristmas":"圣诞服","year":"新年装"};
+var toolMap = ["staff","skin","scene","platform","type"];
 
 function toolkit(){
     //创建toolbar
     let toolkit = new Map([
         //[number,[[id,name],[[options,name]]]]
-        [0,[["staff","出镜人物"],[["A","向晚"],["B","贝拉"],["C","珈乐"],["D","嘉然"],["E","乃琳"],["F","阿草"]]]],[1,[["Scene","出场场景"],[["classroom","教室"],["beach","海滩"],["domroom","客厅"],["show","舞台"],["singroom","录音室"],["filmstudio","摄影棚"],["rooftop","天台"],["Aroom","向晚房间"],["Droom","嘉然房间"],["Eroom","乃琳房间"],["sky","天空湖"],["danceroom","练舞房"],["ktv","ktv"],["spaceship","太空船"]]]],[2,[["type","活动"],[["song","唱歌"],["dance","跳舞"],["game","游戏"],["chat","闲聊"],["theater","小剧场"],["birthday","生日会"],["vertical","竖屏"]]]],[3,[["skin","服饰"],[["official","设定服装"],["group","团服"],["year","新年服装"],["christmas","圣诞装饰"],["sleep","睡衣"],["birthday","生日会服装"],["chinese","古风旗袍(嘉然限定)"],["sport","运动服(贝拉限定)"],["swim","泳装"]]]],[4,[["platform","平台"],[["B","B站"],["D","抖音"]]]]
+        [0,[["staff","出镜人物"],[["A","向晚"],["B","贝拉"],["C","珈乐"],["D","嘉然"],["E","乃琳"],["F","阿草"]]]],[1,[["scene","出场场景"],[["classroom","教室"],["beach","海滩"],["domroom","客厅"],["show","舞台"],["singroom","录音室"],["filmstudio","摄影棚"],["rooftop","天台"],["Aroom","向晚房间"],["Droom","嘉然房间"],["Eroom","乃琳房间"],["sky","天空湖"],["danceroom","练舞房"],["ktv","ktv"],["spaceship","太空船"]]]],[2,[["type","活动"],[["song","唱歌"],["dance","跳舞"],["game","游戏"],["chat","闲聊"],["theater","小剧场"],["birthday","生日会"],["vertical","竖屏"]]]],[3,[["skin","服饰"],[["official","设定服装"],["group","团服"],["year","新年服装"],["christmas","圣诞装饰"],["sleep","睡衣"],["birthday","生日会服装"],["chinese","古风旗袍(嘉然限定)"],["sport","运动服(贝拉限定)"],["swim","泳装"]]]],[4,[["platform","平台"],[["B","B站"],["D","抖音"]]]]
     ]);
 
     for (let item of toolkit.values()){
@@ -29,6 +30,17 @@ function toolkit(){
 
 function fliter(){
     //条件筛选
+    for(let n of toolMap){
+        var child = document.getElementById("tool-"+n).firstChild;
+        var last = document.getElementById("tool-"+n).lastChild;
+        //console.log(child.firstChild.firstChild)
+        while(child!=last){
+            console.log(child.firstChild.firstChild);
+            //Checked(child.id);
+            child = child.nextSibling;
+        }
+        //console.log(last);
+    }
 }
 function makeList(){
     //创建列表
@@ -41,7 +53,7 @@ function makeList(){
         xhr.send(null);
         return JSON.parse(xhr.responseText);
     }
-    if(!Object.keys(mainJson).length){mainJson=getJsonData("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build+"/db/2021/08/main.json")}
+    if(!Object.keys(mainJson).length){mainJson=getJsonData("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build+"/db/2021/main.json")}
     if(!Object.keys(CoverJson).length){CoverJson=getJsonData("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build+"/db/2021/Cover.json")}
     Html = "";
     typ = ["🎤","💃"];
@@ -103,5 +115,6 @@ function init(){
     //初始化
     toolkit();
     makeList();
+    fliter();
 }
 init();
