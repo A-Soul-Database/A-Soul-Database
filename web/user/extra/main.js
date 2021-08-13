@@ -60,8 +60,6 @@ function toolkit(){
     document.getElementById('toolkit').innerHTML = item;
 }
 
-var opened = false;
-var inst = new mdui.Dialog('#dialog');
 /*
 function loading(method=true){
     //加载对话框
