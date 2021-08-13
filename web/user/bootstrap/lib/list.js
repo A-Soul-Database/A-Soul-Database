@@ -1,6 +1,6 @@
 //Js for list.html
 //创建全局变量
-var build = "V1.5";
+var build = "V1.6";
 var mainJson = {};
 var fliterJson = {};
 var CoverJson = {};
@@ -115,6 +115,5 @@ function init(){
     //初始化
     toolkit();
     makeList();
-    fliter();
 }
 init();
