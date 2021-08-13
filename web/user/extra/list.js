@@ -26,7 +26,9 @@ var thumbalJson = new Map();
 
 //获取信息
 function jsons(){
-
+    var test = new mdui.Dialog('#dialog');
+    test.open();
+    opened=true;
     function getJson(url)
     {
         var xhr = new XMLHttpRequest();
@@ -72,16 +74,16 @@ function jsons(){
         for (var attr in targetJson){
             //筛选
             for (let item of toolsMap.entries()){
-                if(!compareList(targetJson[attr][item.toString().split("-")[1]],fliter[item.toString().split("-")[1]])){crossJudge=false;}
+                if(!compareList(targetJson[attr][item.toString().split("-")[1]],fliter[item.toString().split("-")[1]])){crossJudge=false;break;}
             }
             if (!crossJudge){crossJudge=true;continue;}
-            var bv = targetJson[attr]["bv"]
+            var bv = targetJson[attr]["bv"];
             //list = `<div id="${bv}"class="mdui-col"><div class="mdui-card" style="border-radius: 10px;"><div class="mdui-card-media"><img src="${thumbalJson[bv]}" style="height:13vw;object-fit: cover;" /><div class="mdui-card-media-covered mdui-card-media-covered-top"><div class="mdui-card-primary"><div class="mdui-card-primary-title">${targetJson[attr]["title"]}</div></div></div></div><div class="mdui-card-actions">${makeStaffChip(targetJson[attr]["staff"])}<div class="mdui-table-fluid"><table class="mdui-table"><thead><tr><th>${targetJson[attr]["date"]} ${targetJson[attr]["time"]}</th><th><a href="https://www.bilibili.com/${bv}"target="_blank">${bv}</a></th></tr></thead></table></div></div></div></div>${list}`;
-            list = `<div id="${bv}" class="mdui-col mdui-shadow-10" style="transition: all 1s ease-in 1s; "><div class="mdui-card" style="border-radius: 10px;"><div class="mdui-card-media"><img src="${thumbalJson[bv]}"></div><div class="mdui-panel" style="border-radius: 10px;" mdui-panel><div class="mdui-panel-item"><div class="mdui-panel-item-header">${targetJson[attr]["title"]}<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><div class="mdui-panel-item-body">${makeStaffChip(targetJson[attr]["staff"])}<table class="mdui-table"><thead><tr><th>${targetJson[attr]["date"]} ${targetJson[attr]["time"]}</th><th><a href="https://www.bilibili.com/${bv}" target="_blank">${bv}</a></th></tr></thead></table></div></div></div></div></div>${list}`;
+            list = `<div id="${bv}" class="mdui-col mdui-shadow-10 style="border-radius: 10px;"" style="transition: all 1s ease-in 1s; "><div class="mdui-card"><div class="mdui-card-media"><img src="${thumbalJson[bv]}"></div><div class="mdui-panel" style="border-radius: 10px;" mdui-panel><div class="mdui-panel-item"><div class="mdui-panel-item-header">${targetJson[attr]["title"]}<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><div class="mdui-panel-item-body">${makeStaffChip(targetJson[attr]["staff"])}<table class="mdui-table"><thead><tr><th>${targetJson[attr]["date"]} ${targetJson[attr]["time"]}</th><th><a href="https://www.bilibili.com/${bv}" target="_blank">${bv}</a></th></tr></thead></table></div></div></div></div></div>${list}`;
         }
         document.getElementById('main').innerHTML = list;
         //去除dialog
-        if (opened){inst.close();opened=false;}
+        if (opened){test.close();opened=false;}
     }
     initJson();
 }
@@ -111,7 +113,7 @@ function filter(){
         Checked(last.id);
     }
     //比对并整理
-    jsons();
+    
 }
 
 ////////UI//////////

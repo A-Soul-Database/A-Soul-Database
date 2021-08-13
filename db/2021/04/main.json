@@ -267,7 +267,7 @@
 	}],
 	"skin": {
 		"A": ["sleep", "group"],
-		"B": ["sleep"],
+		"B": ["sport"],
 		"C": ["chiristmas"],
 		"D": ["chinese"],
 		"E": ["sleep"],
@@ -703,7 +703,7 @@
 	}],
 	"skin": {
 		"A": ["sleep"],
-		"B": ["sleep"],
+		"B": ["sport"],
 		"D": ["chinese"]
 	},
 	"platform": "B",

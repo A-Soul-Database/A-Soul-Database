@@ -4,7 +4,7 @@
 	"liveRoom": "B",
 	"bv": "BV1sU4y1x7fb",
 	"title": "【A-SOUL】贝拉/乃琳 2.4 贝拉舞蹈室【直播录像】",
-	"scene": ["classroom", "zhijiang"],
+	"scene": ["classroom", "Eroom"],
 	"type": ["dance", "song"],
 	"staff": ["B", "E"],
 	"clip": 2,
@@ -469,7 +469,7 @@
 	"bv": "BV1Py4y1a7jT",
 	"title": "【A-SOUL】珈乐 2.24 王力口乐的假期日常【直播录像】",
 	"scene": ["domroom"],
-	"type": ["caht", "dance"],
+	"type": ["chat", "dance"],
 	"staff": ["C"],
 	"clip": 1,
 	"items": [{
@@ -496,7 +496,7 @@
 	"bv": "BV1Vf4y167ji",
 	"title": "【A-SOUL】乃琳 2.24 那些小时候无法理解的过年习俗【直播录像】",
 	"scene": ["Eroom"],
-	"type": ["caht", "song"],
+	"type": ["chat", "song"],
 	"staff": ["E"],
 	"clip": 1,
 	"items": [{
@@ -523,7 +523,7 @@
 	"bv": "BV1tr4y1N7zX",
 	"title": "【A-SOUL】贝拉 2.25 贝拉来啦~【直播录像】",
 	"scene": ["domroom"],
-	"type": ["caht"],
+	"type": ["chat"],
 	"staff": ["B"],
 	"clip": 1,
 	"items": [{
@@ -548,7 +548,7 @@
 	"bv": "BV17r4y1A7mo",
 	"title": "【A-SOUL】嘉然 2.25 和嘉然一起玩耍【直播录像】",
 	"scene": ["domroom"],
-	"type": ["caht", "game"],
+	"type": ["chat", "game"],
 	"staff": ["D"],
 	"clip": 1,
 	"items": [{

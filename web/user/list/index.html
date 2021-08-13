@@ -38,7 +38,7 @@
                  <div class="mdui-panel-item" style="border-radius: 10px;"> <div class="mdui-panel-item-header">皮肤</div><div class="mdui-panel-item-body" id="tools-skin"></div></div>
                  <div class="mdui-panel-item" style="border-radius: 10px;"> <div class="mdui-panel-item-header">平台</div><div class="mdui-panel-item-body" id="tools-platform"></div></div>
               </div>
-              <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-blue-100" onclick="filter();">筛选</button>
+              <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-blue-100" onclick="filter();jsons();">筛选</button>
             </div>
           </div>
 
@@ -58,10 +58,9 @@
       <!-- MDUI JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@Release/web/user/extra/main.js"></script>
+    <script src="../extra/main.js"></script>
     <!---<script src="https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@V1.0/web/user/extra/main.js"></script>--->
-    <script>var opened = false;var inst = new mdui.Dialog('#dialog');inst.open();opened=true;</script>
-    <script src="https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@Release/web/user/extra/list.js"></script>
+    <script src="../extra/list.js"></script>
     <!---<script src="https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@V1.0/web/user/extra/list.js"></script>--->
     <script>
       drawer();tools();filter();jsons();

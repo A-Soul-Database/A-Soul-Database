@@ -1,0 +1,9 @@
+body {
+    font: normal 100% Helvetica, Arial, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+}
+.avator{
+    width: 2rem;
+    border-radius:50%;
+}
