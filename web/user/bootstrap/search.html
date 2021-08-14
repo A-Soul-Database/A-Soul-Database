@@ -1,0 +1,64 @@
+<!Doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>搜索-As db</title>
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta name="referrer" content="never">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="lib/global.css"/>
+        <script src="https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@latest/web/user/bootstrap/lib/font-awesome.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"/>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;"><div class="container-fluid"><a class="navbar-brand" href="/">A-Soul Database</a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" aria-current="page" href="./index.html"><i class="fas fa-home"></i>主页</a></li><li class="nav-item"><a class="nav-link" href="./list.html"><i class="fas fa-list-ul"></i>列表</a></li><li class="nav-item"><a class="nav-link active" href="./search.html"><i class="fas fa-search"></i>搜索</a></li><li class="nav-item"><a class="nav-link" href="./skin.html"><i class="fas fa-user-astronaut"></i>皮肤库</a></li><li class="nav-item"><a class="nav-link" href="./subtitle.html"><i class="fas fa-closed-captioning"></i>字幕库</a></li><li class="nav-item"><a class="nav-link" href="./scene.html"><i class="fas fa-archway"></i>场景库</a></li></ul></div></div></nav>
+        
+        <div id="search">
+            <div class="row row-cols-lg-auto g-3 align-items-center m-auto" style="margin-left: auto;margin-right: auto;">
+                <div class="col-12">
+                  <label class="visually-hidden" for="searchText">搜索</label>
+                <input type="text" class="form-control" id="searchText" placeholder="搜索捏">
+                </div>
+                <div class="col-12">
+                  <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+                  <select class="form-select" id="inlineFormSelectPref">
+                    <option selected value="all">🥰搜索全部🥰</option>
+                    <option value="title">📰标题📰</option>
+                    <option value="subtitle">💬对话💬</option>
+                    <option value="game">🎮️游戏🎮️</option>
+                    <option value="dance">💃跳舞💃</option>
+                    <option value="song">🎙唱歌🎙</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                    <label class="visually-hidden" for="searchdate">Preference</label>
+                    <select class="form-select" id="searchdate">
+                      <option selected value=0>📅搜索全年🥰</option>
+                      <option value=1>1️月</option>
+                      <option value=2>2️⃣月</option>
+                      <option value=3>3️月</option>
+                      <option value=4>4️月</option>
+                      <option value=5>5️月</option>
+                      <option value=6>6️⃣月</option>
+                      <option value=7>7️月</option>
+                      <option value=8>8️⃣月</option>
+                    </select>
+                  </div>
+                <div class="col-12">
+                  <button class="btn btn-primary">🏃‍♂🏃‍♂🏃‍♂🏃‍♂🏃‍♂</button>
+                </div>
+              </div>
+        </div>
+
+        <div id="mainList" class="row row-cols-2 row-cols-md-4 g-4"></div>
+        
+        
+        <div id="LoadBar"><div class="modal fade" id="LoadingBar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="LoadingBarLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="LoadingBarLabel">贝拉正在扫腿</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><div class="d-flex align-items-center justify-content-center"><p><img src="https://i0.hdslb.com/bfs/article/caf8bccb1123b5f31e3364e168b830379c69214b.gif" style="height: 10rem;"></p><p><strong>保持健康捏</strong></p></div></div></div></div></div></div>
+        <script>var LoadingModal = new bootstrap.Modal(document.getElementById('LoadingBar'), {keyboard: false});</script>
+        <script src="lib/global.js"></script>
+        <script src="lib/list.js"></script>
+        <script src="lib/search.js"></script>
+    </body>
+</html>

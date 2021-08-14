@@ -1,6 +1,5 @@
 //Js for list.html
 //创建全局变量
-var build = "V1.10";
 var mainJson = {};
 var fliterJson = {};
 var CoverJson = {};
@@ -27,21 +26,37 @@ function toolkit(){
         document.getElementById('toolkit').innerHTML += list;
     }
 }
-
-function fliter(){
-    //条件筛选
+function fliter(method){
+    //条件筛选 method = "reset"/"其他"
+    
     for(let n of toolMap){
-        var child = document.getElementById("tool-"+n).firstChild;
-        var last = document.getElementById("tool-"+n).lastChild;
-        //console.log(child.firstChild.firstChild)
+        var child = document.getElementById("tool-"+n).childNodes[0].firstChild;
+        var last = document.getElementById("tool-"+n).childNodes[0].lastChild;
         while(child!=last){
-            console.log(child.firstChild.firstChild);
-            //Checked(child.id);
+            if(method==="reset"){
+                child.firstChild.checked=true;
+            }else{
+                fliterJson[child.firstChild.id] = child.firstChild.checked;
+            }
             child = child.nextSibling;
         }
-        //console.log(last);
+        if(method==="reset"){
+            last.firstChild.checked=true;
+            clearList();
+            //最后调用
+        }else{
+            fliterJson[last.firstChild.id] = last.firstChild.checked;
+        }
+    }
+    makeList();
+        //刷新list
+    
+    function clearList(){
+        fliterJson="";
+        makeList();
     }
 }
+
 function makeList(){
     //创建列表
     activityArray = {"song":"🎤","chat":"💬","game":"🎮️","birthday":"🎂","theater":"🎬","dance":"💃","vertical":"📱"};
@@ -51,7 +66,34 @@ function makeList(){
         var xhr = new XMLHttpRequest();
         xhr.open("GET",url,false);
         xhr.send(null);
-        return JSON.parse(xhr.responseText);
+        try{r = JSON.parse(xhr.responseText);}catch(e){r = {"title":"error"}}finally{return r}
+    }
+    function fliterCheck(item,typ){
+        //筛选检查 fliterCheck(stafflist,"staff-")
+        ending = false;
+        if(typ==="skin-"){
+            doublecheck = false;
+            for(let n in item){
+                if(doublecheck){break;}
+                for(let m of item[n]){
+                    judge = typ+m;
+                    if(fliterJson[judge]){
+                        ending = true;
+                        doublecheck = true;
+                        break;
+                    }
+                }
+            }
+            return ending;
+        }
+        for(let n of item){
+            judge = typ+n;
+            if(fliterJson[judge]){
+                ending = true;
+                break;
+            }
+        }
+        return ending;
     }
     if(!Object.keys(mainJson).length){mainJson=getJsonData("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build+"/db/2021/main.json")}
     if(!Object.keys(CoverJson).length){CoverJson=getJsonData("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build+"/db/2021/Cover.json")}
@@ -71,12 +113,19 @@ function makeList(){
         activity = attr["type"];
         scene = attr["scene"];
         skin = attr["skin"];
+        platform = attr["platform"];
+        if(Object.keys(fliterJson).length){
+            if(!fliterCheck(staff,"staff-")){continue;};
+            if(!fliterCheck(activity,"type-")){continue;};
+            if(!fliterCheck(scene,"scene-")){continue;};
+            if(!fliterCheck(skin,"skin-")){continue;};
+            if(!fliterCheck(platform,"platform-")){continue;};
+        }
         cover = CoverJson[bv];
         for (let item of staff){
             avatorHtml=`${avatorHtml}<img class="avator" src="${avator[item]}">`;
             if(item==="F"){continue;}
             skinHtml = `${skinHtml}<tr><td><img class="avator" style="width:2rem;" src="${avator[item]}"></td><td>`;
-            console.log(bv,skin,item)
             for(let n of skin[item]){
                 skinHtml=`${skinHtml} ${skinMap[n]}`;
             }
@@ -108,14 +157,14 @@ function makeList(){
         Html = `<div class="col"><div class="card"><img src="${cover}" style="height: 13vw;object-fit: cover;" class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">${title}</h5><div class="card-text">${avatorHtml}<span class="badge bg-secondary">${activityHtml}</span></div><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modal-${bv}"><i class="fas fa-info"></i></button><div class="modal fade" id="modal-${bv}" tabindex="-1" aria-labelledby="modal-${bv}-content" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="modal-${bv}-content">${title}</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body">${content}</div></div></div></div></div></div></div>${Html}`;
     }
     document.getElementById("mainList").innerHTML = Html;
-    
+    //关闭加载框
+    setTimeout(function(){LoadingModal.toggle()},1000);
 }
 
 
 function init(){
     //初始化
-    toolkit();
-    makeList();
+    LoadingBarListenser();
 }
 init();
     
