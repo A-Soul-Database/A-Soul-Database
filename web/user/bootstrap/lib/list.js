@@ -1,6 +1,6 @@
 //Js for list.html
 //创建全局变量
-var build = "V1.7";
+var build = "V1.8";
 var mainJson = {};
 var fliterJson = {};
 var CoverJson = {};
