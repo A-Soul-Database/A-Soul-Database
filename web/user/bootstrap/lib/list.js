@@ -1,6 +1,6 @@
 //Js for list.html
 //创建全局变量
-var build = "V1.9";
+var build = "V1.10";
 var mainJson = {};
 var fliterJson = {};
 var CoverJson = {};
@@ -74,8 +74,9 @@ function makeList(){
         cover = CoverJson[bv];
         for (let item of staff){
             avatorHtml=`${avatorHtml}<img class="avator" src="${avator[item]}">`;
-            if(item==="F"){continue}
+            if(item==="F"){continue;}
             skinHtml = `${skinHtml}<tr><td><img class="avator" style="width:2rem;" src="${avator[item]}"></td><td>`;
+            console.log(bv,skin,item)
             for(let n of skin[item]){
                 skinHtml=`${skinHtml} ${skinMap[n]}`;
             }
@@ -94,7 +95,6 @@ function makeList(){
         for(let item of attr["items"][0]["item"]){
             gameHtml = `<tr><td>${item[1]}</td><td>🎮️${item[0]}🎮️</td></tr>${gameHtml}`;
         }
-        console.log(bv)
         for(var i of [1,2]){
             if(Object.keys(attr["items"][i]["item"]).length){
                 for(let item of attr["items"][i]["item"]){

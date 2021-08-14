@@ -493,7 +493,7 @@
 	"title": "【A-SOUL】嘉然 5.19 然然的评论区！有！什！么~【直播录像】",
 	"scene": ["classroom"],
 	"type": ["chat", "game", "song"],
-	"staff": ["A"],
+	"staff": ["D"],
 	"clip": 1,
 	"items": [{
 		"name": "game",
@@ -548,7 +548,7 @@
 	"title": "【A-SOUL】乃琳 5.20 你的月亮我的心！【直播录像】",
 	"scene": ["Eroom"],
 	"type": ["chat", "song"],
-	"staff": ["B"],
+	"staff": ["E"],
 	"clip": 1,
 	"items": [{
 		"name": "game",
@@ -619,7 +619,7 @@
 	"title": "【A-SOUL夜谈】十一期 5.22 生活中的那些小确幸【直播录像】",
 	"scene": ["Aroom", "sky"],
 	"type": ["chat", "song"],
-	"staff": ["A", "B", "D", "E"],
+	"staff": ["A", "B","E"],
 	"clip": 2,
 	"items": [{
 		"name": "game",
