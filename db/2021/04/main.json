@@ -88,7 +88,7 @@
 	"skin": {
 		"A": ["group", "official"],
 		"B": ["year", "official"],
-		"C": ["chiristmas", "official", "group", "year"],
+		"C": ["christmas", "official", "group", "year"],
 		"D": ["year", "official"],
 		"E": ["group", "official"],
 		"F": ["official"]
@@ -268,7 +268,7 @@
 	"skin": {
 		"A": ["sleep", "group"],
 		"B": ["sport"],
-		"C": ["chiristmas"],
+		"C": ["christmas"],
 		"D": ["chinese"],
 		"E": ["sleep"],
 		"F": ["official"]
