@@ -94,6 +94,7 @@ function makeList(){
         for(let item of attr["items"][0]["item"]){
             gameHtml = `<tr><td>${item[1]}</td><td>🎮️${item[0]}🎮️</td></tr>${gameHtml}`;
         }
+        console.log(bv)
         for(var i of [1,2]){
             if(Object.keys(attr["items"][i]["item"]).length){
                 for(let item of attr["items"][i]["item"]){
