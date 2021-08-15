@@ -1,8 +1,6 @@
 //Js for list.html
 //创建全局变量
-var mainJson = {};
 var fliterJson = {};
-var CoverJson = {};
 var SceneMap = {"show":"展台","domroom":"客厅","spaceship":"太空船","ktv":"ktv","sky":"天空湖","Eroom":"乃琳房间","Aroom":"向晚房间","Droom":"嘉然房间","rooftop":"天台","beach":"海滩","classroom":"教室","singroom":"录音室","danceroom":"练舞房","filmstudio":"摄影棚"};
 var skinMap = {"swim":"泳装","official":"官方","sport":"运动服(贝拉)","chinese":"古风旗袍(嘉然)","group":"团服","birthday":"生日会服装","sleep":"睡衣","chiristmas":"圣诞服","year":"新年装"};
 var toolMap = ["staff","skin","scene","platform","type"];
@@ -61,13 +59,6 @@ function makeList(){
     //创建列表
     activityArray = {"song":"🎤","chat":"💬","game":"🎮️","birthday":"🎂","theater":"🎬","dance":"💃","vertical":"📱"};
     avator = {"A":"https://i0.hdslb.com/bfs/face/566078c52b408571d8ae5e3bcdf57b2283024c27.jpg","B":"https://i2.hdslb.com/bfs/face/668af440f8a8065743d3fa79cfa8f017905d0065.jpg","C":"https://i1.hdslb.com/bfs/face/a7fea00016a8d3ffb015b6ed8647cc3ed89cbc63.jpg","D":"https://i2.hdslb.com/bfs/face/d399d6f5cf7943a996ae96999ba3e6ae2a2988de.jpg","E":"https://i1.hdslb.com/bfs/face/8895c87082beba1355ea4bc7f91f2786ef49e354.jpg","F":"https://i2.hdslb.com/bfs/face/f8af62422492758d3377b185869dd69a3bb0c188.jpg"};
-    function getJsonData(url){
-        //通过XMLHttpRequest获取cdn中的版本,同步阻塞式
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET",url,false);
-        xhr.send(null);
-        try{r = JSON.parse(xhr.responseText);}catch(e){r = {"title":"error"}}finally{return r}
-    }
     function fliterCheck(item,typ){
         //筛选检查 fliterCheck(stafflist,"staff-")
         ending = false;
