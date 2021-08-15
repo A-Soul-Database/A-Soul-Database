@@ -1,5 +1,6 @@
 import json,re
 out = {}
+item = {}
 with open("main.json","r",encoding="utf-8")as f:
     main = json.loads(f.read())
     f.close()
@@ -34,7 +35,12 @@ for i in main:
     srt = re.sub(r"\n","",srt)
     srt = re.sub("[0-9]","",srt)
     all = [activity,tags,title,srt]
-    out[bv] = ",".join(all)
+    item["type"] = activity
+    item["tags"] = tags
+    item["title"] = title
+    item["srt"] = srt
+    out[bv] = item
+    #字幕替换
 
 with open("search.json","w",encoding="utf-8") as f:
     f.write(str(out).replace("'",'"'))

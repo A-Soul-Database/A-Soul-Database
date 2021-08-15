@@ -7,3 +7,9 @@ body {
     width: 2rem;
     border-radius:50%;
 }
+a{
+    text-decoration: none;color:#576690;
+}
+.test{
+    color:#BD7D74
+}
