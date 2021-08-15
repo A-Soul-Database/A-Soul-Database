@@ -1,4 +1,4 @@
-var build = "V1.12";
+var build = "V1.13";
 var LoadingBarStatus = false;
 var CoverJson = {};
 var mainJson = {};
