@@ -22,12 +22,13 @@
                 <input type="text" class="form-control" id="searchText" placeholder="搜索捏">
                 </div>
                 <div class="col-12">
-                  <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
-                  <select class="form-select" id="inlineFormSelectPref">
+                  <label class="visually-hidden" for="typeSearch">Preference</label>
+                  <select class="form-select" id="typeSearch">
                     <option selected value="all">🥰搜索全部🥰</option>
                     <option value="title">📰标题📰</option>
                     <option value="subtitle">💬对话💬</option>
                     <option value="activity">🏄️🎮️💃🎙活动</option>
+                    <option value="tags">🔖关键词🏷️</option>
                   </select>
                 </div>
                 <div class="col-12">
@@ -53,7 +54,7 @@
         <div id="mainList" class="row row-cols-2 row-cols-md-4 g-4"></div>
         
         
-        <div id="LoadBar"><div class="modal fade" id="LoadingBar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="LoadingBarLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="LoadingBarLabel">贝拉正在扫腿</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><div class="d-flex align-items-center justify-content-center"><p><img src="https://i0.hdslb.com/bfs/article/caf8bccb1123b5f31e3364e168b830379c69214b.gif" style="height: 10rem;"></p><p><strong>保持健康捏</strong></p></div></div></div></div></div></div>
+        <div id="LoadBar"><div class="modal fade" id="LoadingBar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="LoadingBarLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="LoadingBarLabel">贝拉正在扫腿</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><div class="d-flex align-items-center justify-content-center"><p><img src="https://i0.hdslb.com/bfs/article/caf8bccb1123b5f31e3364e168b830379c69214b.gif" style="height: 10rem;"></p><p><strong>怕你不知道提一嘴,拉姐语音包上线keep了,别忘了锻炼捏</strong></p></div></div></div></div></div></div>
         <script>var LoadingModal = new bootstrap.Modal(document.getElementById('LoadingBar'), {keyboard: false});</script>
         <script src="lib/global.js"></script>
         <script src="lib/list.js"></script>

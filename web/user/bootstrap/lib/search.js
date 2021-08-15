@@ -9,13 +9,45 @@ if(!Object.keys(CoverJson).length){CoverJson=getJsonData("https://cdn.jsdelivr.n
 if(!Object.keys(indexerList).length){indexerList=getJsonData("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build+"/db/2021/indexer.json")}
 function search(){
     //搜索功能  
+    function getSelected(name){
+        //获取筛选
+        child = document.getElementById(name).children;
+        for(let d of child){
+            if(d.selected){
+                activValue = d.value;
+                break;
+            }
+        }
+        return activValue;
+    }
+    typ = getSelected("typeSearch");
+    dat = getSelected("searchdate");
+    if(!dat==="0"){giveJson=getJsonData("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build+"/db/2021/"+dat+"main.json")}else{giveJson=mainJson;}
+    //先拿一下两个筛选框的数据
     document.getElementById("mainList").innerHTML="";
     KeyWord = document.getElementById("searchText").value;
     if(!Object.keys(KeyWord).length){SearchList();return 0;}
     index = "";
-    for(let n of mainJson){
+    for(let n of giveJson){
         bv = n["bv"];
-        content = searchJson[bv];
+        if(typ==="title"){
+            content = searchJson[bv]["title"];
+        }else if(typ==="subtitle"){
+            content = searchJson[bv]["srt"];
+        }else if (typ==="activity"){
+            content = searchJson[bv]["type"];
+        }else if(typ==="tags"){
+            content = searchJson[bv]["tags"];
+        }else{
+            content = "";
+            var items = ["title","srt","type","tags"];
+            for (let e of items){
+                content+=searchJson[bv][e];
+            }
+        }
+        
+        
+        content = srt + typ + tags + title;
         var position = content.indexOf(KeyWord);
         while(position>-1){
             singleBvRsult.push(position);
