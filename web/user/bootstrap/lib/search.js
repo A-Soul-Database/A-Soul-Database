@@ -28,10 +28,15 @@ function search(){
     KeyWord = document.getElementById("searchText").value;
     if(!Object.keys(KeyWord).length){SearchList();return 0;}
     index = "";
+    HavIndexCount = 0;
+    Html = "";
     for(let n of giveJson){
+        content = "";
         bv = n["bv"];
+        title = searchJson[bv]["title"];
+        console.log(bv,title)
         if(typ==="title"){
-            content = searchJson[bv]["title"];
+            content = title;
         }else if(typ==="subtitle"){
             content = searchJson[bv]["srt"];
         }else if (typ==="activity"){
@@ -39,52 +44,39 @@ function search(){
         }else if(typ==="tags"){
             content = searchJson[bv]["tags"];
         }else{
-            content = "";
             var items = ["title","srt","type","tags"];
             for (let e of items){
                 content+=searchJson[bv][e];
             }
         }
-        
-        
-        content = srt + typ + tags + title;
         var position = content.indexOf(KeyWord);
         while(position>-1){
-            singleBvRsult.push(position);
+            searchResult.push(position);
             position = content.indexOf(KeyWord,position+1);
         }
-        if (Object.keys(singleBvRsult).length){
-            searchResult.push([bv,singleBvRsult]);
-            singleBvRsult = [];
-        }
-    }
-    SearchList();
-    function SearchList(){
         if(Object.keys(searchResult).length){
-            Html = "";
-            for (let n of searchResult){
-                bv = n[0];
-                resultlist = n[1];
+            HavIndexCount = 1;
                 keyplace = "";
-                detail = mainJson[indexerList.indexOf(bv)];
-                title = detail["title"];
+                //detail = mainJson[indexerList.indexOf(bv)];
+                //title = detail["title"];
                 cover = CoverJson[bv];
-                for(let m of resultlist){
-                    content = searchJson[bv];
+                for(let m of searchResult){
+                    //content = searchJson[bv];
                     keyplace =`${keyplace}<tr><th scope="row">#</th><td>...${content.substring(m-10,m-1)}🌟<b style="color:#9AC8E2;">${content.substring(m,m+Object.keys(KeyWord).length)}</b>🌟${content.substring(m+Object.keys(KeyWord).length,m+Object.keys(KeyWord).length+20)}...</td></tr>`;
-                    //console.log(bv,keyplace);
                 }
                 searchModalContent = `详情信息请位于<a target="_blank"  href="./list.html">列表</a>查看</br>BV号: <code><a target="_blank" href="https://www.bilibili.com/${bv}">${bv}</a></code><table class="table"><thead><tr><th scope="col">#</th><th scope="col">字幕结果</th></tr></thead><tbody>${keyplace}</tbody></table>`;
                 Html = `<div class="col"><div class="card"><img src="${cover}" style="height: 13vw;object-fit: cover;" class="card-img-top"><div class="card-body"><h5 class="card-title">${title}</h5><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modal-${bv}"><i class="fas fa-info"></i></button><div class="modal fade" id="modal-${bv}" tabindex="-1" aria-labelledby="modal-${bv}-content" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="modal-${bv}-content">${title}</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body">${searchModalContent}</div></div></div></div></div></div></div>${Html}`;
-            }
-        }else{
-            Html = "<div style='height:30vw;text-aligen:center;margin:auto;transform: translate(0, -50%);position: absolute;top:50%;transform: translateX(-50%);left:50%;'><img src='https://i0.hdslb.com/bfs/article/278b26337e1379feb0fc431e2c05e8e2c22e2a21.gif' style='height:20vw;'><h4>没有搜索结果/关键词为空捏,换一个试试吧</h4></div>";
         }
-        document.getElementById("mainList").innerHTML = Html;
         searchResult = [];
-        setTimeout(function(){LoadingModal.toggle()},1000);
-        //本次搜索结束
     }
+    if (!HavIndexCount){
+        Html = "<div style='height:30vw;text-aligen:center;margin:auto;transform: translate(0, -50%);position: absolute;top:50%;transform: translateX(-50%);left:50%;'><img src='https://i0.hdslb.com/bfs/article/278b26337e1379feb0fc431e2c05e8e2c22e2a21.gif' style='height:20vw;'><h4>没有搜索结果/关键词为空捏,换一个试试吧</h4></div>";
+    }
+    document.getElementById("mainList").innerHTML = Html;
+    content = "";
+    setTimeout(function(){LoadingModal.toggle()},1000);
+    //本次搜索结束
+
 }
 
 //search();
