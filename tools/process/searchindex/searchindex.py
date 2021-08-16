@@ -25,7 +25,7 @@ for i in main:
     for j in i["tags"]:
         tags = tags + "," + j
     activity = ""
-    for k in range(2):
+    for k in range(3):
         for a in i["items"][k]["item"]:
             activity = activity+","+a[0]
 
