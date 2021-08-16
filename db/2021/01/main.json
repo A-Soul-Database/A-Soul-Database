@@ -4,7 +4,7 @@
 	"liveRoom": "B",
 	"bv": "BV1ey4y1U7Qk",
 	"title": "【A-SOUL】贝拉 1.2新年首播【完整录播】",
-	"scene": ["christmas"],
+	"scene": ["domroom"],
 	"type": ["game", "dance"],
 	"staff": ["B"],
 	"clip": 2,
@@ -35,7 +35,7 @@
 		]
 	}],
 	"skin": {
-		"B": ["official"]
+		"B": ["sleep"]
 	},
 	"platform": "B",
 	"tags": ["拉姐练舞最多练过18小时", " 开始", " 7 rings", " 闭眼7 rings", " Con Altura", " 闭眼Con Altura", " FANCY", " 我的新衣", " kill this love", " 怪美的", " bad guy", " baby shark 绝世", " 我最红", " old town road", " hip"]
@@ -90,7 +90,7 @@
 	"liveRoom": "D",
 	"bv": "BV17K4y1W7db",
 	"title": "【A-SOUL】嘉然/向晚 1.6 直播录像【弹幕】",
-	"scene": ["christmas"],
+	"scene": ["domroom"],
 	"type": ["game", "dance", "chat"],
 	"staff": ["A", "D"],
 	"clip": 2,
@@ -678,7 +678,7 @@
 	"liveRoom": "D",
 	"bv": "BV1Rv411Y7ih",
 	"title": "【A-SOUL】嘉然 1.30 我画你猜!【直播录像】",
-	"scene": ["christmas"],
+	"scene": ["domroom"],
 	"type": ["chat", "game", "dance"],
 	"staff": ["D"],
 	"clip": 2,

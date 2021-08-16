@@ -343,7 +343,7 @@
 	"liveRoom": "B",
 	"bv": "BV1mv411P7Vz",
 	"title": "七夕特别直播！",
-	"scene": ["classroom", "beach", "sky", "Errom", "Aroom"],
+	"scene": ["classroom", "beach", "sky", "Eroom", "Aroom"],
 	"type": ["chat", "vertical", "dance", "song", "game"],
 	"staff": ["A", "B", "C", "D", "E"],
 	"clip": 2,
