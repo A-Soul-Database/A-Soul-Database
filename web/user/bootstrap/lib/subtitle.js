@@ -10,15 +10,16 @@ for(n in indexerList){
     title = searchJson[indexerList[n]]["title"];
     bv = mainJson[n]["bv"];
     cover = CoverJson[bv];
-    content="";
-    Html = `<div class="col"><div class="card"><img src="${cover}" style="height: 13vw;object-fit: cover;" class="card-img-top"><div class="card-body"><h5 class="card-title">${title}</h5><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modal-${bv}" onclick="viewDetail('${bv}');"><i class="fas fa-info"></i></button><div class="modal fade" id="modal-${bv}" tabindex="-1" aria-labelledby="modal-${bv}-content" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="modal-${bv}-content">${title}</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body">${content}</div></div></div></div></div></div></div>${Html}`;
+    content="<img src='https://i0.hdslb.com/bfs/article/ca4ef2f3f5bfab4d3a59bac40e677120a1e87552.gif' style='height:30vw;'><b style='color:#b8a6d9'>珈乐正在抄写歌词</b>";
+    Html = `<div class="col"><div class="card"><img src="${cover}" style="height: 13vw;object-fit: cover;" class="card-img-top"><div class="card-body"><h5 class="card-title">${title}</h5><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modal-${bv}" onclick="viewDetail('${bv}');"><i class="fas fa-info"></i></button><div class="modal fade" id="modal-${bv}" tabindex="-1" aria-labelledby="modal-${bv}-content" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="modal-${bv}-content">${title}</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body" id="${bv}Content">${content}</div></div></div></div></div></div></div>${Html}`;
 }
 document.getElementById("SubList").innerHTML = Html;
 
 function viewDetail(bv){
-    clip = parseInt(mainJson[indexerList.indexOf(bv)]["clip"]);
-    console.log(clip)
-    month = mainJson[indexerList.indexOf(bv)]["date"].split("-")[0];
+    index = indexerList.indexOf(bv);
+
+    clip = parseInt(mainJson[index]["clip"]);
+    month = mainJson[index]["date"].split("-")[0];
     srt = "";
     
     if(month.length===1){month="0"+month}
@@ -30,7 +31,7 @@ function viewDetail(bv){
             srt += getData("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build+"/db/2021/"+month+"/srt/"+bv+"-"+i.toString()+".srt");
         }
     }
-    console.log(srt);
+    document.getElementById(bv+"Content").innerHtml = srt;
 }
 
 function getData(url){

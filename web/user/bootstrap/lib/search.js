@@ -28,7 +28,15 @@ function search(){
 
     typ = getSelected("typeSearch");
     dat = getSelected("searchdate");
-    if(!dat==="0"){giveJson=getJsonData("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build+"/db/2021/"+dat+"main.json")}else{giveJson=mainJson;}
+    if(!dat==="0"){
+        if(dat.length===1){dat="0"+dat}
+        console.log(dat)
+        giveJson = getJsonData("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build+"/db/2021/"+dat+"/main.json");
+        
+    }else{
+        giveJson=mainJson;
+    }
+
     //先拿一下两个筛选框的数据
     document.getElementById("mainList").innerHTML="";
     KeyWord = document.getElementById("searchText").value;
@@ -100,7 +108,7 @@ function search(){
         searchResult = {};
     }
         if (!HavIndexCount){
-            Html = "<div style='height:30vw;text-aligen:center;margin:auto;transform: translate(0, -50%);position: absolute;top:50%;transform: translateX(-50%);left:50%;'><img src='https://i0.hdslb.com/bfs/article/278b26337e1379feb0fc431e2c05e8e2c22e2a21.gif' style='height:20vw;'><h4>没有搜索结果/关键词为空捏😢,换一个试试吧</h4></div>";
+            Html = "<div style='height:30vw;text-aligen:center;margin:auto;transform: translate(0, -50%);position: absolute;top:50%;transform: translateX(-50%);left:50%;'><img src='https://i0.hdslb.com/bfs/article/278b26337e1379feb0fc431e2c05e8e2c22e2a21.gif' style='height:20vw;;text-align: center;'><h4>没有搜索结果/关键词为空捏😢,换一个试试吧</h4></div>";
         }
     document.getElementById("mainList").innerHTML = Html;
     content = "";
