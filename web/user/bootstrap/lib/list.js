@@ -144,21 +144,31 @@ function makeList(){
         for(var i of [1,2]){
             if(Object.keys(attr["items"][i]["item"]).length){
                 for(let item of attr["items"][i]["item"]){
-                    for(let ite of item[2]){tableAvatorHtml=`${tableAvatorHtml}<img class="avator" style="width:2rem;" src="${avator[ite]}" class="card-img-top" alt="...">`}
+                    for(let ite of item[2]){tableAvatorHtml=`${tableAvatorHtml}<img class="avator" style="width:2rem;" src="${avator[ite]}" class="card-img-top">`}
                     gameHtml = `<tr><td>${item[1]}</td><td>${typ[i-1]}${item[0]}${typ[i-1]}</td><td>${tableAvatorHtml}</td></tr>${gameHtml}`;
                     tableAvatorHtml="";
                 }
             }
         }
-        content = `BV号: <code>${bv}</code></br>日期: <code>${attr["date"]} ${attr["time"]}</code></br>场景: <code>${sceneHtml}</code></br>服饰: <table class="table"><thead><tr><th scope="col">出镜人物</th><th scope="col">服饰</th></tr></thead><tbody>${skinHtml}</tbody></table></br><table class="table"><thead><tr><th scope="col">时间</th><th scope="col">活动</th><th scope="col">出镜人物</th></tr></thead><tbody>${gameHtml}</tbody></table></br>关键词: <code>${tagHtml}</code>`;
+        content = `BV号: <a target="_blank" href="https://www.bilibili.com/${bv}" style="color:#BD7D74">${bv}</a></br>日期: <b style="color:#9AC8E2">${attr["date"]} ${attr["time"]}</b></br>场景: <b style="color:#E799B0">${sceneHtml}</b></br>服饰: <table class="table"><thead><tr><th scope="col">出镜人物</th><th scope="col">服饰</th></tr></thead><tbody>${skinHtml}</tbody></table></br><table class="table"><thead><tr><th scope="col">时间</th><th scope="col">活动</th><th scope="col">出镜人物</th></tr></thead><tbody>${gameHtml}</tbody></table></br>关键词: <code>${tagHtml}</code>`;
         Html = `<div class="col" id="${bv}Card"><div class="card"><img src="${cover}" style="height: 13vw;object-fit: cover;" class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">${title}</h5><div class="card-text">${avatorHtml}<span class="badge bg-secondary">${activityHtml}</span></div><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modal-${bv}"><i class="fas fa-info"></i></button><div class="modal fade" id="modal-${bv}" tabindex="-1" aria-labelledby="modal-${bv}-content" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="modal-${bv}-content">${title}</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body">${content}</div></div></div></div></div></div></div>${Html}`;
     }
     document.getElementById("mainList").innerHTML = Html;
     //关闭加载框
     setTimeout(function(){LoadingModal.toggle()},1000);
+    
+    if(getName("bv")){
+        var getModel = new bootstrap.Modal(document.getElementById("modal-"+bv));
+        getModel.toggle();
+    }
 }
 
-
+function getName(name) {
+    //获取get值
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]); return null;
+    }
 function init(){
     //初始化
     LoadingBarListenser();
