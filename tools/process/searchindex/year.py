@@ -8,7 +8,7 @@ for i in month:
     #os.system("py "+os.getcwd()+"\\"+i+"\\searchindex.py")
     #os.system("cd "+i)
     #os.system("py searchindex.py")
-    os.remove(os.getcwd()+"\\"+i+"\\searchindex.py")
+    #os.remove(os.getcwd()+"\\"+i+"\\searchindex.py")
     with open(i+"/search.json","r",encoding="utf-8")as f:
         temp = json.loads(f.read())
         f.close()
