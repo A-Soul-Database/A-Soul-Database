@@ -1,94 +1,29 @@
-# [asdb](https://asdb.live)
-## ASDB -- A-SOUL Live Clip Database A-SOUL 非官方直播数据库 
+## [asdb](https://asdb.live) -- A-SOUL Live Clip Database  A-SOUL 非官方直播数据库 
 
-# Progress: Finished: 70% web, db in 2021.7 Total:60%, Finish before 2021.8.15
+#### 简介
+A-Soul 简介
 
-### Useage 使用方法
-#### 
+A-SOUL是乐华娱乐于2020年11月23日公开的其旗下首个虚拟偶像团体，由5名成员组成。
 
-### Structures 结构
+A-SOUL主页链接：https://space.bilibili.com/703007996
+乃琳：https://space.bilibili.com/672342685
+珈乐：https://space.bilibili.com/351609538
+嘉然：https://space.bilibili.com/672328094
+贝拉：https://space.bilibili.com/672353429
+向晚：https://space.bilibili.com/672346917
+
+
+#### 目录结构
 ```
-----db
-    ----year(e.g.:2020)
-        ----weeeks(e.g.:13)
-            ----schedule.jpg
-            ----main.json
-            ----id(01)
-                ----main.srt
-                ----timeline.txt
-```
-
-```
-main.json
-
-[{
-    "date":"0509",
-    "id":01,
-    "title":"【A-SOUL游戏室】第七期 5.9 只只大冒险！续集！【直播录像】",
-    "scene":"classroom",
-    "type":"game",
-    "staff":["A","D","E"],
-    "source":"BV1BK4y1d7hv",
-    "song":["爱乘无限大"],
-    "tags":["只只大冒险"]
-},{
-    "date":"日期",
-    "title":"标题",
-    "scene":"list 场景，classroom-教室 beach-沙滩 domroom-客厅 show-舞台,singroom-录音室,filmstudio-摄影棚,rooftop-天台,Aroom-向晚房间,sky-天空湖,danceroom-舞蹈教室,ktv-ktv,spaceship-太空飞船"
-    "type":"game-游戏,theater-小剧场,chat-闲聊,song-唱歌,dance-跳舞,vertical-竖屏,birthday-生日会",
-    "staff":"list类型，A-ava B-bella C-carol D-Diana E-Ellen F-Furry",
-    "source":"BV",
-    "song":"list类型，存放歌曲",
-    "tags":"list 类型，可以存放例如生日会和名场面的其他标签"
-}]
-
-{
-    "date":"",
-    "time":"",
-    "liveRoom":"",
-    "bv":"",
-    "title":"",
-    "scene":[],
-    "type":[],
-    "staff":[],
-    "clip":0,
-    "items":[
-        {
-            "name":"game",
-            "item":[
-
-            ]
-        },
-        {
-            "name":"song",
-            "item":[
-            ]
-        },
-        {
-            "name":"dance",
-            "item":[
-
-            ]
-        }
-    ],
-    "skin":{
-            "A":["official"],
-            "B":["official"],
-            "C":["official"],
-            "D":["official"],
-            "E":["official"]
-    },
-    "platform":"B",
-    "tags":[]
-}
+db --- 存放数据库文件
+    main.json --- json格式的信息
+    search.json --- 简单索引(含字幕)
+    /srt --- 字幕文件
+    /schedule --- 直播QA
+    /timeline --- 时间轴(第三方 感谢@贼眉鼠眼小珈乐 打的轴) 
+web --- 前端网页和js文件
+tool --- 数据的处理
 ```
 
-```
-main.srt
-使用剪映语音自动转换字幕,并替换常见错误词
-```
-
-````
-timeline.txt
-评论下方的时间线
-````
+#### 前端托管
+目前本网站托管于 Github Pages并使用Vercel CDN 部署&加速
