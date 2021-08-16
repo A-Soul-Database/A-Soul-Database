@@ -2,7 +2,7 @@
 //创建全局变量
 var fliterJson = {};
 var SceneMap = {"show":"展台","domroom":"客厅","spaceship":"太空船","ktv":"ktv","sky":"天空湖","Eroom":"乃琳房间","Aroom":"向晚房间","Droom":"嘉然房间","rooftop":"天台","beach":"海滩","classroom":"教室","singroom":"录音室","danceroom":"练舞房","filmstudio":"摄影棚"};
-var skinMap = {"swim":"泳装","official":"官方","sport":"运动服(贝拉)","chinese":"古风旗袍(嘉然)","group":"团服","birthday":"生日会服装","sleep":"睡衣","christmas":"圣诞服","year":"新年装"};
+var skinMap = {"swim":"泳装","official":"官方","sport":"运动服(贝拉)","jk":"jk(贝拉)","chinese":"古风旗袍(嘉然)","group":"团服","birthday":"生日会服装","sleep":"睡衣","christmas":"圣诞服","year":"新年装"};
 var toolMap = ["staff","skin","scene","platform","type"];
 
 function toolkit(){
