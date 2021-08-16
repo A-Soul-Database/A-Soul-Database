@@ -14,7 +14,8 @@ test = document.getElementById('banner-Image').innerHTML=template;
 
 let bannerButton = new Map([
     [0,["./list.html","查看全部","primary"]],
-    [1,["https://github.com/peterpei1186861238/ASDB","Github","info"]]
+    [1,["./search.html","搜索","success"]],
+    [2,["https://github.com/peterpei1186861238/ASDB","Github","info"]]
 ]);
 var template = "";
 for (var entry of bannerButton.values()){
