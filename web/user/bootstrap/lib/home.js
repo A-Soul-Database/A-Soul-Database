@@ -2,7 +2,7 @@ let bannerPhoto = new Map([
     ["Ava", ["https://i.w3tt.com/2021/08/17/q9uzF.webp","向晚"]],
     ["Bella", ["https://i.w3tt.com/2021/08/17/qjMZl.webp","贝拉"]],
     ["Carol",["https://i.w3tt.com/2021/08/17/q98XD.webp","珈乐"]],
-    ["Diana",["https://i.w3tt.com/2021/08/17/qjMZl.webp","嘉然"]],
+    ["Diana",["https://i.w3tt.com/2021/08/17/qjq7s.webp","嘉然"]],
     ["Ellen",["https://i.w3tt.com/2021/08/17/qjOcg.webp","乃琳"]],
     ["Furry",["https://i.w3tt.com/2021/08/17/q9lcM.webp","阿草©Pixiv 88627183"]]
 ]); 
