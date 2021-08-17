@@ -1,10 +1,10 @@
 let bannerPhoto = new Map([
-    ["Ava", ["https://z3.ax1x.com/2021/08/13/fDJjDs.png","向晚"]],
-    ["Bella", ["https://z3.ax1x.com/2021/08/13/fDYCCT.png","贝拉"]],
-    ["Carol",["https://z3.ax1x.com/2021/08/13/fDYEr9.png","珈乐"]],
-    ["Diana",["https://z3.ax1x.com/2021/08/13/fDYKPK.png","嘉然"]],
-    ["Ellen",["https://z3.ax1x.com/2021/08/13/fDYGqA.png","乃琳"]],
-    ["Furry",["https://z3.ax1x.com/2021/08/13/fDYYVI.jpg","阿草©Pixiv 88627183"]]
+    ["Ava", ["https://i.w3tt.com/2021/08/17/q9uzF.webp","向晚"]],
+    ["Bella", ["https://i.w3tt.com/2021/08/17/qjMZl.webp","贝拉"]],
+    ["Carol",["https://i.w3tt.com/2021/08/17/q98XD.webp","珈乐"]],
+    ["Diana",["https://i.w3tt.com/2021/08/17/qjMZl.webp","嘉然"]],
+    ["Ellen",["https://i.w3tt.com/2021/08/17/qjOcg.webp","乃琳"]],
+    ["Furry",["https://i.w3tt.com/2021/08/17/q9lcM.webp","阿草©Pixiv 88627183"]]
 ]); 
 var template = "";
 for (var item of bannerPhoto.values()){
