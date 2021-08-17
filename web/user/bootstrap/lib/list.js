@@ -99,8 +99,8 @@ function makeList(){
     //创建列表
     activityArray = {"song":"🎤","chat":"💬","game":"🎮️","birthday":"🎂","theater":"🎬","dance":"💃","vertical":"📱"};
     avator = {"A":"https://i0.hdslb.com/bfs/face/566078c52b408571d8ae5e3bcdf57b2283024c27.jpg","B":"https://i2.hdslb.com/bfs/face/668af440f8a8065743d3fa79cfa8f017905d0065.jpg","C":"https://i1.hdslb.com/bfs/face/a7fea00016a8d3ffb015b6ed8647cc3ed89cbc63.jpg","D":"https://i2.hdslb.com/bfs/face/d399d6f5cf7943a996ae96999ba3e6ae2a2988de.jpg","E":"https://i1.hdslb.com/bfs/face/8895c87082beba1355ea4bc7f91f2786ef49e354.jpg","F":"https://i2.hdslb.com/bfs/face/f8af62422492758d3377b185869dd69a3bb0c188.jpg"};
-    if(!Object.keys(mainJson).length){mainJson=getJsonData("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build+"/db/2021/main.json")}
-    if(!Object.keys(CoverJson).length){CoverJson=getJsonData("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build+"/db/2021/Cover.json")}
+    if(!Object.keys(mainJson).length){mainJson=getJsonData(sourceUrl+"/db/2021/main.json")}
+    if(!Object.keys(CoverJson).length){CoverJson=getJsonData(sourceUrl+"/db/2021/Cover.json")}
     Html = "";
     typ = ["🎤","💃"];
     for(let attr of mainJson){

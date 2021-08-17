@@ -241,8 +241,8 @@
 	"liveRoom": "D",
 	"bv": "BV1Hh411Q7go",
 	"title": "【A-SOUL】嘉然 3.7 来和嘉然过生日吖【直播录像】",
-	"scene": ["domroom", "show", "sky", "birthday"],
-	"type": ["chat", "dance"],
+	"scene": ["domroom", "show", "sky"],
+	"type": ["chat", "dance", "birthday"],
 	"staff": ["A", "B", "C", "D", "F"],
 	"clip": 2,
 	"items": [{
@@ -293,7 +293,7 @@
 		"A": ["official"],
 		"B": ["official"],
 		"C": ["official"],
-		"D": ["year", "chinese", "show"],
+		"D": ["year", "chinese", "group"],
 		"E": ["official"],
 		"F": ["official"]
 	},

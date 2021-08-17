@@ -1,5 +1,7 @@
 var build = "V1.22";
-var lastUpdateTime = "21-08-17 08:35";
+var lastUpdateTime = "21-08-17 11:09";
+var source = ["https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build,"https://asdb.live","https://github.com/peterpei1186861238/ASDB/tree/"+build];
+var sourceUrl = source[0];
 var LoadingBarStatus = false;
 var CoverJson = {};
 var mainJson = {};
@@ -16,4 +18,7 @@ function getJsonData(url){
     xhr.open("GET",url,false);
     xhr.send(null);
     try{r = JSON.parse(xhr.responseText);}catch(e){r = {"title":"error"}}finally{return r}
+}
+function changeSource(id){
+    sourceUrl = source[id];
 }

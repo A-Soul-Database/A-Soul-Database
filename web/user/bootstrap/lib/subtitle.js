@@ -1,10 +1,10 @@
 searchJson={};
 indexerList={};
 mainJson = {};
-if(!Object.keys(searchJson).length){searchJson=getJsonData("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build+"/db/2021/search.json")};
-if(!Object.keys(mainJson).length){mainJson=getJsonData("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build+"/db/2021/main.json")};
-if(!Object.keys(CoverJson).length){CoverJson=getJsonData("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build+"/db/2021/Cover.json")}
-if(!Object.keys(indexerList).length){indexerList=getJsonData("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build+"/db/2021/indexer.json")}
+if(!Object.keys(searchJson).length){searchJson=getJsonData(sourceUrl+"/db/2021/search.json")};
+if(!Object.keys(mainJson).length){mainJson=getJsonData(sourceUrl+"/db/2021/main.json")};
+if(!Object.keys(CoverJson).length){CoverJson=getJsonData(sourceUrl+"/db/2021/Cover.json")}
+if(!Object.keys(indexerList).length){indexerList=getJsonData(sourceUrl+"/db/2021/indexer.json")}
 Html = ""
 for(n in indexerList){
     title = searchJson[indexerList[n]]["title"];
@@ -23,10 +23,10 @@ function viewDetail(bv){
     srt = "";
     if(month.length===1){month="0"+month}
     if(clip===1){
-        srt = getData("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build+"/db/2021/"+month+"/srt/"+bv+".srt");
+        srt = getData(source+"/db/2021/"+month+"/srt/"+bv+".srt");
     }else{
         for(var i =1;i<clip+1;i++){
-            srt =srt + getData("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build+"/db/2021/"+month+"/srt/"+bv+"-"+i.toString()+".srt");
+            srt =srt + getData(sourceUrl+"/db/2021/"+month+"/srt/"+bv+"-"+i.toString()+".srt");
         }
     }
     //srt.replace(/((?=[\x21-\x7e]+)[^A-Za-z0-9])/,"");

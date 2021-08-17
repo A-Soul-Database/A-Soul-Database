@@ -8,10 +8,10 @@ var searchResult = {
 };
 var singleBvRsult = new Array();
 
-if(!Object.keys(mainJson).length){mainJson=getJsonData("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build+"/db/2021/main.json")};
-if(!Object.keys(searchJson).length){searchJson=getJsonData("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build+"/db/2021/search.json")};
-if(!Object.keys(CoverJson).length){CoverJson=getJsonData("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build+"/db/2021/Cover.json")}
-if(!Object.keys(indexerList).length){indexerList=getJsonData("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build+"/db/2021/indexer.json")}
+if(!Object.keys(mainJson).length){mainJson=getJsonData(sourceUrl+"/db/2021/main.json")};
+if(!Object.keys(searchJson).length){searchJson=getJsonData(sourceUrl+"/db/2021/search.json")};
+if(!Object.keys(CoverJson).length){CoverJson=getJsonData(sourceUrl+"/db/2021/Cover.json")}
+if(!Object.keys(indexerList).length){indexerList=getJsonData(sourceUrl+"/db/2021/indexer.json")}
 function search(){
     //搜索功能  
     function getSelected(name){
@@ -31,7 +31,7 @@ function search(){
     if(!dat==="0"){
         if(dat.length===1){dat="0"+dat}
         console.log(dat)
-        giveJson = getJsonData("https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build+"/db/2021/"+dat+"/main.json");
+        giveJson = getJsonData(sourceUrl+"/db/2021/"+dat+"/main.json");
         
     }else{
         giveJson=mainJson;
@@ -39,7 +39,8 @@ function search(){
 
     //先拿一下两个筛选框的数据
     document.getElementById("mainList").innerHTML="";
-    KeyWord = document.getElementById("searchText").value;
+    KeyWord = document.getElementById("searchText").value.toLowerCase();
+    //转为小写
 
     function searchCore(content,KeyWord){
         result = [];
@@ -63,16 +64,16 @@ function search(){
         bv = n["bv"];
         title = searchJson[bv]["title"];
         if(typ==="title"){
-            content = title;
+            content = title.toLowerCase();
             searchResult[typ] = searchCore(content,KeyWord);
         }else if(typ==="srt"){
-            content = searchJson[bv]["srt"];
+            content = searchJson[bv]["srt"].toLowerCase();
             searchResult[typ] = searchCore(content,KeyWord);
         }else if (typ==="activity"){
-            content = searchJson[bv]["type"];
+            content = searchJson[bv]["type"].toLowerCase();
             searchResult[typ] = searchCore(content,KeyWord);
         }else if(typ==="tags"){
-            content = searchJson[bv]["tags"];
+            content = searchJson[bv]["tags"].toLowerCase();
             searchResult[typ] = searchCore(content,KeyWord);
         }else{
             var items = ["title","srt","type","tags"];
