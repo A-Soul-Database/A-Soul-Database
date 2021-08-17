@@ -1,5 +1,5 @@
-var build = "V1.20";
-var lastUpdateTime = "21-08-17";
+var build = "V1.22";
+var lastUpdateTime = "21-08-17 08:30";
 var LoadingBarStatus = false;
 var CoverJson = {};
 var mainJson = {};

@@ -31,8 +31,12 @@
                 <p></p>
             </div>
             <p>使用GPL V3.0 对工具及数据库开源 ©Ava, Bella, Carol, Diana, Ellen 2021</p>
+            <p id="BUildInfo"></p>
         </div>
 
         <script src="lib/global.js"></script>
+        <script>
+            document.getElementById("BuildInfo").innerHTML = `BUild Info: <code>${build} ${lastUpdateTime}</code>`;
+        </script>
     </body>
 </html>
