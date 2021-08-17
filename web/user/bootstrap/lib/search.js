@@ -86,7 +86,7 @@ function search(){
                 typePlace = "";
                 tagPlace = "";
                 cover = CoverJson[bv];
-
+                try{
                 for(let m of searchResult["srt"]){
                     if(m===-1){srtPlace=''}else{
                         srtPlace =`${srtPlace}<tr><th scope="row">#</th><td>...${searchJson[bv]["srt"].substring(m-10,m-1)}🌟<b style="color:#9AC8E2;">${searchJson[bv]["srt"].substring(m,m+Object.keys(KeyWord).length)}</b>🌟${searchJson[bv]["srt"].substring(m+Object.keys(KeyWord).length,m+Object.keys(KeyWord).length+20)}...</td></tr>`;
@@ -102,6 +102,7 @@ function search(){
                         tagPlace=`${tagPlace}   ${searchJson[bv]["tags"].substring(n-10,n-1)}🐱<b style="color:#576690;">${searchJson[bv]["tags"].substring(n,n+Object.keys(KeyWord).length)}</b>🐭${searchJson[bv]["tags"].substring(n+Object.keys(KeyWord).length,n+Object.keys(KeyWord).length+20)}`;
                     }
                 }
+            }catch(e){}finally{}
                 searchModalContent = `<a target="_blank"  href="./list.html?bv=${bv}">查看详情</a></br>BV号: <code><a target="_blank" href="https://www.bilibili.com/${bv}">${bv}</a></code></br>活动搜索结果🔎: ${typePlace}</br>关键词搜索结果🔬: ${tagPlace}</br><table class="table"><thead><tr><th scope="col">#</th><th scope="col">字幕搜索结果🔭</th></tr></thead><tbody>${srtPlace}</tbody></table>`;
                 Html = `<div class="col"><div class="card"><img src="${cover}" style="height: 13vw;object-fit: cover;" class="card-img-top"><div class="card-body"><h5 class="card-title">🔎${title}</h5><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modal-${bv}"><i class="fas fa-info"></i></button><div class="modal fade" id="modal-${bv}" tabindex="-1" aria-labelledby="modal-${bv}-content" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="modal-${bv}-content">${title}</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body">${searchModalContent}</div></div></div></div></div></div></div>${Html}`;
         }
