@@ -23,7 +23,7 @@ function viewDetail(bv){
     srt = "";
     if(month.length===1){month="0"+month}
     if(clip===1){
-        srt = getData(source+"/db/2021/"+month+"/srt/"+bv+".srt");
+        srt = getData(sourceUrl+"/db/2021/"+month+"/srt/"+bv+".srt");
     }else{
         for(var i =1;i<clip+1;i++){
             srt =srt + getData(sourceUrl+"/db/2021/"+month+"/srt/"+bv+"-"+i.toString()+".srt");
