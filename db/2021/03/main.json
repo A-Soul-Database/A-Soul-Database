@@ -833,31 +833,6 @@
 	"tags": ["向晚表情包"]
 }, {
 	"date": "3-24",
-	"time": "20:10",
-	"liveRoom": "A",
-	"bv": "BV1Df4y1x7Sz",
-	"title": "【A-SOUL】向晚 3.24 我看我自己 之 表情包鉴赏！【直播录像】",
-	"scene": ["domroom"],
-	"type": ["chat"],
-	"staff": ["A"],
-	"clip": 3,
-	"items": [{
-		"name": "game",
-		"item": []
-	}, {
-		"name": "song",
-		"item": []
-	}, {
-		"name": "dance",
-		"item": []
-	}],
-	"skin": {
-		"A": ["official"]
-	},
-	"platform": "B",
-	"tags": ["向晚表情包"]
-}, {
-	"date": "3-24",
 	"time": "21:20",
 	"liveRoom": "E",
 	"bv": "BV1Ky4y1t7Po",
