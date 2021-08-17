@@ -23,11 +23,13 @@ words = json.loads(text)
 for i in filename:
     with open(i,"r+",encoding="utf-8") as f:
         raw = f.read()
-        for item in words:
-            try:
-                raw = raw.replace(item,words[item])
-            except:
-                print("dont have word %s" ,item)
+        for toWord in words:
+            fromList = words[toWord]
+            for fromWord in fromList:
+                try:
+                    raw = raw.replace(fromWord,toWord)
+                except:
+                    print("dont have word %s" ,fromWord)
         for i in stopword:
             try:
                 raw = raw.replace(i,"")
@@ -35,4 +37,4 @@ for i in filename:
                 print("dont have")
         f.seek(0)
         f.write(raw)
-        print("%s is done!",i)
+        print("%s is done!",i) 
