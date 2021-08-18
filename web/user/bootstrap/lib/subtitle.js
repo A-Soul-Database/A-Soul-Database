@@ -36,7 +36,7 @@ function viewDetail(bv){
         //美化输出
         out=`<tr><th scope="row">🍓</th><th scope="row">${n}</th></tr>${out}`;
     }
-    html = `<a href="./list.html?bv=${bv}" target="_blank" style="color:#;e799b0"<table class="table"><thead><tr><th scope="col">#</th><th scope="col">文本</th></tr></thead><tbody>${out}</tbody></table>`;
+    html = `<a href="./list.html?bv=${bv}" target="_blank" style="color:#;e799b0">查看详情</a><table class="table"><thead><tr><th scope="col">#</th><th scope="col">文本</th></tr></thead><tbody>${out}</tbody></table>`;
     document.getElementById(bv+"-Content").innerHTML = html;
 }
 
