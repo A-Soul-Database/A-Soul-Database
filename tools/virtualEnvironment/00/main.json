@@ -44,7 +44,6 @@
         "items": [{
             "name": "game",
             "item": [
-                []
             ]
         }, {
             "name": "song",
@@ -63,37 +62,6 @@
         }],
         "skin": {
             "A": ["swim"]
-        },
-        "platform": "B",
-        "tags": []
-    },    {
-        "date":"8-18",
-        "time":"21:10",
-        "liveRoom":"E",
-        "bv":"",
-        "title":"",
-        "scene":["Eroom"],
-        "type":["song","chat"],
-        "staff":["E"],
-        "clip":2,
-        "items": [{
-            "name": "game",
-            "item": [
-                []
-            ]
-        }, {
-            "name": "song",
-            "item": [
-
-            ]
-        }, {
-            "name": "dance",
-            "item": [
-                
-            ]
-        }],
-        "skin": {
-            "E": ["official","birthday","group"]
         },
         "platform": "B",
         "tags": []
