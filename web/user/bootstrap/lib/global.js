@@ -1,5 +1,5 @@
-var build = "V1.26";
-var lastUpdateTime = "21-08-19 07:58";
+var build = "V1.27";
+var lastUpdateTime = "21-08-19 22:10";
 var source = ["https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build,"https://asdb.live","https://github.com/peterpei1186861238/ASDB/tree/"+build];
 var sourceUrl = source[0];
 var LoadingBarStatus = false;

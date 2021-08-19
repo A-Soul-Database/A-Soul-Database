@@ -1,0 +1,31 @@
+[{
+	"date": "8-19",
+	"time": "18:50",
+	"liveRoom": "B",
+	"bv": "BV1Pb4y1S7zd",
+	"title": "贝拉 8.19 聊！聊点啥呢！！！夏日怪谈~",
+	"scene": ["beach"],
+	"type": ["chat", "song"],
+	"staff": ["B"],
+	"clip": 1,
+	"items": [{
+		"name": "game",
+		"item": []
+	}, {
+		"name": "song",
+		"item": [
+			["奈落の花", "1-15:27", ["B"]],
+            ["Milk and Cookies","1-26:15",["B"]],
+            ["雨之庭","1-39:27",["B"]],
+            ["アメフラシの歌～Beautiful Rain～","1-48:11",["B"]]
+		]
+	}, {
+		"name": "dance",
+		"item": []
+	}],
+	"skin": {
+		"B": ["swim"]
+	},
+	"platform": "B",
+	"tags": ["拉姐讲鬼故事捏","确实哈人（"]
+    }]
