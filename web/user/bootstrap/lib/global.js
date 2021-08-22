@@ -1,6 +1,6 @@
-var build = "V1.28";
+var build = "V1.29";
 var lastUpdateTime = "21-08-20 08:30";
-var source = ["https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build,"https://asdb.live","https://github.com/peterpei1186861238/ASDB/tree/"+build];
+var source = ["https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build,"https://livedb.asoulfan.com","https://github.com/peterpei1186861238/ASDB/tree/"+build];
 var sourceUrl = source[0];
 var LoadingBarStatus = false;
 var CoverJson = {};
