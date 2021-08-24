@@ -91,10 +91,6 @@ class SubTitleBtn extends React.Component{
   handleCancel = () => {
     this.setState({isModalVisible:false});
   };
-  handleHighlight = (text) =>{
-    // this.setState({searchWords:text});
-    // console.log(text);
-  }
   render(){
     const {isModalVisible} = this.state;
     const {subtitles,searchWords} = this.props;
@@ -119,7 +115,18 @@ class SubTitleBtn extends React.Component{
           let time = srtArr[1];
           let text = srtArr[2];
           // console.log(srtArr);
-          return(<Row style={{"borderBottom":"1px dashed"}}>
+          let ClipRow;
+          if(index === "0"){
+            ClipRow = ()=>{return (<Row><Col
+              style={{"color":"#9AC8E2","borderBottom":"1px solid"}}
+            >{"切片分割线"}</Col></Row>)}
+          }else{
+            ClipRow = ()=>{return (<></>)}
+          }
+          return (
+          <>
+          <ClipRow/>
+          <Row style={{"borderBottom":"1px dashed"}}>
             <Col span={3} style={{"color":"#B8A6D9"}}>{index}</Col>
             <Col span={10} style={{"color":"#E799B0"}}>{time}</Col>
             <Col span={11} style={{"color":"#576690"}}>
@@ -130,7 +137,7 @@ class SubTitleBtn extends React.Component{
                 textToHighlight= {text}></Highlighter>
               </Col>
               </Row>
-              
+            </>
               );
         })}
         

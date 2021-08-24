@@ -35,6 +35,7 @@ def getSubtitles(bv):
     else:
         for i in range(1,clip+1):
             srt =srt + getData(sourceUrl+"/db/2021/"+month+"/srt/"+bv+"-"+str(i)+".srt")
+            srt += "\n\n"#切片结尾符号
         
     srtArr = srt.split("\n")
     
@@ -61,7 +62,7 @@ def main():
         
         getSubtitles(bv)
         print("Finish "+str(n),end='\r')
-    print("Finish all"+str(len(indexerList))+" requests")
+    print("Finish all "+str(len(indexerList))+" requests")
     f = open("../db/srt.json","w",encoding='utf8')
     json.dump(subtitlesArr,f,ensure_ascii=False)
     
