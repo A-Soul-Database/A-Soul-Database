@@ -24,14 +24,15 @@ export default () => {
   return (
     <PageContainer>
       <Title align="middle" >Asoul二创切片的有力助手，免费且开源</Title>
-      <Row><Col span={16}></Col><Col><Title level={3} type="secondary">--把字刻在石头上</Title></Col></Row>
+      <Row><Col xs={8} md={16}></Col><Col><Title level={3} type="secondary">--把字刻在石头上</Title></Col></Row>
       <Row 
         style={{
           "height":"300px",
           "marginTop":"40px"
         }}
+        gutter={[16,32]}
       >
-        <Col span={12} align="middle">
+        <Col  xs={24} md={12} align="middle">
           <Button
             onMouseEnter={(e)=>{setColorOne("#D9D9D9")}}
             onMouseLeave={(e)=>{setColorOne("#737373")}}
@@ -58,7 +59,7 @@ export default () => {
             <Row><Col align="middle" span={24}>进入视频库</Col></Row>
           </Button>
         </Col>
-        <Col span={12} align="middle">
+        <Col xs={24} md={12} align="middle">
           <Button
             onMouseEnter={(e)=>{setColorTwo("#D9D9D9")}}
             onMouseLeave={(e)=>{setColorTwo("#737373")}}
