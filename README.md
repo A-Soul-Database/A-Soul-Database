@@ -49,28 +49,28 @@ make-front-end --- 前端的react源码
 * 首次：
     ```console
     ~$ cd A-Soul-Database/
-    ~/A-Soul-Databse$ npm install cnpm -g
-    ~/A-Soul-Databse$ cd make-front-end/
-    ~/A-Soul-Databse/make-front-end$ cnpm install
-    ~/A-Soul-Databse/make-front-end$ cnpm install react-highlight-words
-    ~/A-Soul-Databse/make-front-end$ cd ..
-    ~/A-Soul-Databse$ ./update-front-end.sh
+    ~/A-Soul-Database$ npm install cnpm -g
+    ~/A-Soul-Database$ cd make-front-end/
+    ~/A-Soul-Database/make-front-end$ cnpm install
+    ~/A-Soul-Database/make-front-end$ cnpm install react-highlight-words
+    ~/A-Soul-Database/make-front-end$ cd ..
+    ~/A-Soul-Database$ ./update-front-end.sh
     ```
 * 非首次：
     ```console
     ~$ cd A-Soul-Database/
-    ~/A-Soul-Databse$ ./update-front-end.sh
+    ~/A-Soul-Database$ ./update-front-end.sh
     ```
 成功之后，静态的网页文件会生成在 A-Soul-Database/web/目录下
 
-可以在A-Soul-Databse/make-front-end/config/config.js中的outputPath修改静态文件生成路径
+可以在A-Soul-Database/make-front-end/config/config.js中的outputPath修改静态文件生成路径
 
 本地测试:
 
 首次编译成功之后，可以将网页运行在localhost或服务器上
 ```console
 ~$ cd A-Soul-Database/make-front-end/
-~/A-Soul-Databse/make-front-end$ cnpm start
+~/A-Soul-Database/make-front-end$ cnpm start
 ```
 默认端口为8000
 #### 进度
