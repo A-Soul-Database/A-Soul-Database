@@ -9,7 +9,7 @@ const Settings = {
   colorWeak: false,
   title: 'Asoul Database',
   pwa: false,
-  logo: "./icons/logo.png",
+  logo: "./icons/new_logo.png",
   iconfontUrl: '',
 };
 export default Settings;

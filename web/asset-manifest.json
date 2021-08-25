@@ -1,8 +1,8 @@
 {
   "./umi.css": "./umi.f51408d7.css",
-  "./umi.js": "./umi.a4cf8907.js",
+  "./umi.js": "./umi.73942c95.js",
   "./t__plugin-layout__Layout.css": "./t__plugin-layout__Layout.69685f62.chunk.css",
-  "./t__plugin-layout__Layout.js": "./t__plugin-layout__Layout.61e36838.async.js",
+  "./t__plugin-layout__Layout.js": "./t__plugin-layout__Layout.d992aadc.async.js",
   "./p__Index.css": "./p__Index.578fa1b0.chunk.css",
   "./p__Index.js": "./p__Index.76100454.async.js",
   "./p__List.css": "./p__List.604edcb2.chunk.css",
@@ -32,6 +32,7 @@
   "./avatars/d.jpg": "./avatars/d.jpg",
   "./avatars/f.jpg": "./avatars/f.jpg",
   "./icons/logo.png": "./icons/logo.png",
+  "./icons/new_logo.png": "./icons/new_logo.png",
   "./favicon.ico": "./favicon.ico",
   "./cheat.png": "./cheat.png",
   "./icons/icon-512x512.png": "./icons/icon-512x512.png",
