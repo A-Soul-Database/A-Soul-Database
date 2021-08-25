@@ -102,11 +102,11 @@ class SubTitleBtn extends React.Component{
         查看
       </Button>
       <Modal title="字幕展示" visible={isModalVisible} onOk={this.handleOk} onCancel={this.handleCancel}>
-        <Row><Col span={24} align="middle"><Title>字幕表</Title></Col></Row>
+        <Row><Col xs={24} md={24} align="middle"><Title>字幕表</Title></Col></Row>
         <Row>
-          <Col span={3}>序号</Col>
-          <Col span={10}>时间</Col>
-          <Col span={11}>字幕</Col>
+          <Col xs={3} md={3}>序号</Col>
+          <Col xs={10} md={10}>时间</Col>
+          <Col xs={11} md={11}>字幕</Col>
         </Row>
         <Row style={{"borderBottom":"2px solid"}}><Text type="secondary">字幕搜索结果会以高亮展示💃💃💃往下翻翻吧</Text></Row>
         {subtitles.map((s)=>{
@@ -127,9 +127,9 @@ class SubTitleBtn extends React.Component{
           <>
           <ClipRow/>
           <Row style={{"borderBottom":"1px dashed"}}>
-            <Col span={3} style={{"color":"#B8A6D9"}}>{index}</Col>
-            <Col span={10} style={{"color":"#E799B0"}}>{time}</Col>
-            <Col span={11} style={{"color":"#576690"}}>
+            <Col xs={3} md={3} style={{"color":"#B8A6D9"}}>{index}</Col>
+            <Col xs={10} md={10} style={{"color":"#E799B0"}}>{time}</Col>
+            <Col xs={11} md={11} style={{"color":"#576690"}}>
               <Highlighter
                 highlightStyle={{ backgroundColor: '#BD7D74', padding: 0 }}
                 searchWords={[searchWords]}
@@ -162,11 +162,6 @@ const columns = [
     width: 80,
     dataIndex: 'hour',
   },
-
-  {
-    title: '标题',
-    dataIndex: 'title',
-  },
   {
     title: '字幕',
     dataIndex: 'subtitle',
@@ -174,7 +169,15 @@ const columns = [
       const {subtitles,searchWords} = subtitle
       return (<SubTitleBtn subtitles={subtitles} searchWords={searchWords}/>);
     }
-  }
+  },
+  {
+    title: '标题',
+    dataIndex: 'title',
+    render:(title)=>{
+      return (<Row><Col md={12}>{title}</Col></Row>)
+    }
+  },
+  
 ]
 
 class ToolKits extends React.Component{
@@ -220,21 +223,20 @@ class ToolKits extends React.Component{
           ]
         }
         ><Row>
-          <Col span={10}></Col>
-          <Col span={4} align="middle">
+          <Col xs={24} md={24} align="middle">
             <Title level={2}>字幕库检索</Title>
           </Col>
         </Row>
         <Row style={{"height":"50px"}}>
-        <Col span={6}></Col>
-        <Col span={12} align="middle">
+        <Col xs={0} md={6}></Col>
+        <Col xs={24} md={12} align="middle">
           <Input style={{"borderRadius":"50px"}}
           placeholder="单条字幕检索🔍" 
           onChange={(e)=>{this.setState({input:e.target.value})}}
           value={this.state.input}
         ></Input>
         </Col>
-        <Col span={6} align="middle">
+        <Col md={6} align="middle">
         </Col>
         </Row>
       </Card>
@@ -276,13 +278,16 @@ class SubtitlePage extends React.Component{
     return(
       <PageContainer>
         <ToolKits parent={this}/>
+        <Row style={{"marginTop":"20px"}}>
+          <Col xs={24} md={24}>
           <ProTable
             columns={this.props.initColumns}
             rowKey="key"
             dataSource={this.state.dataSource}
             search={false}
           ></ProTable>
-        
+          </Col>
+        </Row>
       </PageContainer>
     );
   }

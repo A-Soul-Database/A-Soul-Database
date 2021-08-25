@@ -18,7 +18,7 @@ const CodePreview = ({ children }) => (
 );
 
 export default () => {
-  const intl = useIntl();
+  // const intl = useIntl();
   const [colorOne,setColorOne] = React.useState("#737373");
   const [colorTwo,setColorTwo] = React.useState("#737373");
   return (

@@ -198,21 +198,20 @@ class ToolKits extends React.Component{
           ]
         }
         ><Row>
-          <Col span={10}></Col>
-          <Col span={4} align="middle">
+          <Col xs={24} md={24} align="middle">
             <Title level={2}>视频库检索</Title>
           </Col>
         </Row>
-        <Row style={{"height":"50px"}}>
-        <Col span={6}></Col>
-        <Col span={12} align="middle">
+        <Row gutter={[16,16]}>
+        <Col xs={0} md={6}></Col>
+        <Col xs={24} md={12} align="middle">
           <Input style={{"borderRadius":"50px"}}
           placeholder="ASDB一下，你就知道😘😘😘" 
           onChange={(e)=>{this.setState({input:e.target.value})}}
           value={this.state.input}
         ></Input>
         </Col>
-        <Col span={6} align="middle">
+        <Col xs={24} md={6} align="middle">
         <Select defaultValue="all" 
           onSelect={(e)=>{this.setState({select:e})}}
           value={this.state.select}
@@ -224,6 +223,8 @@ class ToolKits extends React.Component{
         </Select>
         </Col>
         </Row>
+        <Row style={{"marginTop":"50px"}}>
+        <Col xs={24} md={24}>
         <Collapse>
           <Panel header="高级搜索" forceRender={true}>
           <MyCheckbox {...staffConfig} bindRef={(p)=>this.staff=p}></MyCheckbox>
@@ -233,6 +234,8 @@ class ToolKits extends React.Component{
           <MyCheckbox {...platformConfig} bindRef={(p)=>this.platform=p}></MyCheckbox>
           </Panel>
         </Collapse>
+        </Col>
+        </Row>
       </Card>
       
     );
@@ -275,17 +278,17 @@ class AvatarCard extends React.Component{
     if(item.length >= 3){
       return (
         <Row style={{"borderBottom":"1px dotted"}}>
-          <Col span={4}>{item[1]}</Col>
-          <Col span={11}>{typeMap[name]+item[0]+typeMap[name]}</Col>
-          <Col span={9}>{item[2].map((staff)=>{
+          <Col md={4}>{item[1]}</Col>
+          <Col md={11}>{typeMap[name]+item[0]+typeMap[name]}</Col>
+          <Col md={9}>{item[2].map((staff)=>{
             return(<Avatar src={avatar[staff]}></Avatar>);
           })}</Col>
         </Row>)
     }else{
       return(
       <Row style={{"borderBottom":"1px dotted"}}>
-        <Col span={4}>{item[1]}</Col>
-        <Col span={11}>{typeMap[name]+item[0]+typeMap[name]}
+        <Col md={4}>{item[1]}</Col>
+        <Col md={11}>{typeMap[name]+item[0]+typeMap[name]}
       </Col></Row>);
     }
   }
@@ -312,32 +315,33 @@ class AvatarCard extends React.Component{
         onClick={this.imgClick}
         style={
           {
-            "cursor":"pointer"
+            "cursor":"pointer",
           }
         }
       >
       </img>
+      
     }
     actions={[
       <InfoCircleOutlined title="详细信息" key="info" onClick={this.infoClick}/>,
     ]}
   >
-    <Space direction="vertical">
+    
     <Row>
       {title}
     </Row>
-    <Row gutter={16}>
-      <Col xs={12}>
+    <Row gutter={[16,16]}>
+      <Col xs={24} md={14}>
       <Avatar.Group maxCount={3}>
           {staff.map((s)=>{
             return (<Avatar src={avatar[s]}></Avatar>);
           })}
         </Avatar.Group>
       </Col>
-      <Col xs={12}><div style={{"background":"#6c757d","borderRadius":"4px","display":"inline"}}>{activityStr}</div></Col>
+      <Col xs={24} md={10}><div style={{"background":"#6c757d","borderRadius":"4px","display":"inline"}}>{activityStr}</div></Col>
         
     </Row>
-    </Space>
+    
     <Modal title={title} visible={this.state.modalVisible} maskClosable={true} onCancel={this.infoCancel} footer={null}
     >
         <Row>
@@ -355,7 +359,7 @@ class AvatarCard extends React.Component{
             dataSource={this.skinToskinData()}
             header={
               <Row>
-                <Col span={22}><b>出镜人物</b></Col>
+                <Col md={22}><b>出镜人物</b></Col>
                 <Col><b align="right">服饰</b></Col>
               </Row>
             }
@@ -379,8 +383,8 @@ class AvatarCard extends React.Component{
           </List>
         <Divider></Divider>
         <Row style={{"height":"20px","borderBottom":"1px solid"}}>
-          <Col span={4}><b>时间</b></Col>
-          <Col span={11}><b>活动</b></Col>
+          <Col md={4}><b>时间</b></Col>
+          <Col md={11}><b>活动</b></Col>
           <Col ><b>出镜人物</b></Col>
         </Row>
         {items.map((i)=>{
@@ -433,7 +437,7 @@ class ListPage extends React.Component{
     return(
       <PageContainer>
         <Row>
-          <Col span={24}>
+          <Col md={24}>
               <ToolKits onReverse={this.handleReverse} parent={this}/>
           </Col>
         </Row>
@@ -444,7 +448,7 @@ class ListPage extends React.Component{
           {
             displayJson.map((config)=>{
               return(
-              <Col xs={4} sm={6}>
+              <Col xs={12} md={6}>
                 <AvatarCard props={config}/>
               </Col>)
             })
