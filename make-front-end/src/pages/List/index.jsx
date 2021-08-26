@@ -5,6 +5,7 @@ import { Card, Alert, Typography,Avatar,Row,Col,Checkbox,Collapse, Space,Modal,L
 import { InfoCircleOutlined, UndoOutlined, ClearOutlined, SearchOutlined } from '@ant-design/icons';
 import {match,reverseArray,getJsonData} from "../../../public/js/basic.js";
 import config from "../../../public/js/basic.js";
+import Highlighter from 'react-highlight-words';
 // import mainJson from "../../../../db/2021/main.json";
 // import coverJson from "../../../../db/2021/Cover.json";
 //本地测试时的import路径，后来发现这样做不行，因为若服务器上修改json文件内容，其修改并不会被同步到这个文件中
@@ -144,15 +145,36 @@ class ToolKits extends React.Component{
       queryJson["titlestr"] = this.state.input;
       queryJson["typestr"] = this.state.input;
       queryJson["tagstr"] = this.state.input;
+      this.props.parent.setState({
+        titleSearchWords:this.state.input,
+        typeSearchWords:this.state.input,
+        tagSearchWords:this.state.input
+      });
+      
     }else{
       queryJson[this.state.select] = this.state.input;
+      if(this.state.select === "titlestr"){
+        this.props.parent.setState({
+          titleSearchWords:this.state.input,
+          typeSearchWords:"",
+          tagSearchWords:"",
+        });
+      }else if(this.state.select === "typestr"){
+        this.props.parent.setState({
+          titleSearchWords:"",
+          typeSearchWords:this.state.input,
+          tagSearchWords:"",
+        });
+      }else if(this.state.select === "tagstr"){
+        this.props.parent.setState({
+          titleSearchWords:"",
+          typeSearchWords:"",
+          tagSearchWords:this.state.input,
+        });
+      }
+
     }
-    console.log(queryJson);
-    console.log(mainJson[0]);
     this.props.parent.filter(queryJson);
-    window.find(this.state.input);
-    window.find(this.state.input);
-    
   }
   render(){
     
@@ -276,12 +298,21 @@ class AvatarCard extends React.Component{
     return res;
   }
 
-  itemToReactNode(item,name){
+  itemToReactNode = (item,name)=>{
+    const {typeSearchWords} = this.props;
     if(item.length >= 3){
       return (
         <Row style={{"borderBottom":"1px dotted"}}>
           <Col md={4}>{item[1]}</Col>
-          <Col md={11}>{typeMap[name]+item[0]+typeMap[name]}</Col>
+          <Col md={11}>
+          {typeMap[name]}
+          <Highlighter
+            highlightStyle={{ backgroundColor: '#BD7D74', padding: 0 }}
+            searchWords={[typeSearchWords]}
+            autoEscape
+            textToHighlight={item[0]}
+          ></Highlighter>
+          {typeMap[name]}</Col>
           <Col md={9}>{item[2].map((staff)=>{
             return(<Avatar src={avatar[staff]}></Avatar>);
           })}</Col>
@@ -299,7 +330,7 @@ class AvatarCard extends React.Component{
     
     const {bv,clip,date,items,liveRoom,platform,scene,skin,staff,tags,time,title,type} = this.props.props;
     
-    
+    const {titleSearchWords,typeSearchWords,tagSearchWords} = this.props;
     
     let activityStr = "";
     type.map((a)=>{
@@ -311,7 +342,7 @@ class AvatarCard extends React.Component{
     cover={
       
       <img
-        alt="example"
+        alt="cover"
         src={coverJson[bv]}
         referrerPolicy='no-referrer'
         onClick={this.imgClick}
@@ -330,7 +361,11 @@ class AvatarCard extends React.Component{
   >
     
     <Row>
-      {title}
+      <Highlighter
+        highlightStyle={{ backgroundColor: '#BD7D74', padding: 0 }}
+        searchWords={[titleSearchWords]}
+        autoEscape
+        textToHighlight= {title}></Highlighter>
     </Row>
     <Row gutter={[16,16]}>
       <Col xs={24} md={14}>
@@ -396,7 +431,13 @@ class AvatarCard extends React.Component{
         <Row><b>关键词:</b></Row>
         <code >
           {tags.map((tag)=>{
-            return (<div style={{"color":"#D63384"}}>{tag}</div>)
+            return (<div style={{"color":"#D63384"}}>
+                    <Highlighter
+                      highlightStyle={{ backgroundColor: '#BD7D74', padding: 0 }}
+                      searchWords={[tagSearchWords]}
+                      autoEscape
+                      textToHighlight= {tag}></Highlighter>
+            </div>)
           })}
         </code>
 
@@ -412,7 +453,10 @@ class ListPage extends React.Component{
   }
 
   state = {
-    displayJson:this.props.initMainJson
+    displayJson:this.props.initMainJson,
+    titleSearchWords:"",
+    typeSearchWords:"",
+    tagSearchWords:""
   }
 
   handleReverse = (e) => {
@@ -422,7 +466,12 @@ class ListPage extends React.Component{
   }
 
   handleClear = () =>{
-    this.setState({displayJson:this.props.initMainJson});
+    this.setState({
+      displayJson:this.props.initMainJson,
+      titleSearchWords:"",
+      typeSearchWords:"",
+      tagSearchWords:""
+    });
   }
   
   //查找捏
@@ -435,7 +484,7 @@ class ListPage extends React.Component{
   }
 
   render(){
-    const {displayJson} = this.state; 
+    const {displayJson,titleSearchWords,typeSearchWords,tagSearchWords} = this.state; 
     return(
       <PageContainer>
         <Row>
@@ -451,7 +500,12 @@ class ListPage extends React.Component{
             displayJson.map((config)=>{
               return(
               <Col xs={12} md={6}>
-                <AvatarCard props={config}/>
+                <AvatarCard 
+                  props={config} 
+                  titleSearchWords={titleSearchWords}
+                  typeSearchWords={typeSearchWords}
+                  tagSearchWords={tagSearchWords}
+                />
               </Col>)
             })
           }
