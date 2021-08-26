@@ -4,34 +4,36 @@ import { PageContainer } from '@ant-design/pro-layout';
 import { Card, Alert, Typography,Avatar,Row,Col,Checkbox,Collapse, Space,Modal,List, Divider,Button,Option,Select,Input } from 'antd';
 import { InfoCircleOutlined, UndoOutlined, ClearOutlined, SearchOutlined } from '@ant-design/icons';
 import {match,reverseArray,getJsonData} from "../../../public/js/basic.js";
-import mainJson from "../../../../db/2021/main.json";
-import coverJson from "../../../../db/2021/Cover.json";
+import config from "../../../public/js/basic.js";
+// import mainJson from "../../../../db/2021/main.json";
+// import coverJson from "../../../../db/2021/Cover.json";
+//本地测试时的import路径，后来发现这样做不行，因为若服务器上修改json文件内容，其修改并不会被同步到这个文件中
+// import mainJson from "D:/asoul/A-Soul-Database/db/2021/main.json";
+// import coverJson from "D:/asoul/A-Soul-Database/db/2021/cover.json";
+//采用发送http的方式来获取json文件，这样永远都是最新版的json啦！
 
+
+const sourceUrl = config.sourceUrl;
+console.log(sourceUrl);
+const MainUrl = sourceUrl+"/db/2021/main.json"; // main.json文件url,直接从网页拿
+const Coverurl = sourceUrl+"/db/2021/Cover.json"; //cover.json文件url,直接从网页拿
 
 const CheckboxGroup = Checkbox.Group;
 const Panel = Collapse.Panel;
 const { Meta } = Card;
 const {Title,Text} = Typography;
 
-//本地测试时的import路径，后来发现这样做不行，因为若服务器上修改json文件内容，其修改并不会被同步到这个文件中
-// import mainJson from "D:/asoul/A-Soul-Database/db/2021/main.json";
-// import coverJson from "D:/asoul/A-Soul-Database/db/2021/cover.json";
-//采用发送http的方式来获取json文件，这样永远都是最新版的json啦！
-// const sourceUrl = "https://raw.githubusercontent.com/peterpei1186861238/A-Soul-Database/main";
-const build = "V1.30";
-const sourceUrl = "https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build;
-const MainUrl = sourceUrl+"/db/2021/main.json"; // main.json文件url,直接从github拿
-const Coverurl = sourceUrl+"/db/2021/Cover.json"; //cover.json文件url,直接从github拿
+
 
 
   
   
 // }
 // let mainJson = [];
-// let mainJson = getJsonData(MainUrl);
+let mainJson = getJsonData(MainUrl);
 
 
-// let coverJson = getJsonData(Coverurl);
+let coverJson = getJsonData(Coverurl);
 
 let InitialMainJson = [];
 
@@ -345,7 +347,7 @@ class AvatarCard extends React.Component{
     <Modal title={title} visible={this.state.modalVisible} maskClosable={true} onCancel={this.infoCancel} footer={null}
     >
         <Row>
-          BV号:<a target="_blank" href={"https://www.bilibili.com/"+bv} style={{"color":"#BD7D74"}}>{bv}</a>
+          BV号:<a target="_blank" href={"https://www.bilibili.com/"+bv} target="_blank" style={{"color":"#BD7D74"}}>{bv}</a>
         </Row>
         <Row>
           日期:<b style={{"color":"#9AC8E2"}}>{date+" "+time}</b>

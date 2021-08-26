@@ -53,14 +53,15 @@ make-front-end --- 前端的react源码
     ~/A-Soul-Database$ cd make-front-end/
     ~/A-Soul-Database/make-front-end$ cnpm install
     ~/A-Soul-Database/make-front-end$ cnpm install react-highlight-words
-    ~/A-Soul-Database/make-front-end$ cd ..
-    ~/A-Soul-Database$ ./update-front-end.sh
+    ~/A-Soul-Database/make-front-end$ cnpm run build
     ```
 * 非首次：
     ```console
-    ~$ cd A-Soul-Database/
-    ~/A-Soul-Database$ ./update-front-end.sh
+    ~$ cd A-Soul-Database/make-front-end/
+    ~/A-Soul-Database/make-front-end$ cnpm run build
     ```
+(上面的所有cnpm命令都可以用npm替代，但由于境内网络特殊性可能会导致失败或延迟过高)
+
 成功之后，静态的网页文件会生成在 A-Soul-Database/web/目录下
 
 可以在A-Soul-Database/make-front-end/config/config.js中的outputPath修改静态文件生成路径

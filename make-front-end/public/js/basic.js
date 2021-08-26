@@ -56,6 +56,19 @@
     "title": []
 }
 */
+const build = "V1.30";
+const sourceUrls = 
+    [
+    "https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build,
+    "https://raw.githubusercontent.com/peterpei1186861238/A-Soul-Database/main",
+    "https://livedb.asoulfan.com",
+    ]
+const urlChoice = 1;
+export default {
+    sourceUrl:sourceUrls[urlChoice]
+}
+
+
 const insertionJustable = ["scene","staff","type"]//可以用相交法判断的关键字数组
 export function match(queryJson,json){
     for(let keyword in queryJson){
