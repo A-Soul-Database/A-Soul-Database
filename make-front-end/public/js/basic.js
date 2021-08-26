@@ -63,7 +63,7 @@ const sourceUrls =
     "https://raw.githubusercontent.com/peterpei1186861238/A-Soul-Database/main",
     "https://livedb.asoulfan.com",
     ]
-const urlChoice = 1;
+const urlChoice = 2;
 export default {
     sourceUrl:sourceUrls[urlChoice]
 }
