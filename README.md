@@ -21,6 +21,7 @@ db --- 存放数据库文件
     /srt --- 字幕文件
     /schedule --- 直播QA
     /timeline --- 时间轴(第三方 感谢@贼眉鼠眼小珈乐 打的轴) 
+    /danmaku --- 直播弹幕的Json文件
 web --- 前端网页和js文件
 tool --- 数据的处理
 make-front-end --- 前端的react源码
