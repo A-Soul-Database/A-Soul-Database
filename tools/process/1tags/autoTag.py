@@ -33,7 +33,7 @@ for i in filename:
     #分块
     for i in main:
         if i["bv"]==bv:
-            i["tags"] += index
+            i["tags"] = index
 
     
     with open("main.json","w",encoding='utf-8')as f:

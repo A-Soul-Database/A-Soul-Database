@@ -13,15 +13,19 @@ print("Useage:\n1.Make Sure You have srtChange.txt in same dirctory.\n2.put this
 
 with open("srtChange.json","r",encoding="utf-8") as f:
     text = f.read()
+    f.close()
 words = json.loads(text)
 wordlist = []
-for i in words:
-    wordlist.append(i)
+for k in words:
+    wordlist.append(k)
 for i in filename:
-    with open(i,"r+",encoding="utf-8") as f:
-        raw = f.read()  
-        for z in wordlist:
-            raw.replace(z,words[z])
+    with open(i,"r",encoding="utf-8") as f:
+        raw = f.read()
+        f.close()
+    for z in wordlist:
+        raw = raw.replace(z,words[z])
+        
+    with open(i,"w",encoding="utf-8")as f:
         f.seek(0)
         f.write(raw)
         print("%s is done!" %i) 
