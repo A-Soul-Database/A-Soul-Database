@@ -1,7 +1,7 @@
 import json,shutil,os
 out = {}
 temp = {}
-month = ["01","02","03","04","05","06","07","08"]
+month = ["01","02","03","04","05","06","07","08","09"]
 for i in month:
     #print(os.getcwd()+"\\"+i+"\\searchindex.py")
     #shutil.copyfile(os.getcwd()+"\\searchindex.py", os.getcwd()+"\\"+i+"\\searchindex.py")
