@@ -70,6 +70,8 @@ make-front-end --- 前端的react源码
     ```
 (上面的所有cnpm命令都可以用npm替代，但由于境内网络特殊性可能会导致失败或延迟过高)
 
+由于CDN拦截跨域请求，故在编译时请把 `public/js/basic.js` 中的 `urlChoice` 改为 1
+
 成功之后，静态的网页文件会生成在 A-Soul-Database/web/目录下
 
 可以在A-Soul-Database/make-front-end/config/config.js中的outputPath修改静态文件生成路径
