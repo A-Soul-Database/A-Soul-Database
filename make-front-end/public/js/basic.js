@@ -63,16 +63,71 @@ const sourceUrls =
     "https://raw.githubusercontent.com/peterpei1186861238/A-Soul-Database/main",
     "https://livedb.asoulfan.com",
     ]
-const urlChoice = 2;
+const urlChoice = 1;
 export default {
     sourceUrl:sourceUrls[urlChoice]
 }
 
 
 const insertionJustable = ["scene","staff","type"]//可以用相交法判断的关键字数组
+
+// export function match(queryJson,json){
+//     for(let keyword in queryJson){
+//         if(keyword === "skin"){
+//             let skinSet = new Set();//存储所有衣服，去重
+//             for(let s of json["staff"]){
+//                 if(s === "F") continue;//可怜的阿草，没有衣服，我真的，哭死
+//                 for(let cloth of json["skin"][s]){
+//                     skinSet.add(cloth);
+//                 }
+//             }
+//             let skinArr = Array.from(skinSet);
+//             if(skinArr.length === 0) continue;
+//             if(!isInsertion(queryJson["skin"],skinArr)){
+//                 // console.log("skin not match");
+//                 return false;
+//             }
+//         }else if(keyword === "platform"){
+//             if(queryJson["platform"].indexOf(json["platform"])===-1){
+                
+//                 // console.log("platform not match");
+//                 return false;
+//             }//json里的platform并非数组，而是一个字符，B或者D
+//         }else if(insertionJustable.indexOf(keyword)!==-1){
+//             if(!isInsertion(queryJson[keyword],json[keyword])){
+//                 // console.log("insert not match");
+//                 return false;
+//             }
+//         }else if(keyword === "titlestr"){
+//             if(json["title"].indexOf(queryJson[keyword]) !== -1){
+//                 return true;
+//             }
+//         }else if(keyword === "tagstr"){
+//             for(let tag of json["tags"]){
+//                 if(tag.indexOf(queryJson[keyword]) !== -1){
+//                     return true;
+//                 }
+//             }
+//         }else if(keyword === "typestr"){
+//             for(let arr of json["items"]){
+//                 for(let i of arr["item"]){
+//                     if(i[0].indexOf(queryJson[keyword]) !== -1){
+//                         return true;
+//                     }
+//                 }
+//             }
+//         }else{
+//             continue;
+//         }
+//     }
+    
+//     return false;
+// }
+
 export function match(queryJson,json){
-    for(let keyword in queryJson){
-        if(keyword === "skin"){
+    
+        // keyword = "skin"
+        {
             let skinSet = new Set();//存储所有衣服，去重
             for(let s of json["staff"]){
                 if(s === "F") continue;//可怜的阿草，没有衣服，我真的，哭死
@@ -81,45 +136,57 @@ export function match(queryJson,json){
                 }
             }
             let skinArr = Array.from(skinSet);
-            if(!isInsertion(queryJson["skin"],skinArr)){
-                console.log("skin not match");
+            
+            if(skinArr.length !== 0&&!isInsertion(queryJson["skin"],skinArr)){
+                // console.log("skin not match");
                 return false;
             }
-        }else if(keyword === "platform"){
+        }
+
+        // keyword = "platform"
+        {
             if(queryJson["platform"].indexOf(json["platform"])===-1){
                 
-                console.log("platform not match");
+                // console.log("platform not match");
                 return false;
             }//json里的platform并非数组，而是一个字符，B或者D
-        }else if(insertionJustable.indexOf(keyword)!==-1){
+        }
+        for(let keyword of insertionJustable){
             if(!isInsertion(queryJson[keyword],json[keyword])){
-                console.log("insert not match");
+                // console.log("insert not match");
                 return false;
             }
-        }else if(keyword === "titlestr"){
-            if(json["title"].indexOf(queryJson[keyword]) !== -1){
+        }
+        if(queryJson["titlestr"] === ""&&queryJson["tagstr"]===""&&queryJson["typestr"] === "") return true;
+        // keyword = "titlestr"
+        {
+            if(json["title"].indexOf(queryJson["titlestr"]) !== -1){
                 return true;
             }
-        }else if(keyword === "tagstr"){
+        }
+        // keyword = "tagstr"
+        {
             for(let tag of json["tags"]){
-                if(tag.indexOf(queryJson[keyword]) !== -1){
+                if(tag.indexOf(queryJson["tags"]) !== -1){
                     return true;
                 }
             }
-        }else if(keyword === "typestr"){
+        }
+        // keyword = "typestr"
+        {
             for(let arr of json["items"]){
                 for(let i of arr["item"]){
-                    if(i[0].indexOf(queryJson[keyword]) !== -1){
+                    if(i[0].indexOf(queryJson["typestr"]) !== -1){
                         return true;
                     }
                 }
             }
-        }else{
-            continue;
         }
-    }
+    
     return false;
 }
+
+
 export function getJsonData(url){
     //通过XMLHttpRequest获取cdn中的版本,同步阻塞式
     var xhr = new XMLHttpRequest();

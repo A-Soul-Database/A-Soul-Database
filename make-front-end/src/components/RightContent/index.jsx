@@ -1,5 +1,5 @@
-import { Space } from 'antd';
-import { QuestionCircleOutlined } from '@ant-design/icons';
+import { Row,Col,Dropdown,Menu,Button } from 'antd';
+import { DownOutlined} from '@ant-design/icons';
 import React from 'react';
 import { useModel, SelectLang } from 'umi';
 import Avatar from './AvatarDropdown';
@@ -7,57 +7,35 @@ import HeaderSearch from '../HeaderSearch';
 import styles from './index.less';
 
 const GlobalHeaderRight = () => {
-  const { initialState } = useModel('@@initialState');
-
-  if (!initialState || !initialState.settings) {
-    return null;
-  }
-
-  const { navTheme, layout } = initialState.settings;
-  let className = styles.right;
-
-  if ((navTheme === 'dark' && layout === 'top') || layout === 'mix') {
-    className = `${styles.right}  ${styles.dark}`;
-  }
-
+  const menu = (
+    <Menu>
+      <Menu.Item key="1">
+        <a target="_blank" href="https://www.asoulfan.com/">AsoulFan</a>
+      </Menu.Item>
+      <Menu.Item key="2">
+        <a target="_blank" href="https://asoulcnki.asia/">枝网查重</a>
+      </Menu.Item>
+      <Menu.Item key="3">
+        <a target="_blank" href="https://www.asoul.cloud/">一个魂二创</a>
+      </Menu.Item>
+      <Menu.Item key="4">
+        <a target="_blank" href="https://asoulwiki.com/">一个魂维基</a>
+      </Menu.Item>
+      <Menu.Item key="5">
+        <a target="_blank" href="https://www.bilibili.com/video/BV1wo4y1X7Tk?p=1">宇宙的终点站</a>
+      </Menu.Item>
+    </Menu>
+  );
   return (
-    <Space className={className}>
-      <HeaderSearch
-        className={`${styles.action} ${styles.search}`}
-        placeholder="站内搜索"
-        defaultValue="umi ui"
-        options={[
-          {
-            label: <a href="https://umijs.org/zh/guide/umi-ui.html">umi ui</a>,
-            value: 'umi ui',
-          },
-          {
-            label: <a href="next.ant.design">Ant Design</a>,
-            value: 'Ant Design',
-          },
-          {
-            label: <a href="https://protable.ant.design/">Pro Table</a>,
-            value: 'Pro Table',
-          },
-          {
-            label: <a href="https://prolayout.ant.design/">Pro Layout</a>,
-            value: 'Pro Layout',
-          },
-        ]} // onSearch={value => {
-        //   console.log('input', value);
-        // }}
-      />
-      <span
-        className={styles.action}
-        onClick={() => {
-          window.open('https://pro.ant.design/docs/getting-started');
-        }}
-      >
-        <QuestionCircleOutlined />
-      </span>
-      <Avatar />
-      <SelectLang className={styles.action} />
-    </Space>
+    <Row style={{"height":"80%"}}>
+      <Dropdown overlay={menu}>
+        <Button>
+         
+            <b>友情链接</b>
+
+        </Button>
+      </Dropdown>
+    </Row>
   );
 };
 
