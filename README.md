@@ -27,13 +27,10 @@ tool --- 数据的处理
 make-front-end --- 前端的react源码
 ```
 #### 更新日志
-###### 2021-09-10
-🩹 修复 `Tag.py` 的逻辑问题 <br>
-🩹 修复 `srtChange.py` 的逻辑问题，现在人名终于能搜索到了🧎🙇 <br>
-🩹 修复 `8.25好多小乃琳` 出场人物错误 <br>
-🩹 修复 多场景显示问题 <br>
-➕ 新增 场景 `演播室` `乐华现场`
-➕ 新增 友情链接
+###### 2021-09-11
+🩹 修复 大小写非敏感搜索 <br>
+➕ 新增 时间轴直接跳转 <br>
+
 
 #### 编译前端源码
     编译在Ubuntu20.04LTS以及Windows10下均通过
@@ -71,8 +68,6 @@ make-front-end --- 前端的react源码
     ```
 (上面的所有cnpm命令都可以用npm替代，但由于境内网络特殊性可能会导致失败或延迟过高)
 
-由于CDN拦截跨域请求，故在编译时请把 `public/js/basic.js` 中的 `urlChoice` 改为 1
-
 成功之后，静态的网页文件会生成在 A-Soul-Database/web/目录下
 
 可以在A-Soul-Database/make-front-end/config/config.js中的outputPath修改静态文件生成路径
@@ -85,6 +80,8 @@ make-front-end --- 前端的react源码
 ~/A-Soul-Database/make-front-end$ cnpm start
 ```
 默认端口为8000
+
+<b>由于CDN拦截跨域请求，故在本地运行时时请把 `public/js/basic.js` 中的 `urlChoice` 改为 1,修改完成之后请将其改回0再push</b>
 #### 进度
 已完成：
 * 2021年目前所有直播数据的简略时间轴（完整 歌曲，舞蹈）和全部字幕（机器识别）

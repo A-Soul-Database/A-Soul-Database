@@ -56,15 +56,16 @@
     "title": []
 }
 */
-const build = "V1.30";
+
 const sourceUrls = 
     [
-    "https://cdn.jsdelivr.net/gh/peterpei1186861238/ASDB@"+build,
-    "https://raw.githubusercontent.com/peterpei1186861238/A-Soul-Database/main",
     "https://livedb.asoulfan.com",
+    "https://raw.githubusercontent.com/peterpei1186861238/A-Soul-Database/main",
+    
     ]
-const urlChoice = 2;
+const urlChoice = 0;
 export default {
+    RunOnLocal:urlChoice !== 0,//当urlChoice不为0时，说明工程在本地跑
     sourceUrl:sourceUrls[urlChoice]
 }
 
@@ -160,14 +161,15 @@ export function match(queryJson,json){
         if(queryJson["titlestr"] === ""&&queryJson["tagstr"]===""&&queryJson["typestr"] === "") return true;
         // keyword = "titlestr"
         {
-            if(json["title"].indexOf(queryJson["titlestr"]) !== -1){
+            if(json["title"].toLowerCase().indexOf(queryJson["titlestr"].toLowerCase()) !== -1){
                 return true;
             }
         }
         // keyword = "tagstr"
         {
+            
             for(let tag of json["tags"]){
-                if(tag.indexOf(queryJson["tags"]) !== -1){
+                if(tag.toLowerCase().indexOf(queryJson["tagstr"].toLowerCase()) !== -1){
                     return true;
                 }
             }
@@ -176,7 +178,7 @@ export function match(queryJson,json){
         {
             for(let arr of json["items"]){
                 for(let i of arr["item"]){
-                    if(i[0].indexOf(queryJson["typestr"]) !== -1){
+                    if(i[0].toLowerCase().indexOf(queryJson["typestr"].toLowerCase()) !== -1){
                         return true;
                     }
                 }

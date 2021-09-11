@@ -27,7 +27,7 @@ let searchJson = getJsonData(sourceUrl+"/db/2021/search.json");
 let mainJson = getJsonData(sourceUrl+"/db/2021/main.json");
 let indexerList = getJsonData(sourceUrl+"/db/2021/indexer.json");
 
-
+const highlightColor = "yellow";
 
 
 function getSubtitles(bv){
@@ -202,7 +202,6 @@ class SubtitlePage extends React.Component{
     let subtitles = [];
     if(displayBV !== ""){
       subtitles = getSubtitles(displayBV);
-      console.log(subtitles);
     }
     return(
       <PageContainer>
@@ -236,34 +235,34 @@ class SubtitlePage extends React.Component{
             <Col xs={11} md={11}>字幕</Col>
           </Row>
           <Row style={{"borderBottom":"2px solid"}}><Text type="secondary">字幕搜索结果会以高亮展示💃💃💃往下翻翻吧</Text></Row>
-          {subtitles.map((clipSubtitles)=>{
-            console.log(clipSubtitles); 
-            return clipSubtitles.map((s)=>{
+          {subtitles.map((clipSubtitles,clip)=>{ 
+            return (
+            <>
+            <Row><Col
+                  style={{"color":"#9AC8E2","borderBottom":"1px solid"}}
+                ><a target="_blank" href={"https://www.bilibili.com/"+displayBV+"?p="+(clip+1)}>{"切片"+(clip+1)}</a></Col></Row>
+            <>{
+            clipSubtitles.map((s)=>{
               let srtArr = s.split("|");
               let index = srtArr[0];
               let time = srtArr[1];
               let text = srtArr[2];
-              // console.log(srtArr);
-              let ClipRow;
-              if(index === "0"){
-                ClipRow = ()=>{return (<Row><Col
-                  style={{"color":"#9AC8E2","borderBottom":"1px solid"}}
-                >{"切片分割线"}</Col></Row>)}
-              }else{
-                ClipRow = ()=>{return (<></>)}
-              }
-              // const ClipRow = ()=>{return (<Row><Col
-              //   style={{"color":"#9AC8E2","borderBottom":"1px solid"}}
-              // >{"切片分割线"}</Col></Row>)};
+              
+              const hour = parseInt(time.split("-->")[0].split(":")[0]);
+              const min = parseInt(time.split("-->")[0].split(":")[1]);
+              const sec = parseInt(time.split("-->")[0].split(":")[2].split(",")[0]);
+              const totalSec = hour*3600+60*min+sec;
+              const href = "https://www.bilibili.com/"+displayBV+"?p="+(clip+1)+"&t="+totalSec;
+              
+              
               return (
               <>
-              <ClipRow/>
               <Row style={{"borderBottom":"1px dashed"}}>
                 <Col xs={3} md={3} style={{"color":"#B8A6D9"}}>{index}</Col>
-                <Col xs={10} md={10} style={{"color":"#E799B0"}}>{time}</Col>
-                <Col xs={11} md={11} style={{"color":"#576690"}}>
+                <Col xs={10} md={10}><a target="_blank" href={href}>{time}</a></Col>
+                <Col xs={11} md={11} style={{"color":"#E799B0"}}>
                   <Highlighter
-                    highlightStyle={{ backgroundColor: '#BD7D74', padding: 0 }}
+                    highlightStyle={{ backgroundColor: highlightColor, padding: 0 }}
                     searchWords={[searchWords]}
                     autoEscape
                     textToHighlight= {text}></Highlighter>
@@ -271,7 +270,11 @@ class SubtitlePage extends React.Component{
                   </Row>
                 </>
                   );
-  })})}
+              })
+            }</>
+            </>
+
+  )})}
         </Modal>
       </PageContainer>
     );

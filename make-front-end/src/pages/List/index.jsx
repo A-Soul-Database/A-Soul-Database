@@ -6,12 +6,7 @@ import { InfoCircleOutlined, UndoOutlined, ClearOutlined, SearchOutlined } from 
 import {match,reverseArray,getJsonData} from "../../../public/js/basic.js";
 import config from "../../../public/js/basic.js";
 import Highlighter from 'react-highlight-words';
-// import mainJson from "../../../../db/2021/main.json";
-// import coverJson from "../../../../db/2021/Cover.json";
-//本地测试时的import路径，后来发现这样做不行，因为若服务器上修改json文件内容，其修改并不会被同步到这个文件中
-// import mainJson from "D:/asoul/A-Soul-Database/db/2021/main.json";
-// import coverJson from "D:/asoul/A-Soul-Database/db/2021/cover.json";
-//采用发送http的方式来获取json文件，这样永远都是最新版的json啦！
+
 
 
 const sourceUrl = config.sourceUrl;
@@ -24,7 +19,7 @@ const Panel = Collapse.Panel;
 const { Meta } = Card;
 const {Title,Text} = Typography;
 
-
+const highlightColor = "yellow";
 
 
   
@@ -299,16 +294,23 @@ class AvatarCard extends React.Component{
     return res;
   }
 
-  itemToReactNode = (item,name)=>{
+  itemToReactNode = (item,name,bv)=>{
     const {typeSearchWords} = this.props;
+    let time = item[1];
+    const clip = time.split("-")[0];
+    const min = parseInt(time.split("-")[1].split(":")[0]);
+    const sec = parseInt(time.split("-")[1].split(":")[1]);
+    const totalSec = min*60+sec;
+    const href = "https://www.bilibili.com/"+bv+"?p="+clip+"&t="+totalSec;
+    
     if(item.length >= 3){
       return (
         <Row style={{"borderBottom":"1px dotted"}}>
-          <Col md={4}>{item[1]}</Col>
+          <Col md={4}><a target="_blank" href={href}>{item[1]}</a></Col>
           <Col md={11}>
           {typeMap[name]}
           <Highlighter
-            highlightStyle={{ backgroundColor: '#BD7D74', padding: 0 }}
+            highlightStyle={{ backgroundColor: highlightColor, padding: 0 }}
             searchWords={[typeSearchWords]}
             autoEscape
             textToHighlight={item[0]}
@@ -321,7 +323,7 @@ class AvatarCard extends React.Component{
     }else{
       return(
       <Row style={{"borderBottom":"1px dotted"}}>
-        <Col md={4}>{item[1]}</Col>
+        <Col md={4}><a target="_blank" href={href}>{item[1]}</a></Col>
         <Col md={11}>{typeMap[name]+item[0]+typeMap[name]}
       </Col></Row>);
     }
@@ -364,7 +366,7 @@ class AvatarCard extends React.Component{
     
     <Row>
       <Highlighter
-        highlightStyle={{ backgroundColor: '#BD7D74', padding: 0 }}
+        highlightStyle={{ backgroundColor: highlightColor, padding: 0 }}
         searchWords={[titleSearchWords]}
         autoEscape
         textToHighlight= {title}></Highlighter>
@@ -402,7 +404,6 @@ class AvatarCard extends React.Component{
             }
             
           })}
-          {/* <b style={{"color":"#E799B0"}}>{sceneMap[scene]}</b> */}
         </Row>
         
           <List
@@ -439,7 +440,7 @@ class AvatarCard extends React.Component{
           <Col ><b>出镜人物</b></Col>
         </Row>
         {items.map((i)=>{
-          return i.item.map((it)=>{return this.itemToReactNode(it,i.name)});
+          return i.item.map((it)=>{return this.itemToReactNode(it,i.name,bv)});
         })}
         <Divider></Divider>
         <Row><b>关键词:</b></Row>
@@ -447,7 +448,7 @@ class AvatarCard extends React.Component{
           {tags.map((tag)=>{
             return (<div style={{"color":"#D63384"}}>
                     <Highlighter
-                      highlightStyle={{ backgroundColor: '#BD7D74', padding: 0 }}
+                      highlightStyle={{ backgroundColor: highlightColor, padding: 0 }}
                       searchWords={[tagSearchWords]}
                       autoEscape
                       textToHighlight= {tag}></Highlighter>

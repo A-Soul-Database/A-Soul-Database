@@ -3,19 +3,17 @@ import { PageContainer } from '@ant-design/pro-layout';
 import { Card, Alert, Typography,Row,Col, Button } from 'antd';
 import { useIntl, FormattedMessage } from 'umi';
 import {TableOutlined,createFromIconfontCN, ProfileOutlined} from '@ant-design/icons';
-import styles from './index.less';
+import config from "../../../public/js/basic.js";
 const {Text,Title}  = Typography;
 const IconFont = createFromIconfontCN({
   scriptUrl: "//at.alicdn.com/t/font_2756813_9ml228rpprq.js",
 });
+const RunOnLocal = config.RunOnLocal;
+let basicHref="";
+if(!RunOnLocal){
+  basicHref="/web/index.html";
+}
 
-const CodePreview = ({ children }) => (
-  <pre className={styles.pre}>
-    <code>
-      <Typography.Text copyable>{children}</Typography.Text>
-    </code>
-  </pre>
-);
 
 export default () => {
   // const intl = useIntl();
@@ -36,7 +34,7 @@ export default () => {
           <Button
             onMouseEnter={(e)=>{setColorOne("#D9D9D9")}}
             onMouseLeave={(e)=>{setColorOne("#737373")}}
-            href="/web/index.html#/./list"
+            href={basicHref+"#/./list"}
             style={{
               "borderRadius":"20px",
               "width":"300px",
@@ -63,7 +61,7 @@ export default () => {
           <Button
             onMouseEnter={(e)=>{setColorTwo("#D9D9D9")}}
             onMouseLeave={(e)=>{setColorTwo("#737373")}}
-            href="/web/index.html#/./subtitle"
+            href={basicHref+"#/./subtitle"}
             style={{
               "borderRadius":"20px",
               "width":"300px",
