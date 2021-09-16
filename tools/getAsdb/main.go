@@ -3,27 +3,29 @@ package main
 var MannualMod bool
 
 type settings struct {
-	update string
 	//上次更新时间
-	checkInterval int
+	update string
 	//检查间隔
-	MonitorUrlApi string
-	//项目链接
-	targetPath string
+	checkInterval int
+	//项目仓库
+	targetResp string
 	//目标路径
-	dbOnly bool
-	//若为True,仅对比db差异，不对比其他内容
+	targetPath string
+	//轮询模式/Webhook模式
+	mannualMod bool
+	//替换模式 string[] db make-font-end tools
+	diffList []string
 }
 
-var MonitorSetting settings
+var Setting settings
 
 func main() {
-	MonitorSetting.update = ""
-	MonitorSetting.checkInterval = 200
-	MonitorSetting.MonitorUrlApi = "https://api.github.com/repos/peterpei1186861238/A-Soul-Database"
-	MonitorSetting.targetPath = "./"
-	MonitorSetting.dbOnly = true
-	MannualMod = false
+	Setting.update = ""
+	Setting.checkInterval = 200
+	Setting.targetResp = "peterpei1186861238/A-Soul-Database"
+	Setting.targetPath = "./"
+	Setting.diffList = ["db"]
+	Setting.mannualMod = false
 	if !MannualMod {
 		//Webhooks()
 		Updater("")

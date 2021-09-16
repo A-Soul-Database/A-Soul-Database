@@ -1,5 +1,6 @@
 package main
 
+//更新模块
 import (
 	"fmt"
 	"os"
@@ -7,21 +8,21 @@ import (
 )
 
 func Updater(lastUpdate string) bool {
-
-	//更新数据
-	downUrl := "https://github.com/peterpei1186861238/A-Soul-Database.git"
+	//更新数据 lastUpdate:手动检查模式下需要，Webhook模式默认为空。 返回True表示更新成功
+	downUrl := "https://github.com/" + Setting.targetResp + ".git"
 	//Download Main Archive
-	test := "git clone " + downUrl + " " + MonitorSetting.targetPath + "tmp"
-	cmd := exec.Command(test)
+	cmd := exec.Command("git", "clone", downUrl, Setting.targetPath+"tmp")
 	if err := cmd.Run(); err != nil {
 		fmt.Print("", err)
-	}
-	//更新文件
-	Ioerr := os.Rename(MonitorSetting.targetPath+"tmp/db", MonitorSetting.targetPath)
-	if Ioerr != nil {
-		fmt.Print("\nerror in move file to working direct")
 		return false
 	}
-	MonitorSetting.update = lastUpdate
+	fmt.Print("Successfully pulled.")
+	//移动文件到工作目录
+	Ioerr := os.Rename(Setting.targetPath+"tmp/db", Setting.targetPath)
+	if Ioerr != nil {
+		fmt.Print("\nerror in move file to working direct:")
+		return false
+	}
+	Setting.update = lastUpdate
 	return true
 }
