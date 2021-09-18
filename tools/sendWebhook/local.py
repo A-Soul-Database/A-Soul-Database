@@ -8,6 +8,6 @@ def main():
         "web":False,
         "tools":False
     }
-    requests.post("",json=result)
+    requests.post("http://127.0.0.1:8988",json=result)
 
 main()

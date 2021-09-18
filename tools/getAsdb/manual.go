@@ -16,18 +16,18 @@ func Mannual() {
 	var lastUpdate string
 	for {
 		lastUpdate = monitor()
-		if lastUpdate != Setting.update {
+		if lastUpdate != Setting.Update {
 			fmt.Print("last update at " + lastUpdate + "\n")
 			Updater(lastUpdate)
 		}
-		time.Sleep(time.Duration(Setting.checkInterval) * time.Second)
+		time.Sleep(time.Duration(Setting.CheckInterval) * time.Second)
 		//设置定时器
 	}
 }
 
 func monitor() string {
 	fmt.Print("Trying to ask for update\n")
-	resp, err := http.Get("https://api.github.com/repos/" + Setting.targetResp)
+	resp, err := http.Get("https://api.github.com/repos/" + Setting.TargetRepo)
 	if err != nil {
 		fmt.Print(err)
 		return "err"

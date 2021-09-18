@@ -7,3 +7,27 @@
 
 #####  如果我没有公网Ip,无法使用Webhooks该怎么办
 您可以通过监听Github Api的更新进行pull,不过定期pull会耗费一定的网络，且确保您的网络条件可以连接Github
+
+##### 使用
+###### 对于Githubwebhook
+1. 确保你已经安装go,执行`go get .`获取必要的包
+2. 执行
+    ```
+        $: GithubToken=xxxxxx 
+        $: export GithubToken
+    ```
+    来导入配置的GIthubToken
+
+3. 配置 config.json 中的各项值(请在三确保targetPath的配置) `mannualMod=false` `isGithubOfficial=true`
+4. `go run .` 以运行, 长时间运行请使用 `nohup go run . &`
+
+###### 对于GithubActions Webhook 
+1. 确保你已经安装go,执行`go get .`获取必要的包
+2. 通过Pull Request 添加 `sendList.txt` <b>请逐行添加<b>
+3. 配置 config.json 中的各项值(请在三确保targetPath的配置) `mannualMod=false` `isGithubOfficial=false`
+4. `go run .` 以运行, 长时间运行请使用 `nohup go run . &`
+
+###### 对于没有公网Ip或者其他情况
+1. 确保你已经安装go,执行`go get .`获取必要的包
+2. 配置 config.json 中的各项值(请在三确保targetPath的配置) `mannualMod=true`
+3. `go run .` 以运行, 长时间运行请使用 `nohup go run . &`
