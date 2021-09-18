@@ -1,4 +1,4 @@
-## [asdb](https://asdb.live) -- A-SOUL Live Clip Database  A-SOUL 非官方直播数据库 
+## [Asdb](https://asdb.live) -- A-SOUL Live Clip Database  A-SOUL 非官方直播数据库 
 
 #### 简介
 A-Soul 简介
