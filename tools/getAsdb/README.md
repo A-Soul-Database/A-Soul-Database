@@ -1,4 +1,4 @@
-### Get Asdb
+### 保持数据库最新
 
 #### 若您希望自动拉取最新的 asdb 数据供您使用，您可以考虑部署该项目于您的服务器/主机上
 
@@ -23,7 +23,7 @@
 
 ###### 对于GithubActions Webhook 
 1. 确保你已经安装go,执行`go get .`获取必要的包
-2. 通过Pull Request 添加 `sendList.txt` <b>请逐行添加<b>
+2. 通过Pull Request 添加 `/tools/sendWebhook/sendList.txt` <b>请逐行添加<b>
 3. 配置 config.json 中的各项值(请在三确保targetPath的配置) `mannualMod=false` `isGithubOfficial=false`
 4. `go run .` 以运行, 长时间运行请使用 `nohup go run . &`
 

@@ -21,7 +21,10 @@ def main():
             result["db"] = True
         if i.split("/")[0] == "make-front-end":
             result["web"] = True
-
-    requests.post("",json=result)
+    with open("./sendList.txt","r",encoding="utf-8")as f:
+        urlList = f.read().split("\n")
+        f.close()
+    for i in urlList:
+        requests.post(i,json=result)
 
 main()
