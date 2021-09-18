@@ -21,7 +21,7 @@ def main():
             result["db"] = True
         if i.split("/")[0] == "make-front-end":
             result["web"] = True
-    with open("./sendList.txt","r",encoding="utf-8")as f:
+    with open("tools/sendWebhook/sendList.txt","r",encoding="utf-8")as f:
         urlList = f.read().split("\n")
         f.close()
     for i in urlList:
