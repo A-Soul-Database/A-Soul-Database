@@ -91,4 +91,4 @@ make-front-end --- 前端的react源码
 * 按时间搜索
 
 #### 前端托管
-目前本网站托管于 Github Pages 并使用 Vercel CDN 部署&加速，部分由 jsdeliever 加速
+目前本网站托管于 Github Pages,暂时重定向到Asoul Fan的国内服务器上。
