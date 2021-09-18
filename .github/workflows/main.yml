@@ -32,7 +32,7 @@ jobs:
           python-version: '3.7'
       - name: 'Install requirements'
         run: |
-         pip install -r /tools/sendWebhook/requirements.txt
+         pip install -r tools/sendWebhook/requirements.txt
          
       - name: File Changes Action
         uses: trilom/file-changes-action@v1.2.4
