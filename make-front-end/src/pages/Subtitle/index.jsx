@@ -1,7 +1,7 @@
 import React from 'react';
 import { PageContainer } from '@ant-design/pro-layout';
-import { Card, Alert, Typography,Avatar,Row,Col,Checkbox,Collapse,Table,Input, Button,Modal, ConfigProvider } from 'antd';
-import { InfoCircleOutlined, UndoOutlined, ClearOutlined, SearchOutlined } from '@ant-design/icons';
+import { Card, Alert, Typography,Avatar,Row,Col,Checkbox,Collapse,Table,Input, Button,Modal, ConfigProvider,Anchor } from 'antd';
+import { InfoCircleOutlined, UndoOutlined, ClearOutlined, SearchOutlined,CaretUpFilled,CaretDownFilled } from '@ant-design/icons';
 import Highlighter from 'react-highlight-words';
 import {reverseArray,getJsonData,getData} from "../../../public/js/basic.js";
 import config from "../../../public/js/basic.js";
@@ -177,10 +177,12 @@ class SubtitlePage extends React.Component{
     dataSource: this.props.initDatasrc,
     isModalVisible: false,
     displayBV:"",
-    searchWords:""
+    searchWords:"",
+    currentID:0
   }
   handleCancel = ()=>{
-    this.setState({isModalVisible:false});
+    this.scrollTop();
+    this.setState({isModalVisible:false,currentID:0});
   }
   handleSearch = (searchWords)=>{
     this.setState({searchWords:searchWords});
@@ -189,7 +191,7 @@ class SubtitlePage extends React.Component{
       let bv = data["bv"];
       let subtitles = searchJson[bv]["srt"];
       
-      if(subtitles.indexOf(searchWords)!== -1)  newDatasrc.push(data);
+      if(subtitles.toLowerCase().indexOf(searchWords.toLowerCase())!== -1)  newDatasrc.push(data);
     }
     this.setState({dataSource:newDatasrc});
   }
@@ -197,8 +199,37 @@ class SubtitlePage extends React.Component{
     let newDatasrc = reverseArray(this.state.dataSource);
     this.setState({dataSource:newDatasrc});
   }
+  scrollTop = () => {
+        let anchorElement = document.getElementById("Table-top");
+        anchorElement.scrollIntoView({behavior:'auto'});
+  }
+  scrollNext = (className) =>{
+    let anchorElements = document.getElementsByClassName(className);
+    
+    if(anchorElements.length === 0) return;
+    const i = this.state.currentID;
+    anchorElements[i].scrollIntoView({behavior:'smooth'});
+    if(i >= anchorElements.length-1){
+      this.setState({currentID:0})
+    }else{
+      this.setState({currentID:i+1});
+    }
+  }
+  scrollPre = (className)=>{
+    let anchorElements = document.getElementsByClassName(className);
+    
+    if(anchorElements.length == 0) return;
+    const i = this.state.currentID;
+    anchorElements[i].scrollIntoView({behavior:'smooth'});
+    if(i <= 0){
+      this.setState({currentID:anchorElements.length-1});
+    }else{
+      this.setState({currentID:i-1});
+    }
+  }
   render(){
     const {isModalVisible,displayBV,searchWords} = this.state;
+    
     let subtitles = [];
     if(displayBV !== ""){
       subtitles = getSubtitles(displayBV);
@@ -216,6 +247,7 @@ class SubtitlePage extends React.Component{
             onRow={(record)=>{
               return {
                 onClick: (e)=>{
+                  
                   this.setState({
                     isModalVisible:true,
                     displayBV: record["bv"]
@@ -227,19 +259,34 @@ class SubtitlePage extends React.Component{
           ></ProTable>
           </Col>
         </Row>
-        <Modal visible={isModalVisible} maskClosable={true} onCancel={this.handleCancel} footer={null}>
+        
+        <Modal id="modal"
+          visible={isModalVisible} 
+          maskClosable={true} 
+          onCancel={this.handleCancel} 
+          footer={null}
+          
+        >
+          
           <Row><Col xs={24} md={24} align="middle"><Title>字幕表</Title></Col></Row>
+          <Row><Col><a onClick={()=>this.scrollPre("active-highlight")} 
+            
+          ><CaretUpFilled/>上一条搜索结果</a></Col></Row>
+          <Row><Col><a onClick={()=>this.scrollNext("active-highlight")}><CaretDownFilled/>下一条搜索结果</a></Col></Row>
           <Row>
             <Col xs={3} md={3}>序号</Col>
             <Col xs={10} md={10}>时间</Col>
             <Col xs={11} md={11}>字幕</Col>
           </Row>
-          <Row style={{"borderBottom":"2px solid"}}><Text type="secondary">字幕搜索结果会以高亮展示💃💃💃往下翻翻吧</Text></Row>
+          <Row style={{"borderBottom":"2px solid"}}><Text type="secondary">字幕搜索结果会以高亮展示，用按键上下移动吧💃💃💃</Text></Row>
+          
+          <Row>
+          <Col span={24} style={{"height":"500px","overflowY":"scroll"}}>
           {subtitles.map((clipSubtitles,clip)=>{ 
             return (
             <>
             <Row><Col
-                  style={{"color":"#9AC8E2","borderBottom":"1px solid"}}
+                  style={{"color":"#9AC8E2","borderBottom":"1px solid"}} id="Table-top"
                 ><a target="_blank" href={"https://www.bilibili.com/"+displayBV+"?p="+(clip+1)}>{"切片"+(clip+1)}</a></Col></Row>
             <>{
             clipSubtitles.map((s)=>{
@@ -253,11 +300,11 @@ class SubtitlePage extends React.Component{
               const sec = parseInt(time.split("-->")[0].split(":")[2].split(",")[0]);
               const totalSec = hour*3600+60*min+sec;
               const href = "https://www.bilibili.com/"+displayBV+"?p="+(clip+1)+"&t="+totalSec;
-              
-              
+              let className='';
+              if(text.toLowerCase().indexOf(searchWords.toLowerCase())!== -1)  className='active-highlight';
               return (
               <>
-              <Row style={{"borderBottom":"1px dashed"}}>
+              <Row style={{"borderBottom":"1px dashed"}} className={className}>
                 <Col xs={3} md={3} style={{"color":"#B8A6D9"}}>{index}</Col>
                 <Col xs={10} md={10}><a target="_blank" href={href}>{time}</a></Col>
                 <Col xs={11} md={11} style={{"color":"#E799B0"}}>
@@ -265,16 +312,20 @@ class SubtitlePage extends React.Component{
                     highlightStyle={{ backgroundColor: highlightColor, padding: 0 }}
                     searchWords={[searchWords]}
                     autoEscape
-                    textToHighlight= {text}></Highlighter>
+                    textToHighlight= {text}
+                    ></Highlighter>
                   </Col>
                   </Row>
                 </>
                   );
               })
-            }</>
+            }
+            </>
             </>
 
   )})}
+  </Col>
+  </Row>
         </Modal>
       </PageContainer>
     );
@@ -289,6 +340,7 @@ export default () => {
     }
     return (
       <ConfigProvider locale={zhCN}>
+        
         <SubtitlePage {...subPageProps}/>
       </ConfigProvider>
     );
