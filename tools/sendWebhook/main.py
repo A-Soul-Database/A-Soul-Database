@@ -25,6 +25,10 @@ def main():
         urlList = f.read().split("\n")
         f.close()
     for i in urlList:
-        requests.post(i,json=result)
-
+        try:
+            print("trying to POST info to",i)
+            r = requests.post(i,json=result)
+            print("POST with result ",r.status_code)
+        finally:
+            sys.exit()
 main()
