@@ -28,7 +28,7 @@ def main():
         try:
             print("trying to POST info to",i)
             r = requests.post(i,json=result)
-            print("POST with result ",r.status_code)
+            print("POST with result to "+ i + "with returning " + r.status_code)
         finally:
             sys.exit()
 main()
