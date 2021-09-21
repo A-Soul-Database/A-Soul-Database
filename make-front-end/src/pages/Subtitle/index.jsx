@@ -60,19 +60,15 @@ function getSubtitles(bv){
 
 let tableListDataSource = [];
 
-for(let n in indexerList){
+for(let n in mainJson){
   let title;
   let bv;
   let date;
   let hour;
 
+  
   try{
-    title = searchJson[indexerList[n]]["title"];
-    
-  }catch{
-    console.error("title fault for bv: "+indexerList[n])
-  }
-  try{
+    title = mainJson[n]["title"];
     bv = mainJson[n]["bv"];
     date = mainJson[n]["date"];
     hour = mainJson[n]["time"];
@@ -128,7 +124,12 @@ class ToolKits extends React.Component{
   }
   handleClear = (e) =>{
     this.setState({input:""});
-    this.props.parent.handleSearch("");
+    const initDatasrc = this.props.parent.props.initDatasrc;
+    this.props.parent.setState({
+      dataSource: initDatasrc,
+      searchWords: "",
+      currentID: 0
+    })
   }
 
   handleReverse = (e) =>{
@@ -201,7 +202,13 @@ class SubtitlePage extends React.Component{
     let newDatasrc = [];
     for(let data of this.props.initDatasrc){
       let bv = data["bv"];
-      let subtitles = searchJson[bv]["srt"];
+      let subtitles;
+      try{
+        subtitles = searchJson[bv]["srt"];
+      }catch{
+        continue;
+      }
+      
       
       if(subtitles.toLowerCase().indexOf(searchWords.toLowerCase())!== -1)  newDatasrc.push(data);
     }
