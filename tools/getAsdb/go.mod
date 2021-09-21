@@ -39,3 +39,5 @@ require (
 	gopkg.in/warnings.v0 v0.1.2 // indirect
 	gopkg.in/yaml.v2 v2.3.0 // indirect
 )
+
+require github.com/yl2chen/cidranger v1.0.2 // indirect

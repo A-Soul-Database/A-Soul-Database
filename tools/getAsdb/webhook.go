@@ -15,13 +15,13 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"log"
+	"net"
 	"net/http"
 	"os"
-	"strconv"
 	"strings"
 
-	"github.com/3th1nk/cidr"
 	"github.com/gin-gonic/gin"
+	"github.com/yl2chen/cidranger"
 )
 
 func Webhooks() {
@@ -47,6 +47,7 @@ func actionswebHook(c *gin.Context) {
 	/*Github actions的webhook*/
 	if !isFromGithub(c) {
 		log.Print("illegal call from", c.ClientIP())
+		c.AbortWithStatus(500)
 		return
 	}
 	var webhooks WebhookStruct
@@ -71,7 +72,6 @@ func actionswebHook(c *gin.Context) {
 
 func isFromGithub(c *gin.Context) bool {
 	/*限制Github ip,防止第三方POST*/
-	ending := false
 	fp, err := ioutil.ReadFile("./utils/githubIps")
 	if err != nil {
 		log.Print("error in open github IPs")
@@ -83,35 +83,22 @@ func isFromGithub(c *gin.Context) bool {
 	//分割为每个ip
 
 	//对于127.0.0.1 clientip0 =127 , clientip1=0 ...
-	clientIp0, _ := strconv.Atoi(strings.Split(c.ClientIP(), ".")[0])
-	clientIp1, _ := strconv.Atoi(strings.Split(c.ClientIP(), ".")[1])
-	clientIp2, _ := strconv.Atoi(strings.Split(c.ClientIP(), ".")[2])
-	clientIp3, _ := strconv.Atoi(strings.Split(c.ClientIP(), ".")[3])
+
 	//前两位ip比较
 
-	beginIps := [2]string{strconv.Itoa(clientIp0), strconv.Itoa(clientIp1)}
 	//请求的前两位IP
+	ranger := cidranger.NewPCTrieRanger()
 	for k := range whitlelistString {
-		githubBeginIps := [2]string{strings.Split(whitlelistString[k], ".")[0], strings.Split(whitlelistString[k], ".")[1]}
-		if githubBeginIps != beginIps {
-			//GO 没有数组查找功能，我真的哭死
-			continue
-		} else {
-			c, _ := cidr.ParseCIDR(whitlelistString[k])
-			//如果前两项匹配就该计算后两项
-			start, end := c.IPRange()
-			//第三位和第四位的起始ip
-			start2, _ := strconv.Atoi(strings.Split(start, ".")[2])
-			start3, _ := strconv.Atoi(strings.Split(start, ".")[3])
-			end2, _ := strconv.Atoi(strings.Split(end, ".")[2])
-			end3, _ := strconv.Atoi(strings.Split(end, ".")[3])
-			if clientIp2-start2 > 0 && clientIp2-end2 < 0 && clientIp3-start3 > 0 && clientIp3-end3 < 0 {
-				ending = true
-				break
-			}
-		}
+		_, networks, _ := net.ParseCIDR(whitlelistString[k])
+		ranger.Insert(cidranger.NewBasicRangerEntry(*networks))
 	}
-	return ending
+
+	contains, err := ranger.Contains(net.ParseIP(c.ClientIP()))
+	if err != nil {
+		log.Panic(err)
+	}
+
+	return contains
 }
 
 func githubHook(c *gin.Context) {
