@@ -61,14 +61,26 @@ function getSubtitles(bv){
 let tableListDataSource = [];
 
 for(let n in indexerList){
-  let title = searchJson[indexerList[n]]["title"];
-  let bv = mainJson[n]["bv"];
-  //let subtitles = getSubtitles(bv);//这样写，会导致加载时需要发送190多个http请求，而且用的是同步阻塞。直接把页面炸穿。希望能有大神给改成异步式或者是别的什么方法，比如直接从本地加载？
-  //console.log(subtitles);
-  let date = mainJson[n]["date"];
-  let hour = mainJson[n]["time"];
+  let title;
+  let bv;
+  let date;
+  let hour;
+
+  try{
+    title = searchJson[indexerList[n]]["title"];
+    
+  }catch{
+    console.error("title fault for bv: "+indexerList[n])
+  }
+  try{
+    bv = mainJson[n]["bv"];
+    date = mainJson[n]["date"];
+    hour = mainJson[n]["time"];
+  }catch{
+    console.error("mainJson parse fault for n: "+n);
+  }
   
-  // let time = mainJson[n]["date"]+""+mainJson[n]["time"];
+
   tableListDataSource.push({key:n,date:date,hour:hour,bv:bv,title:title});
 }
 // console.log(tableListDataSource);
