@@ -17,8 +17,10 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strconv"
 	"strings"
 
+	"github.com/3th1nk/cidr"
 	"github.com/gin-gonic/gin"
 )
 
@@ -75,26 +77,38 @@ func isFromGithub(c *gin.Context) bool {
 		log.Print("error in open github IPs")
 	}
 	/*读取GithubActions 白名单。 Refer : https://api.github.com/meta
-	因为是网段，所以直接对比前三位了
+	IP 采用CIDR 计数
 	*/
 	whitlelistString := strings.Split(string(fp), ",")
 	//分割为每个ip
-	senderIpStr := ""
-	for i := 0; i < 3; i++ {
-		senderIpStr += strings.Split(c.ClientIP(), ".")[i]
-	}
-	//把前三位IP替换为一个大的字符串，例如 127.0.0.0 => 12700
-	var gitIpStr string
-	var thisWhiteListIp []string
+
+	//对于127.0.0.1 clientip0 =127 , clientip1=0 ...
+	clientIp0, _ := strconv.Atoi(strings.Split(c.ClientIP(), ".")[0])
+	clientIp1, _ := strconv.Atoi(strings.Split(c.ClientIP(), ".")[1])
+	clientIp2, _ := strconv.Atoi(strings.Split(c.ClientIP(), ".")[2])
+	clientIp3, _ := strconv.Atoi(strings.Split(c.ClientIP(), ".")[3])
+	//前两位ip比较
+
+	beginIps := [2]string{strconv.Itoa(clientIp0), strconv.Itoa(clientIp1)}
+	//请求的前两位IP
 	for k := range whitlelistString {
-		thisWhiteListIp = strings.Split(whitlelistString[k], ".")[:3]
-		gitIpStr = ""
-		for i := 0; i < 3; i++ {
-			gitIpStr += thisWhiteListIp[i]
-		}
-		if gitIpStr == senderIpStr {
-			break
-			ending = true
+		githubBeginIps := [2]string{strings.Split(whitlelistString[k], ".")[0], strings.Split(whitlelistString[k], ".")[1]}
+		if githubBeginIps != beginIps {
+			//GO 没有数组查找功能，我真的哭死
+			continue
+		} else {
+			c, _ := cidr.ParseCIDR(whitlelistString[k])
+			//如果前两项匹配就该计算后两项
+			start, end := c.IPRange()
+			//第三位和第四位的起始ip
+			start2, _ := strconv.Atoi(strings.Split(start, ".")[2])
+			start3, _ := strconv.Atoi(strings.Split(start, ".")[3])
+			end2, _ := strconv.Atoi(strings.Split(end, ".")[2])
+			end3, _ := strconv.Atoi(strings.Split(end, ".")[3])
+			if clientIp2-start2 > 0 && clientIp2-end2 < 0 && clientIp3-start3 > 0 && clientIp3-end3 < 0 {
+				ending = true
+				break
+			}
 		}
 	}
 	return ending
