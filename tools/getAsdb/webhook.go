@@ -47,7 +47,7 @@ func actionswebHook(c *gin.Context) {
 	/*Github actions的webhook*/
 	if !isFromGithub(c) {
 		log.Print("illegal call from", c.ClientIP())
-		c.AbortWithStatus(500)
+		c.AbortWithStatus(404)
 		return
 	}
 	var webhooks WebhookStruct
@@ -79,25 +79,21 @@ func isFromGithub(c *gin.Context) bool {
 	/*读取GithubActions 白名单。 Refer : https://api.github.com/meta
 	IP 采用CIDR 计数
 	*/
+
 	whitlelistString := strings.Split(string(fp), ",")
-	//分割为每个ip
-
-	//对于127.0.0.1 clientip0 =127 , clientip1=0 ...
-
-	//前两位ip比较
-
-	//请求的前两位IP
 	ranger := cidranger.NewPCTrieRanger()
+	//分割为每个CIDR
 	for k := range whitlelistString {
-		_, networks, _ := net.ParseCIDR(whitlelistString[k])
-		ranger.Insert(cidranger.NewBasicRangerEntry(*networks))
+		thisCIDR := strings.Trim(whitlelistString[k], " ")
+		thisCIDR = strings.Trim(thisCIDR, "'")
+		_, kcidr, err := net.ParseCIDR(string(thisCIDR))
+		if err != nil {
+			log.Print(err)
+			return false
+		}
+		ranger.Insert(cidranger.NewBasicRangerEntry(*kcidr))
 	}
-
 	contains, err := ranger.Contains(net.ParseIP(c.ClientIP()))
-	if err != nil {
-		log.Panic(err)
-	}
-
 	return contains
 }
 
