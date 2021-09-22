@@ -6,7 +6,7 @@ import Highlighter from 'react-highlight-words';
 import {reverseArray,getJsonData,getData} from "../../../public/js/basic.js";
 import config from "../../../public/js/basic.js";
 import ProTable from '@ant-design/pro-table';
-import { range } from 'lodash';
+
 //import srtJson from "../../../../db/srt.json";//目前是本地加载
 import zhCN from 'antd/lib/locale/zh_CN';
 import { useIntl, FormattedMessage } from 'umi';
@@ -31,15 +31,36 @@ const highlightColor = "yellow";
 
 
 function getSubtitles(bv){
+  //TODO:加强鲁棒性
   let index = indexerList.indexOf(bv);
+  if(mainJson[index]["bv"] != bv){
+    console.error("indexer.json don't match mainJson in bv fileds, index: "+index);
+    return new Array();
+  }
+  let clip = 1;
+  let month = "";
+  try{
+    clip = parseInt(mainJson[index]["clip"]);
+    month = mainJson[index]["date"].split("-")[0];
+  }catch{
+    console.error("clip and month parse fault in bv: "+bv);
+  }
+  if(month === "" || clip === 0) return new Array();
+  if(month.length===1){month="0"+month};
 
-  let clip = parseInt(mainJson[index]["clip"]);
-  let month = mainJson[index]["date"].split("-")[0];
-  if(month.length===1){month="0"+month}
   let subtitles = new Array(clip);
   for(let i=0;i<clip;i++) subtitles[i] = [];
   if(clip===1){
-      let srt = getData(sourceUrl+"/db/2021/"+month+"/srt/"+bv+".srt");
+      let srt = "";
+      let url = sourceUrl+"/db/2021/"+month+"/srt/"+bv+".srt";
+      try{
+        srt = getData(url);
+      }catch{
+        console.error("Get subtitles fault on url: "+url);
+        subtitles[0].push("||");
+        return subtitles;
+      }
+      
       let srtArr = srt.split("\n");
       for(let i=0;i<srtArr.length-2;i+=4){
         let subtitle = srtArr[i]+"|"+srtArr[i+1]+"|"+srtArr[i+2];
@@ -47,7 +68,16 @@ function getSubtitles(bv){
       }
   }else{
       for(var i =1;i<clip+1;i++){
-          let srt = getData(sourceUrl+"/db/2021/"+month+"/srt/"+bv+"-"+i.toString()+".srt");
+          let srt = "";
+          let url = sourceUrl+"/db/2021/"+month+"/srt/"+bv+"-"+i.toString()+".srt";
+          try{
+            srt = getData(url);
+          }catch{
+            console.error("Get subtitles fault on url: "+url);
+            subtitles[i-1].push("||");
+            continue;
+          }
+          
           let srtArr = srt.split("\n");
           for(let j=0;j<srtArr.length-2;j+=4){
             let subtitle = srtArr[j]+"|"+srtArr[j+1]+"|"+srtArr[j+2];
