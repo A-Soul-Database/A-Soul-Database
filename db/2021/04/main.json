@@ -744,7 +744,7 @@
 	"title": "【A-SOUL】向晚 4.28 你们听五月天吗？来听我弹吉他呀~【直播录像】",
 	"scene": ["domroom"],
 	"type": ["chat", "song"],
-	"staff": ["A", "F"],
+	"staff": ["A"],
 	"clip": 2,
 	"items": [{
 		"name": "game",

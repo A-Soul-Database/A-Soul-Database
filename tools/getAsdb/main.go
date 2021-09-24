@@ -45,6 +45,13 @@ type settings struct {
 	ListenAddr string `json:"listenAddr"`
 	//是否为GIthubWebhook
 	GithubOfficialWebhook bool `json:"isGithubOfficial"`
+	//收到更新命令后执行触发器(例如要编译自己的web或其他内容) 举例: python3 main.py 或 cnpm build等
+	AfterTriggers triggers
+}
+type triggers struct {
+	AfterTriggerDb    string `json:"db"`
+	AfterTriggerWeb   string `json:"web"`
+	AfterTriggerTools string `json:"tools"`
 }
 
 var Setting settings

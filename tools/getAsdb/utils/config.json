@@ -6,5 +6,10 @@
     "diffList":["db","web"],
     "mannualMod": false ,
     "listenAddr":"127.0.0.1:8988",
-    "isGithubOfficial":false
+    "isGithubOfficial":false,
+    "trigger":{
+        "db":"",
+        "web":"",
+        "tools":""
+    }
 }
