@@ -13,11 +13,10 @@ class GetSrt():
         with open("config.json","r",encoding="utf-8")as f:
             self.Config = json.loads(f.read())
         #获取视频列表
-        self.videoList = os.listdir(self.Config["videoDir"])
-        for i in self.videoList:
-            name = i.split(".")[-1].lower()
-            if name != "mp4" and name != "flv":
-                self.videoList.remove(i)
+        videoFormat = ["mp4","flv"]
+        self.videoList = [fn for fn in os.listdir(self.Config["videoDir"])
+         if any(fn.endswith(formats) for formats in videoFormat)
+        ]
         self.confidence = self.Config["confidence"]
         self.theme = self.Config["theme"]
 
@@ -74,7 +73,7 @@ class GetSrt():
             gui.click(x+width/2,y+height/2)
                 #开始识别
             x,y,width,height = gui.locateOnScreen("./position/srt.png",confidence=self.confidence)
-            gui.click(x+width/2,y+height*4/5)
+            gui.click(x+width/2,y+height*6/7)
         except:
             logging.error("error in start parsing srt")
             return False
@@ -99,7 +98,7 @@ class GetSrt():
             gui.press("backspace")
             time.sleep(1)
             x,y,width,height = gui.locateOnScreen("./position/confirm.png",confidence=self.confidence)
-            gui.moveTo(x+width/4,y+height*6/7)
+            gui.click(x+width/4,y+height*6/7)
         except:
             logging.error("error in removing media file")
             return False
@@ -107,6 +106,7 @@ class GetSrt():
         return True
 
     def parseSrt(self):
+        print(self.videoList)
         for i in self.videoList:
             result = self.parseSrtPart(i)
             if result != True:
