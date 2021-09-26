@@ -33,7 +33,11 @@ func Webhooks() {
 		//GitHub actions的第三方webhook
 		router.POST("/", actionswebHook)
 	}
-	router.Run(Setting.ListenAddr)
+
+	err := router.Run(Setting.ListenAddr)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 type WebhookStruct struct {
@@ -47,16 +51,22 @@ func actionswebHook(c *gin.Context) {
 	/*Github actions的webhook*/
 	if !isFromGithub(c) {
 		log.Print("illegal call from", c.ClientIP())
-		c.AbortWithStatus(404)
+		c.AbortWithStatus(http.StatusBadRequest)
 		return
 	}
+
+	//接收并反序列化json文件
 	var webhooks WebhookStruct
 	body, err := ioutil.ReadAll(c.Request.Body)
 	if err != nil {
 		log.Print("Io read error")
 	}
-	json.Unmarshal(body, &webhooks)
-	//接收并反序列化json文件
+
+	if err = json.Unmarshal(body, &webhooks); err != nil {
+		log.Printf("Unmarshal Webhooks error, message: %s, request hook body: %s \n", err, body)
+		c.AbortWithStatus(http.StatusInternalServerError)
+		return
+	}
 
 	/*对比是否需要更新*/
 	for items := range Setting.DiffList {
@@ -68,6 +78,8 @@ func actionswebHook(c *gin.Context) {
 			go callUpdater()
 		}
 	}
+
+	c.JSON(http.StatusOK, nil)
 }
 
 func isFromGithub(c *gin.Context) bool {
@@ -76,6 +88,7 @@ func isFromGithub(c *gin.Context) bool {
 	if err != nil {
 		log.Print("error in open github IPs")
 	}
+
 	/*读取GithubActions 白名单。 Refer : https://api.github.com/meta
 	IP 采用CIDR 计数
 	*/
@@ -121,4 +134,10 @@ func githubHook(c *gin.Context) {
 		return
 	}
 }
-func callUpdater() { Updater("") }
+func callUpdater() {
+	defer func() {
+		err := recover()
+		log.Print(err)
+	}()
+	Updater("")
+}
