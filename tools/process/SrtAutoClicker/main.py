@@ -1,4 +1,4 @@
-import os,json,time
+import os,json,time,sys,hashlib
 import pyautogui as gui
 from srtParser import draft_content,simple_srt
 import logging
@@ -66,9 +66,11 @@ class GetSrt():
             x,y,width,height = gui.locateOnScreen("./position/text.png",confidence=self.confidence)
             gui.click(x+width/2,y+height/2)
                 #智能字幕
+            time.sleep(1)
             x,y,width,height = gui.locateOnScreen("./position/AutoSrt.png",confidence=self.confidence)
             gui.click(x+width/2,y+height/2)
                 #清空已有字幕
+            time.sleep(0.5)
             x,y,width,height = gui.locateOnScreen("./position/ClearSrts.png",confidence=self.confidence)
             gui.click(x+width/2,y+height/2)
                 #开始识别
@@ -77,28 +79,37 @@ class GetSrt():
         except:
             logging.error("error in start parsing srt")
             return False
+        time.sleep(1)
         while True:
             #持续中
-            result = gui.locateOnScreen("./position/recon.png",confidence=self.confidence)
-            if result == None:
+            try:
+                with open(self.Config["draftContentPath"],"rb") as f:
+                    f.close()
+            except PermissionError:
+                time.sleep(2)
                 break
-        
-        
+
+
         #3.字幕提取
         self.SrtMain((self.Config["draftContentPath"],name))
             #点击“媒体”  
         
-        try:
-            time.sleep(0.5)
-            x,y,width,height = gui.locateOnScreen("./position/media.png",confidence=self.confidence)
-            gui.click(x+width/2,y+height/2)
+        
+        time.sleep(3)
+        x,y,width,height = gui.locateOnScreen("./position/media.png",confidence=self.confidence)
+        gui.click(x+width/2,y+height/2)
         #4.移除媒体文件
-            x,y,width,height = gui.locateOnScreen("./position/add_small.png",confidence=self.confidence)
-            gui.click(x+(width/2)*3,y+height/2)
-            gui.press("backspace")
-            time.sleep(1)
-            x,y,width,height = gui.locateOnScreen("./position/confirm.png",confidence=self.confidence)
-            gui.click(x+width/4,y+height*6/7)
+        time.sleep(1)
+        x,y,width,height = gui.locateOnScreen("./position/add_small.png",confidence=self.confidence)
+        gui.click(x+(width/2)*3,y+height/2)
+        time.sleep(1)
+        gui.press("backspace")
+        time.sleep(1)
+        x,y,width,height = gui.locateOnScreen("./position/confirm.png",confidence=self.confidence)
+            
+        gui.click(x+width/4,y+height*6/7)
+        try:
+            pass
         except:
             logging.error("error in removing media file")
             return False
@@ -106,13 +117,15 @@ class GetSrt():
         return True
 
     def parseSrt(self):
-        print(self.videoList)
         for i in self.videoList:
             result = self.parseSrtPart(i)
+            time.sleep(2)
             if result != True:
                 logging.error("error in handeling video " + i)
-                print(self.FinishedList)
                 break
+            else:
+                logging.info(f"{i} is done")
+        logging.info("finished:  "+self.FinishedList)
 
     def SrtMain(self,args):
         name = args[1]
@@ -122,4 +135,8 @@ class GetSrt():
         with open(name+".srt", 'w', encoding='utf-8') as f:
             f.write(simple_srt.tracks_to_srt_string(tracks))
     
+    def Md5Calcu(self):
+        with open(self.Config["draftContentPath"],"rb") as f:
+            draftContent = f.read()
+        return hashlib.md5(draftContent).hexdigest()
 GetSrt().parseSrt()
