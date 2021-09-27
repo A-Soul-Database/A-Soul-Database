@@ -61,7 +61,7 @@ const sourceUrls =
     [
     "https://livedb.asoulfan.com",
     "https://raw.githubusercontent.com/peterpei1186861238/A-Soul-Database/main",
-    
+    "https://cdn.jsdelivr.net/gh/peterpei1186861238/A-Soul-Database@latest",
     ]
 const urlChoice = 0;
 export default {
