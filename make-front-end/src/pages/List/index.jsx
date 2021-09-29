@@ -300,8 +300,8 @@ class AvatarCard extends React.Component{
     const clip = time.split("-")[0];
     const min = parseInt(time.split("-")[1].split(":")[0]);
     const sec = parseInt(time.split("-")[1].split(":")[1]);
-    const totalSec = min*60+sec;
-    const href = "https://www.bilibili.com/"+bv+"?p="+clip+"&t="+totalSec;
+    const totalMinSec = (min*60+sec)*1000;
+    const href = "https://www.bilibili.com/"+bv+"?p="+clip+"&start_progress="+totalMinSec;
     
     if(item.length >= 3){
       return (

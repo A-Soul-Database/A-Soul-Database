@@ -347,8 +347,8 @@ class SubtitlePage extends React.Component{
               const hour = parseInt(time.split("-->")[0].split(":")[0]);
               const min = parseInt(time.split("-->")[0].split(":")[1]);
               const sec = parseInt(time.split("-->")[0].split(":")[2].split(",")[0]);
-              const totalSec = hour*3600+60*min+sec;
-              const href = "https://www.bilibili.com/"+displayBV+"?p="+(clip+1)+"&t="+totalSec;
+              const totalMinSec = (hour*3600+60*min+sec)*1000;
+              const href = "https://www.bilibili.com/"+displayBV+"?p="+(clip+1)+"&start_progress="+totalMinSec;
               let className='';
               if(text.toLowerCase().indexOf(searchWords.toLowerCase())!== -1)  className='active-highlight';
               return (
