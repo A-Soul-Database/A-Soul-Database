@@ -42,11 +42,7 @@ const typeMapStr = {"song":"唱歌","chat":"杂谈","game":"游戏","birthday":"
 const avatar = {"A":"./avatars/a.jpg","B":"./avatars/b.jpg","C":"./avatars/c.jpg","D":"./avatars/d.jpg","E":"./avatars/e.jpg","F":"./avatars/f.jpg"};
 const staffMap = {"A":"向晚","B":"贝拉","C":"珈乐","D":"嘉然","E":"乃琳","F":"阿草"};
 const sceneMap = {"show":"展台","domroom":"客厅","spaceship":"太空船","ktv":"ktv","sky":"天空湖","Eroom":"乃琳房间","Aroom":"向晚房间","Droom":"嘉然房间","rooftop":"天台","beach":"海滩","classroom":"教室","singroom":"录音室","danceroom":"练舞房","filmstudio":"摄影棚","seaworld":"海底世界","broadcastroom":"演播室","YUEHUA":"乐华现场"};
-<<<<<<< HEAD
 const skinMap = {"swim":"泳装","official":"官方","sport":"运动服(贝拉)","jk":"jk(贝拉)","chinese":"古风旗袍(嘉然)","group":"团服","birthday":"生日会服装","sleep":"睡衣","christmas":"圣诞服","year":"新年装","DianaOfficialBlue":"蓝色常服(嘉然)"};
-=======
-const skinMap = {"swim":"泳装","official":"官方","sport":"运动服(贝拉)","jk":"jk(贝拉)","chinese":"古风旗袍(嘉然)","group":"团服","birthday":"生日会服装","sleep":"睡衣","christmas":"圣诞服","year":"新年装","DianaOfficialBlue":"嘉然蓝色常服"};
->>>>>>> 0ae1c0d28a6deaa04b9a65df5e9f97903de3f00b
 const platformMap = {"B":"B站","D":"抖音"}
 const toolMap = {"staff":["出镜人物",staffMap],"skin":["服饰",skinMap],"scene":["出场场景",sceneMap],"platform":["平台",platformMap],"type":["活动",typeMapStr]};
 
