@@ -23,18 +23,21 @@ jobs:
     - uses: actions/checkout@v2
     - name: Setup Node.js environment
       uses: actions/setup-node@v2.4.1
-    - name: Build GithubWeb
-      run: | 
+    - name: Install Depenidencies🥰
+      run: |
        npm install cnpm -g
+       cnpm install react-highlight-words
        cd make-front-end/
        cnpm install
-       cnpm install react-highlight-words
+       
+    - name: Build GithubWeb🤠
+      run: | 
        sed -i 's/const urlChoice = 0;/const urlChoice = 2;/g' public/js/basic.js
        echo public/js/basic.js
        cnpm run build
        cd ../
        mv web/* gitweb/*
-    - name: Build ASFWeb
+    - name: Build ASFWeb🥳
       run: |
        cd make-front-end/
        sed -i 's/const urlChoice = 2;/const urlChoice = 0;/g' public/js/basic.js
