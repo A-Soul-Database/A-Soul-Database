@@ -16,6 +16,7 @@ package main
 */
 import (
 	"encoding/json"
+	"flag"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -29,6 +30,7 @@ var MannualMod bool
 var UpdateTrigger bool
 
 type settings struct {
+	LoggerPath string `json:"logger_path"`
 	//上次更新时间
 	Update string `json:"update"`
 	//检查间隔
@@ -45,31 +47,61 @@ type settings struct {
 	ListenAddr string `json:"listenAddr"`
 	//是否为GIthubWebhook
 	GithubOfficialWebhook bool `json:"isGithubOfficial"`
+	//收到更新命令后执行触发器(例如要编译自己的web或其他内容) 举例: python3 main.py 或 cnpm build等
+	AfterTriggers triggers
+}
+type triggers struct {
+	AfterTriggerDb    string `json:"db"`
+	AfterTriggerWeb   string `json:"web"`
+	AfterTriggerTools string `json:"tools"`
 }
 
 var Setting settings
 
-func main() {
-	//读取Config.json 文件以配置
-	jsonFile, err := os.Open("./utils/config.json")
-	if err != nil {
-		log.Fatal("Cannot read config.json!")
-	}
-	defer jsonFile.Close()
-	byteVal, _ := ioutil.ReadAll(jsonFile)
-	json.Unmarshal(byteVal, &Setting)
+var configFile = flag.String("f", "./utils/config.json", "set config file loading.")
 
-	//设置log输出
-	logFile, err := os.OpenFile("./logger.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0644)
-	if err != nil {
-		fmt.Print(err)
+func main() {
+	if _settings, err := readConfig(*configFile); err != nil {
+		log.Fatal(err)
+	} else {
+		Setting = *_settings
+		fmt.Printf("use config file -> %s\n", *configFile)
 	}
-	log.SetOutput(logFile)
-	log.SetFlags(log.Llongfile | log.Lmicroseconds | log.Ldate)
+
+	if Setting.LoggerPath != "" {
+		//设置log输出
+		logFile, err := os.OpenFile(Setting.LoggerPath, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0644)
+		if err != nil {
+			fmt.Print(err)
+		}
+		log.SetOutput(logFile)
+		log.SetFlags(log.Llongfile | log.Lmicroseconds | log.Ldate)
+	}
 
 	if !MannualMod {
 		Webhooks()
 	} else {
 		Mannual()
 	}
+}
+
+func readConfig(configPath string) (*settings, error) {
+	var _settings *settings
+	//读取Config.json 文件以配置
+	jsonFile, err := os.Open(configPath)
+	if err != nil {
+		return nil, err
+	}
+	defer jsonFile.Close()
+
+	byteVal, err := ioutil.ReadAll(jsonFile)
+	if err != nil {
+		return nil, err
+	}
+
+	if err = json.Unmarshal(byteVal, &_settings); err != nil {
+		return nil, err
+	}
+
+	return _settings, nil
 }

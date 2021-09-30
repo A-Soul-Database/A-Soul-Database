@@ -58,17 +58,40 @@ func Cop(typ []string) bool {
 				log.Print("\nerror in move file to working direct:", Ioerr)
 				return false
 			}
-		} else if typ[k] == "tools" {
+			if len(Setting.AfterTriggers.AfterTriggerDb) > 0 {
+				cmd := exec.Command(Setting.AfterTriggers.AfterTriggerDb)
+				if err := cmd.Run(); err != nil {
+					log.Print("error in excuting afterdb", err)
+					return false
+				}
+			}
+		}
+		if typ[k] == "tools" {
 			Ioerr := copy.Copy(Setting.TargetPath+"tmp/tools/", Setting.TargetPath+"tools")
 			if Ioerr != nil {
 				log.Print("\nerror in move file to working direct:", Ioerr)
 				return false
 			}
-		} else if typ[k] == "web" {
+			if len(Setting.AfterTriggers.AfterTriggerTools) > 0 {
+				cmd := exec.Command(Setting.AfterTriggers.AfterTriggerTools)
+				if err := cmd.Run(); err != nil {
+					log.Print("error in excuting aftertools", err)
+					return false
+				}
+			}
+		}
+		if typ[k] == "web" {
 			Ioerr := copy.Copy(Setting.TargetPath+"tmp/web/", Setting.TargetPath+"web")
 			if Ioerr != nil {
 				log.Print("\nerror in move file to working direct:", Ioerr)
 				return false
+			}
+			if len(Setting.AfterTriggers.AfterTriggerWeb) > 0 {
+				cmd := exec.Command(Setting.AfterTriggers.AfterTriggerWeb)
+				if err := cmd.Run(); err != nil {
+					log.Print("error in excuting afterWeb", err)
+					return false
+				}
 			}
 		}
 	}

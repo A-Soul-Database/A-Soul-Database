@@ -1,0 +1,47 @@
+# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: FontCompiler
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v2.4.1
+    - name: Install Depenidencies🥰
+      run: |
+       npm install cnpm -g
+       cnpm install react-highlight-words
+       cd make-front-end/
+       cnpm install
+       
+    - name: Build GithubWeb🤠
+      run: | 
+       sed -i 's/const urlChoice = 0;/const urlChoice = 2;/g' public/js/basic.js
+       echo public/js/basic.js
+       cnpm run build
+       cd ../
+       mv web/* gitweb/*
+    - name: Build ASFWeb🥳
+      run: |
+       cd make-front-end/
+       sed -i 's/const urlChoice = 2;/const urlChoice = 0;/g' public/js/basic.js
+       echo public/js/basic.js
+       cd make-front-end/
+       cnpm run build
+       echo /web/index.html
