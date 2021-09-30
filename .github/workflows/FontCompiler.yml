@@ -23,18 +23,22 @@ jobs:
     - uses: actions/checkout@v2
     - name: Setup Node.js environment
       uses: actions/setup-node@v2.4.1
-
-    - run: npm install cnpm -g
-    - run: cd make-front-end/
-    - run: cnpm install
-    - run: cnpm install react-highlight-words
-    - run: cd ../
-    - run: sed -i 's/const urlChoice = 0;/const urlChoice = 2;/g' make-front-end/public/js/basic.js
-    - run: echo make-front-end/public/js/basic.js
-    - run: cnpm run build
-    - run: mv web/* gitweb/*
-    - run: sed -i 's/const urlChoice = 2;/const urlChoice = 0;/g' make-front-end/public/js/basic.js
-    - run: echo /home/A-Soul-Database/make-front-end/public/js/basic.js
-    - run: cd make-front-end/
-    - run: cnpm run build
-    - run: echo /home/A-Soul-Database/web/index.html
+    - name: Build GithubWeb
+      run: | 
+       npm install cnpm -g
+       cd make-front-end/
+       cnpm install
+       cnpm install react-highlight-words
+       sed -i 's/const urlChoice = 0;/const urlChoice = 2;/g' public/js/basic.js
+       echo public/js/basic.js
+       cnpm run build
+       cd ../
+       mv web/* gitweb/*
+    - name: Build ASFWeb
+      run: |
+       cd make-front-end/
+       sed -i 's/const urlChoice = 2;/const urlChoice = 0;/g' public/js/basic.js
+       echo public/js/basic.js
+       cd make-front-end/
+       cnpm run build
+       echo /web/index.html
