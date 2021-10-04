@@ -41,6 +41,7 @@ jobs:
        mv web/* gitweb
     - name: Build ASFWeb🥳
       run: |
+       pwd
        sed -i 's/const urlChoice = 2;/const urlChoice = 0;/g' public/js/basic.js
        cd make-front-end/
        cnpm run build
