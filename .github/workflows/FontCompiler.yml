@@ -38,7 +38,7 @@ jobs:
        cd ../
        rm -rf gitweb/
        mkdir gitweb
-       mv web/* gitweb/*
+       mv web/* gitweb
     - name: Build ASFWeb🥳
       run: |
        cd make-front-end/
