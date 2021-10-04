@@ -32,6 +32,7 @@ jobs:
        
     - name: Build GithubWeb🤠
       run: | 
+       cd make-front-end/
        sed -i 's/const urlChoice = 0;/const urlChoice = 2;/g' public/js/basic.js
        echo public/js/basic.js
        cnpm run build
