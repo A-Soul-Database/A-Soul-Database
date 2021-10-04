@@ -33,6 +33,7 @@ jobs:
     - name: Build GithubWeb🤠
       run: | 
        pwd
+       ls
        cd make-front-end/
        sed -i 's/const urlChoice = 0;/const urlChoice = 2;/g' public/js/basic.js
        cnpm run build
@@ -43,6 +44,7 @@ jobs:
     - name: Build ASFWeb🥳
       run: |
        pwd
+       ls
        cd make-front-end/
        sed -i 's/const urlChoice = 2;/const urlChoice = 0;/g' public/js/basic.js
        cd make-front-end/
