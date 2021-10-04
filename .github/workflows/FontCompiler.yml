@@ -43,7 +43,7 @@ jobs:
     - name: Build ASFWeb🥳
       run: |
        pwd
-       cd ../make-front-end/
+       cd make-front-end/
        sed -i 's/const urlChoice = 2;/const urlChoice = 0;/g' public/js/basic.js
        cd make-front-end/
        cnpm run build
