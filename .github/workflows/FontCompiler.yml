@@ -41,8 +41,16 @@ jobs:
        mv web/* gitweb
     - name: Build ASFWeb🥳
       run: |
-       cd make-front-end/
        sed -i 's/const urlChoice = 2;/const urlChoice = 0;/g' public/js/basic.js
        cd make-front-end/
        cnpm run build
-       echo /web/index.html
+    - name: CommitChanges💃
+      run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -m "Auto Compile Font" -a
+    - name: PushToRepo🐱‍🏍
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: auto
