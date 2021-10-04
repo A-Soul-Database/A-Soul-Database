@@ -37,6 +37,7 @@ jobs:
        cnpm run build
        cd ../
        rm -rf gitweb/
+       mkdir gitweb
        mv web/* gitweb/*
     - name: Build ASFWeb🥳
       run: |
