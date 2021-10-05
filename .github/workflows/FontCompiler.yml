@@ -32,16 +32,30 @@ jobs:
        
     - name: Build GithubWeb🤠
       run: | 
+       pwd
+       ls
+       cd make-front-end/
        sed -i 's/const urlChoice = 0;/const urlChoice = 2;/g' public/js/basic.js
-       echo public/js/basic.js
        cnpm run build
        cd ../
-       mv web/* gitweb/*
+       rm -rf gitweb/
+       mkdir gitweb
+       mv web/* gitweb
     - name: Build ASFWeb🥳
       run: |
+       pwd
+       ls
        cd make-front-end/
        sed -i 's/const urlChoice = 2;/const urlChoice = 0;/g' public/js/basic.js
-       echo public/js/basic.js
        cd make-front-end/
        cnpm run build
-       echo /web/index.html
+    - name: CommitChanges💃
+      run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -m "Auto Compile Font" -a
+    - name: PushToRepo🐱‍🏍
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: auto
