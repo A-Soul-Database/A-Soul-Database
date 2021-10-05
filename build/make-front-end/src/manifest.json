@@ -1,0 +1,14 @@
+{
+  "name": "Asoul Database",
+  "short_name": "ASDB",
+  "display": "standalone",
+  "start_url": "./?utm_source=homescreen",
+  "theme_color": "#002140",
+  "background_color": "#001529",
+  "icons": [
+    {
+      "src": "icons/logo.png",
+      "sizes": "192x192"
+    }
+  ]
+}
