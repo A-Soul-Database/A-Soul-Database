@@ -32,23 +32,15 @@ jobs:
        
     - name: Build GithubWeb🤠
       run: | 
-       pwd
-       ls
-       cd make-front-end/
-       sed -i 's/const urlChoice = 0;/const urlChoice = 2;/g' public/js/basic.js
-       cnpm run build
-       cd ../
+       sed -i 's/const urlChoice = 0;/const urlChoice = 2;/g' make-front-end/public/js/basic.js
+       sh update-front-end.sh
        rm -rf gitweb/
        mkdir gitweb
        mv web/* gitweb
     - name: Build ASFWeb🥳
       run: |
-       pwd
-       ls
-       cd make-front-end/
-       sed -i 's/const urlChoice = 2;/const urlChoice = 0;/g' public/js/basic.js
-       cd make-front-end/
-       cnpm run build
+       sed -i 's/const urlChoice = 2;/const urlChoice = 0;/g' make-front-end/public/js/basic.js
+       sh update-front-end.sh
     - name: CommitChanges💃
       run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
