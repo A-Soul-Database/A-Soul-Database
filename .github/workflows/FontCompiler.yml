@@ -64,10 +64,6 @@ jobs:
        sed -i 's/const urlChoice = 2;/const urlChoice = 0;/g' make-front-end/public/js/basic.js
        cd make-front-end
        cnpm run build
-       
-  Push_Commit:
-    runs-on: ubuntu-latest
-    steps:
     - name: CommitChanges💃
       run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
