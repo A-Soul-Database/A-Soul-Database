@@ -7,7 +7,30 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+
+  WebHooks:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.7'
+      - name: 'Install requirements'
+        run: |
+         pip install -r tools/sendWebhook/requirements.txt
+         
+      - name: File Changes Action
+        uses: trilom/file-changes-action@v1.2.4
+        
+      - name: Test
+        run: |
+            python3 tools/sendWebhook/main.py
+
+  FontCompiler:
 
     runs-on: ubuntu-latest
 
@@ -41,6 +64,10 @@ jobs:
        sed -i 's/const urlChoice = 2;/const urlChoice = 0;/g' make-front-end/public/js/basic.js
        cd make-front-end
        cnpm run build
+       
+  Push_Commit:
+    runs-on: ubuntu-latest
+    steps:
     - name: CommitChanges💃
       run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
@@ -51,7 +78,10 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: auto
-      
+        
+  Sync_To_Gitee:
+    runs-on: ubuntu-latest
+    steps:
     - name: Sync To Gitee🐱‍👤
       uses: abersheeran/sync-gitee-mirror@v1-beta
       with:
