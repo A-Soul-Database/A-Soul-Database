@@ -34,7 +34,7 @@ jobs:
 
   FontCompiler:
     needs : WebHooks
-    #if: ${{ env.WebUpdate == "1"}}
+    if: ${{ ${{needs.WebHooks.outputs.output1}} == "1"}}
     runs-on: ubuntu-latest
     #shell: bash
     strategy:
@@ -49,7 +49,6 @@ jobs:
     - name: Install Depenidencies🥰
       shell: bash
       run: |
-       echo ${{needs.WebHooks.outputs.output1}}
        cd build
        npm install cnpm -g
        cnpm install react-highlight-words
