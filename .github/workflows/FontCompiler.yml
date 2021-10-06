@@ -31,7 +31,7 @@ jobs:
             python3 tools/sendWebhook/main.py
 
   FontCompiler:
-
+    if: ${{ ${WebUpdate} == "1"}}
     runs-on: ubuntu-latest
 
     strategy:
