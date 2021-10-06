@@ -19,7 +19,7 @@ def main():
             result["tools"] = True
         if i.split("/")[0] == "db":
             result["db"] = True
-        if i.split("/")[0] == "make-front-end":
+        if i.split("/")[0] == "build":
             result["web"] = True
             os.environ["WebUpdate"] = "1"
     with open("tools/sendWebhook/sendList.txt","r",encoding="utf-8")as f:
