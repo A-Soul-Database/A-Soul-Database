@@ -80,7 +80,7 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: auto
         
-  Sync_To_Gitee👨‍💻:
+  Sync_To_Gitee:
     
     if: always()
     needs: [FontCompiler,WebHooks]
