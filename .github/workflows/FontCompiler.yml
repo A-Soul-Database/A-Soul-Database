@@ -33,7 +33,7 @@ jobs:
   FontCompiler:
     #if: ${{ env.WebUpdate == "1"}}
     runs-on: ubuntu-latest
-    shell: bash
+    #shell: bash
     strategy:
       matrix:
         node-version: [16.x]
