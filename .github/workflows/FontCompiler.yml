@@ -45,6 +45,7 @@ jobs:
       uses: actions/setup-node@v2.4.1
     - name: Install Depenidencies🥰
       run: |
+       cd build
        npm install cnpm -g
        cnpm install react-highlight-words
        cd make-front-end/
@@ -52,18 +53,21 @@ jobs:
        
     - name: Build GithubWeb🤠
       run: | 
+       cd build
        sed -i 's/const urlChoice = 0;/const urlChoice = 2;/g' make-front-end/public/js/basic.js
        cd make-front-end
        cnpm run build
        cd ../
-       rm -rf gitweb/
-       mkdir gitweb
-       mv web/* gitweb
+       rm -rf ../webs/gitweb/
+       mkdir ../webs/gitweb
+       mv web/* ../webs/gitweb
     - name: Build ASFWeb🥳
       run: |
+       cd webs
        sed -i 's/const urlChoice = 2;/const urlChoice = 0;/g' make-front-end/public/js/basic.js
        cd make-front-end
        cnpm run build
+       mv ../web/* ../../webs
     - name: CommitChanges💃
       run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
@@ -75,7 +79,7 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: auto
         
-  Sync_To_Gitee:
+  Sync_To_Gitee👨‍💻:
     runs-on: ubuntu-latest
     steps:
     - name: Sync To Gitee🐱‍👤
