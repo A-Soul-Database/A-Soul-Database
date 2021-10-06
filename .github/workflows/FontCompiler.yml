@@ -49,7 +49,7 @@ jobs:
     - name: Install Depenidencies🥰
       shell: bash
       run: |
-       echo ${{needs.WebHooks.Changer.output1}}
+       echo ${{needs.WebHooks.outputs.output1}}
        cd build
        npm install cnpm -g
        cnpm install react-highlight-words
