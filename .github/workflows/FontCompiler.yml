@@ -35,9 +35,8 @@ jobs:
             python3 tools/sendWebhook/main.py
 
   FontCompiler:
-    needs : WebHooks
+    needs : [WebHooks]
     #if: ${{ env.WebUpdate == "1"}}
-    echo ${{needs.WebHooks.outputs.WebUpdate}}
     runs-on: ubuntu-latest
     #shell: bash
     strategy:
@@ -52,6 +51,7 @@ jobs:
     - name: Install Depenidencies🥰
       shell: bash
       run: |
+       echo ${{needs.WebHooks.outputs.WebUpdate}}
        cd build
        npm install cnpm -g
        cnpm install react-highlight-words
