@@ -26,14 +26,15 @@ jobs:
       - name: File Changes Action
         uses: trilom/file-changes-action@v1.2.4
         
-      - name: Test
+      - name: RunChange
         run: |
             python3 tools/sendWebhook/main.py
+            echo env.WebUpdate
 
   FontCompiler:
     if: ${{ env.WebUpdate == "1"}}
     runs-on: ubuntu-latest
-
+    shell: bash
     strategy:
       matrix:
         node-version: [16.x]
@@ -44,6 +45,7 @@ jobs:
     - name: Setup Node.js environment
       uses: actions/setup-node@v2.4.1
     - name: Install Depenidencies🥰
+      shell: bash
       run: |
        cd build
        npm install cnpm -g
@@ -80,6 +82,9 @@ jobs:
         branch: auto
         
   Sync_To_Gitee👨‍💻:
+    
+    if: always()
+    needs: [FontCompiler,WebHooks]
     runs-on: ubuntu-latest
     steps:
     - name: Sync To Gitee🐱‍👤
