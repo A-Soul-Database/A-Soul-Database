@@ -29,10 +29,8 @@ jobs:
         uses: trilom/file-changes-action@v1.2.4
         
       - name: RunChange
-      - id: Changer
-      
-        run: |
-            python3 tools/sendWebhook/main.py
+        id: Changer
+        run: python3 tools/sendWebhook/main.py
 
   FontCompiler:
     needs : WebHooks
@@ -51,7 +49,7 @@ jobs:
     - name: Install Depenidencies🥰
       shell: bash
       run: |
-       echo ${{needs.WebHooks.outputs.WebUpdate}}
+       echo ${{needs.WebHooks.Changer.output1}}
        cd build
        npm install cnpm -g
        cnpm install react-highlight-words
