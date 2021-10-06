@@ -21,7 +21,11 @@ def main():
             result["db"] = True
         if i.split("/")[0] == "build":
             result["web"] = True
-            os.environ["WebUpdate"] = "1"
+    
+    if result["web"] == True:
+        os.system("::set-output name=WebUpdate::1")
+    else:
+        os.system("::set-output name=WebUpdate::0")
     with open("tools/sendWebhook/sendList.txt","r",encoding="utf-8")as f:
         urlList = f.read().split("\n")
         f.close()

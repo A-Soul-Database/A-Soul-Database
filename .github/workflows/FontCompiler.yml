@@ -10,6 +10,8 @@ jobs:
 
   WebHooks:
     runs-on: ubuntu-latest
+    outputs: 
+      output1: ${{ steps.Changer.outputs.WebUpdate }}
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
@@ -27,11 +29,15 @@ jobs:
         uses: trilom/file-changes-action@v1.2.4
         
       - name: RunChange
+      - id: Changer
+      
         run: |
             python3 tools/sendWebhook/main.py
 
   FontCompiler:
+    needs : WebHooks
     #if: ${{ env.WebUpdate == "1"}}
+    echo ${{needs.WebHooks.outputs.WebUpdate}}
     runs-on: ubuntu-latest
     #shell: bash
     strategy:
@@ -64,7 +70,7 @@ jobs:
        mv web/* ../webs/gitweb
     - name: Build ASFWeb🥳
       run: |
-       cd webs
+       cd build
        sed -i 's/const urlChoice = 2;/const urlChoice = 0;/g' make-front-end/public/js/basic.js
        cd make-front-end
        cnpm run build
