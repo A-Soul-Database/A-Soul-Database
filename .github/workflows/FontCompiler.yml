@@ -1,4 +1,4 @@
-name: FontCompiler
+name: FontCompiler@v1
 
 on:
   push:
@@ -29,10 +29,9 @@ jobs:
       - name: RunChange
         run: |
             python3 tools/sendWebhook/main.py
-            echo env.WebUpdate
 
   FontCompiler:
-    if: ${{ env.WebUpdate == "1"}}
+    #if: ${{ env.WebUpdate == "1"}}
     runs-on: ubuntu-latest
     shell: bash
     strategy:
