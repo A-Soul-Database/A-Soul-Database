@@ -28,8 +28,7 @@ jobs:
       - name: File Changes Action
         uses: trilom/file-changes-action@v1.2.4
         
-      - name: RunChange
-        id: Changer
+      - id: Changer
         run: python3 tools/sendWebhook/main.py
 
   FontCompiler:
@@ -37,9 +36,7 @@ jobs:
     if:  ${{needs.WebHooks.outputs.output1}} == 1 || ${{needs.WebHooks.outputs.output1}} == "1"
     runs-on: ubuntu-latest
     #shell: bash
-    strategy:
-      matrix:
-        node-version: [16.x]
+    node-version: 16.x
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:

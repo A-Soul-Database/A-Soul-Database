@@ -24,8 +24,10 @@ def main():
     
     if result["web"] == True:
         os.system('echo "::set-output name=WebUpdate::1"')
+        print('echo "::set-output name=WebUpdate::1"')
     else:
         os.system('echo "::set-output name=WebUpdate::0"')
+        print('echo "::set-output name=WebUpdate::0"')
     with open("tools/sendWebhook/sendList.txt","r",encoding="utf-8")as f:
         urlList = f.read().split("\n")
         f.close()
