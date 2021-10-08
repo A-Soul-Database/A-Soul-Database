@@ -36,7 +36,9 @@ jobs:
     if:  ${{needs.WebHooks.outputs.output1}} == 1 || ${{needs.WebHooks.outputs.output1}} == "1"
     runs-on: ubuntu-latest
     #shell: bash
-    node-version: 16.x
+    strategy:
+      matrix:
+        node-version: [16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -44,6 +46,7 @@ jobs:
     - name: Setup Node.js environment
       uses: actions/setup-node@v2.4.1
     - name: Install Depenidencies🥰
+      if:  ${{needs.WebHooks.outputs.output1}} == 1 || ${{needs.WebHooks.outputs.output1}} == "1"
       shell: bash
       run: |
        cd build
