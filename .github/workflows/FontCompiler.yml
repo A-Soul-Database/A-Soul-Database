@@ -34,7 +34,7 @@ jobs:
 
   FontCompiler:
     needs : WebHooks
-    if:  ${{needs.WebHooks.outputs.output1}} == 1
+    if:  ${{needs.WebHooks.outputs.output1}} == 1 || ${{needs.WebHooks.outputs.output1}} == "1"
     runs-on: ubuntu-latest
     #shell: bash
     strategy:
