@@ -8,10 +8,11 @@ on:
 
 jobs:
 
-  WebHooks:
+  CompareDiffer:
     runs-on: ubuntu-latest
     outputs: 
       output1: ${{ steps.Changer.outputs.WebUpdate }}
+      output2: ${{ steps.Changer.outputs.ChangesJson }}
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
@@ -23,30 +24,31 @@ jobs:
           python-version: '3.7'
       - name: 'Install requirements'
         run: |
-         pip install -r tools/sendWebhook/requirements.txt
+         pip install -r tools/GithubActions/sendWebhook/requirements.txt
          
       - name: File Changes Action
         uses: trilom/file-changes-action@v1.2.4
         
       - id: Changer
-        run: python3 tools/sendWebhook/main.py
+        run: python3 tools/GithubActions/sendWebhook/differ.py
 
   FontCompiler:
-    needs : WebHooks
-    if:  ${{needs.WebHooks.outputs.output1}} == 1 || ${{needs.WebHooks.outputs.output1}} == "1"
+    needs : CompareDiffer
+    env:
+      IfWebChanged : ${{needs.CompareDiffer.outputs.output1}}
+    if:  ${{IfWebChanged}} == 1 || ${{IfWebChanged}} == "1"
     runs-on: ubuntu-latest
     #shell: bash
     strategy:
       matrix:
         node-version: [16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+      
 
     steps:
     - uses: actions/checkout@v2
     - name: Setup Node.js environment
       uses: actions/setup-node@v2.4.1
     - name: Install Depenidencies🥰
-      if:  ${{needs.WebHooks.outputs.output1}} == 1 || ${{needs.WebHooks.outputs.output1}} == "1"
       shell: bash
       run: |
        cd build
@@ -86,7 +88,7 @@ jobs:
   Sync_To_Gitee:
     
     if: always()
-    needs: [FontCompiler,WebHooks]
+    needs: [FontCompiler,CompareDiffer]
     runs-on: ubuntu-latest
     steps:
     - name: Sync To Gitee🐱‍👤
@@ -95,3 +97,13 @@ jobs:
            repository: peterpei1186861238/A-Soul-Database
            username: ${{ secrets.GITEEUSERNAME }}
            password: ${{ secrets.GITEEPASSWORD }}
+
+  WebHooks:
+    if: always()
+    needs: [FontCompiler,CompareDiffer,Sync_To_Gitee]
+    runs-on: ubuntu-latest
+    env:
+      DifferJson : ${{needs.CompareDiffer.outputs.output2}}
+    steps:
+    - name: Run sendWebhooks.py 
+      run: python3 tools/GithubActions/sendWebhook/sendHooks.py "$DifferJson"

@@ -1,5 +1,5 @@
 import requests,os,json,time,sys
-from ../compile import compile.compile as C
+
 HOME = os.getenv("HOME")
 
 def main():
@@ -15,8 +15,6 @@ def main():
         "tools":False
     }
     
-    args = []
-
     for i in allChanges:
         if i.split("/")[0] == "tools":
             result["tools"] = True
