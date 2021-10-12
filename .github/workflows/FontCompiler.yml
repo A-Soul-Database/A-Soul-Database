@@ -35,8 +35,8 @@ jobs:
   FontCompiler:
     needs : CompareDiffer
     env:
-      IfWebChanged : ${{needs.CompareDiffer.outputs.output1}}
-    if:  ${{ "$IfWebChanged" == 1 || "$IfWebChanged" == "1" }}
+      IFWEBCHANGE : ${{needs.CompareDiffer.outputs.output1}}
+    if:  ${{ "$IFWEBCHANGE" == 1 || "$IFWEBCHANGE" == "1" }}
     runs-on: ubuntu-latest
     #shell: bash
     strategy:
