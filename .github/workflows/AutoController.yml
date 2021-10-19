@@ -79,6 +79,6 @@ jobs:
     steps:
     - name: Run sendWebhooks.py 
       run: |
-       cd tools
        pwd
+       ls
        python3 GithubActions/sendWebhook/sendHooks.py "$DifferJson"
