@@ -74,6 +74,7 @@ jobs:
     if: always()
     needs: [CompareDiffer,Sync_To_Gitee]
     runs-on: ubuntu-latest
+    shell: bash
     env:
       DifferJson : ${{needs.CompareDiffer.outputs.output2}}
     steps:
