@@ -74,12 +74,14 @@ jobs:
     if: always()
     needs: [CompareDiffer,Sync_To_Gitee]
     runs-on: ubuntu-latest
-    shell: bash
     env:
       DifferJson : ${{needs.CompareDiffer.outputs.output2}}
     steps:
+    - name: 'Set up Python'
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.7'
     - name: Run sendWebhooks.py 
       run: |
        ls
-       cd tools/GithubActions/sendWebhook
-       python3 sendHooks.py "$DifferJson"
+       python3 tools/GithubActions/sendWebhook/sendHooks.py "$DifferJson"
