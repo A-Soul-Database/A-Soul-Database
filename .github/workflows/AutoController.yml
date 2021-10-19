@@ -39,20 +39,22 @@ jobs:
   CommitChanges:
   #commit 差异
     runs-on: ubuntu-latest
+    need: CompareDiffer
+    env:
+      BUILD : ${{needs.CompareDiffer.outputs.output1}}
     steps: 
     - name: CommitChanges💃
+      if: ${{env.BUILD == 1}}
       run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git commit -m "Auto Compile Font" -a
+          git commit -m "CommitDiffer" -a
     - name: PushToRepo🐱‍🏍
+      if: ${{env.BUILD == 1}}
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: auto
-
-  
-
 
   Sync_To_Gitee:
     # 同步至Gitee源
@@ -76,4 +78,6 @@ jobs:
       DifferJson : ${{needs.CompareDiffer.outputs.output2}}
     steps:
     - name: Run sendWebhooks.py 
-      run: python3 tools/GithubActions/sendWebhook/sendHooks.py "$DifferJson"
+      run: |
+       pwd
+       python3 tools/GithubActions/sendWebhook/sendHooks.py "$DifferJson"
