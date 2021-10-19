@@ -77,11 +77,8 @@ jobs:
     env:
       DifferJson : ${{needs.CompareDiffer.outputs.output2}}
     steps:
-    - name: 'Set up Python'
-      uses: actions/setup-python@v1
-      with:
-        python-version: '3.7'
     - name: Run sendWebhooks.py 
       run: |
-       ls
-       python3 tools/GithubActions/sendWebhook/sendHooks.py "$DifferJson"
+       cd tools
+       pwd
+       python3 GithubActions/sendWebhook/sendHooks.py "$DifferJson"
