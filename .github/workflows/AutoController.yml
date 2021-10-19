@@ -39,7 +39,7 @@ jobs:
   CommitChanges:
   #commit 差异
     runs-on: ubuntu-latest
-    need: CompareDiffer
+    needs: CompareDiffer
     env:
       BUILD : ${{needs.CompareDiffer.outputs.output1}}
     steps: 
