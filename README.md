@@ -1,5 +1,5 @@
 ## [Asdb](https://asdb.live) -- A-SOUL Live Clip Database  A-SOUL 非官方直播数据库 
-
+## 数据库指路[A-Soul-Data](https://github.com/peterpei1186861238/A-Soul-Data)
 #### 简介
 A-Soul 简介
 
