@@ -83,4 +83,4 @@ jobs:
       run: |
        pwd
        ls
-       python3 GithubActions/sendWebhook/sendHooks.py "$DifferJson"
+       python3 tools/GithubActions/sendWebhook/sendHooks.py "$DifferJson"
