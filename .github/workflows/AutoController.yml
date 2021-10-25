@@ -25,7 +25,7 @@ jobs:
           python-version: '3.7'
       - name: 'Install requirements'
         run: |
-         pwd
+         ls
          pip install -r tools/GithubActions/sendWebhook/requirements.txt
          
       - name: File Changes Action
@@ -71,6 +71,11 @@ jobs:
            repository: peterpei1186861238/A-Soul-Database
            username: ${{ secrets.GITEEUSERNAME }}
            password: ${{ secrets.GITEEPASSWORD }}
+    - name: Test
+      run: |
+           pwd
+           ls
+         
 
   WebHooks:
     # 向订阅服务器发送webhook
@@ -82,5 +87,4 @@ jobs:
         env:
           DIFFERJSON: ${{needs.CompareDiffer.outputs.output2}}
         run: |
-         cd tools
          python3 tools/GithubActions/sendWebhook/sendHooks.py "$DIFFERJSON"
