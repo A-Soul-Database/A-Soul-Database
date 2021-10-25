@@ -25,6 +25,7 @@ jobs:
           python-version: '3.7'
       - name: 'Install requirements'
         run: |
+         pwd
          pip install -r tools/GithubActions/sendWebhook/requirements.txt
          
       - name: File Changes Action
