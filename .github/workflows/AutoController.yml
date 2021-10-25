@@ -61,7 +61,7 @@ jobs:
   Sync_To_Gitee:
     # 同步至Gitee源
     if: always()
-    needs: [CompareDiffer,CommitChanges]
+    needs: CommitChanges
     runs-on: ubuntu-latest
     steps:
     - name: Sync To Gitee🐱‍👤
@@ -74,12 +74,14 @@ jobs:
   WebHooks:
     # 向订阅服务器发送webhook
     if: always()
-    needs: [CompareDiffer,Sync_To_Gitee]
+    needs: Sync_To_Gitee
     runs-on: ubuntu-latest
     steps:
     - name: Run sendWebhooks.py 
       env:
         DifferJson : ${{needs.CompareDiffer.outputs.output2}}
       run: |
-       sleep 2
+       shell: bash -l {0}
+       ls
+       pwd
        python3 tools/GithubActions/sendWebhook/sendHooks.py "$DifferJson"
