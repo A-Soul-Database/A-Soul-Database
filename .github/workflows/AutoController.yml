@@ -40,16 +40,18 @@ jobs:
   #commit 差异
     runs-on: ubuntu-latest
     needs: CompareDiffer
-    env:
-      BUILD : ${{needs.CompareDiffer.outputs.output1}}
     steps: 
     - name: CommitChanges💃
+      env:
+        BUILD: ${{needs.CompareDiffer.outputs.output1}}
       if: ${{env.BUILD == 1}}
       run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git commit -m "CommitDiffer" -a
     - name: PushToRepo🐱‍🏍
+      env:
+        BUILD: ${{needs.CompareDiffer.outputs.output1}}
       if: ${{env.BUILD == 1}}
       uses: ad-m/github-push-action@master
       with:
@@ -74,10 +76,10 @@ jobs:
     if: always()
     needs: [CompareDiffer,Sync_To_Gitee]
     runs-on: ubuntu-latest
-    env:
-      DifferJson : ${{needs.CompareDiffer.outputs.output2}}
     steps:
     - name: Run sendWebhooks.py 
+      env:
+        DifferJson : ${{needs.CompareDiffer.outputs.output2}}
       run: |
        pwd
        ls

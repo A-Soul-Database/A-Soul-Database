@@ -1,21 +1,19 @@
-# ASoul-database 2.0 To Do List
+### A-Soul Database 2.0 Project
 
-
-## I0 (Very Important)
-- GithubActions Bot GithubActions机器人
-- AutoMatically Depolyment (Bilibili Bot) 自动部署
-- Design new structure of Asdb Data 更改A-SOUL Data结构
-- Dynamtic Bot 动态归档(动态爬虫)
-- PinYin Search 拼音模糊搜索(字幕替换)
-## I1 (Important)
-- Fill 2020&DouYin Clips (DouYin Bot) 补全2020录播并部署抖音内容(抖音爬虫)
-- Asdb Reconginze (CoCo&ASoul DataSet) Asdb识别(利用coco128数据集?)
-- Photo Search By Hash (Be Used On Automatically) 哈希相近算法
-## I2 (Not Important)
-- Activities End Time 各个活动结束时间(自动截片段)
-- Subtitles Purify Project (Srt2Csv) 字幕共享修改
-- Music&Dance Library (New Feature) 音乐/舞蹈库
-
+#### To Do List
+|Project|Stage|Content|wight|
+|------|------|------|------|
+|GithubActions维护|I0(Very Important)|push之后在GitHub actions 对数据进行整理|0.9|
+|自动部署|I0|可以做到半自动更新直播数据|0.7|
+|动态归档|I0|获取官号和五个成员的动态|0.9|
+|字幕模糊搜索|I0|通过拼音进行模糊搜索|0.7|
+|前后端分离|I0|Asdb Api ，gin+golang 嗯造|0.9|
+|------|------|------|------|
+|补全2020和抖音内容|I1(Important)||0.4|
+|Yolox Asdb Dataset|I1|先标注数据用于后期识别|0.6|
+|Hash Photo Search|I1|对每场直播进行一分钟间隔切片，储存其哈希值|0.7|
+|------|------|-----|-----|
+|字幕共享修改|I2|石墨文档共享修改字幕文件|0.9|
 ## Done
 ```bash
 None
