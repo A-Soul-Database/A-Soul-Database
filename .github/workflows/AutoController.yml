@@ -81,6 +81,7 @@ jobs:
         env:
           DIFFERJSON: ${{needs.CompareDiffer.outputs.output2}}
         run: |
-         ls
-         cd tools/GithubActions/sendWebhook
+         pwd
+         cd /
+         pwd
          #python3 tools/GithubActions/sendWebhook/sendHooks.py "$DIFFERJSON"
