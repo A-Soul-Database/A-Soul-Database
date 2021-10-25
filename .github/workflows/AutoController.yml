@@ -79,8 +79,8 @@ jobs:
     steps:
     - name: Run sendWebhooks.py 
       env:
-        DifferJson : ${{needs.CompareDiffer.outputs.output2}}
+        DIFFERJSON : ${{needs.CompareDiffer.outputs.output2}}
       run: |
        ls
        pwd
-       #python3 tools/GithubActions/sendWebhook/sendHooks.py "$DifferJson"
+       #python3 tools/GithubActions/sendWebhook/sendHooks.py "$DIFFERJSON"
