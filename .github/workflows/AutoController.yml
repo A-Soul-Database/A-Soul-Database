@@ -71,11 +71,6 @@ jobs:
            repository: peterpei1186861238/A-Soul-Database
            username: ${{ secrets.GITEEUSERNAME }}
            password: ${{ secrets.GITEEPASSWORD }}
-    - name: Test
-      run: |
-           pwd
-           ls
-         
 
   WebHooks:
     # 向订阅服务器发送webhook
@@ -83,8 +78,9 @@ jobs:
     needs: Sync_To_Gitee
     runs-on: ubuntu-latest
     steps:
-      - name: Run sendWebhooks.py 
-        env:
-          DIFFERJSON: ${{needs.CompareDiffer.outputs.output2}}
-        run: |
+    - name: Run sendWebhooks.py 
+      env:
+        DIFFERJSON: ${{needs.CompareDiffer.outputs.output2}}
+      run: |
+         ls
          python3 tools/GithubActions/sendWebhook/sendHooks.py "$DIFFERJSON"
