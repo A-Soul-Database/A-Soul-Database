@@ -77,12 +77,13 @@ jobs:
     needs: [Sync_To_Gitee,CompareDiffer]
     runs-on: ubuntu-latest
     steps:
+    - name: 'Check Out FIle'
+      uses: actions/checkout@v2
     - name: 'Set up Python'
       uses: actions/setup-python@v1
       with:
         python-version: '3.7'
     - name: Run sendWebhooks.py 
-      uses: actions/checkout@v2
       env:
         DIFFERJSON: ${{needs.CompareDiffer.outputs.output2}}
       run: |
