@@ -13,9 +13,9 @@ A-SOUL是乐华娱乐于2020年11月23日公开的其旗下首个虚拟偶像团
 
 
 
-#### 更新数据库和web
-我们利用Github Actions进行部分自动化推送
-具体请参考 [保持数据库最新](https://github.com/peterpei1186861238/A-Soul-Database/tree/main/tools/getAsdb)
+#### 使用ASDB的数据进行开发
+ 为了便于维护,数据库现在已经单独作为 [A-Soul Data](https://github.com/peterpei1186861238/A-Soul-Data) 仓库存储
+ [保持数据库最新](https://github.com/peterpei1186861238/A-Soul-Database/tree/main/tools/getAsdb)
 
 
 #### 前端托管

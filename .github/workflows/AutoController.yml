@@ -25,7 +25,6 @@ jobs:
           python-version: '3.7'
       - name: 'Install requirements'
         run: |
-         ls
          pip install -r tools/GithubActions/sendWebhook/requirements.txt
          
       - name: File Changes Action
@@ -75,12 +74,11 @@ jobs:
   WebHooks:
     # 向订阅服务器发送webhook
     if: always()
-    needs: Sync_To_Gitee
+    needs: [Sync_To_Gitee,CompareDiffer]
     runs-on: ubuntu-latest
     steps:
     - name: Run sendWebhooks.py 
       env:
         DIFFERJSON: ${{needs.CompareDiffer.outputs.output2}}
       run: |
-         ls
          python3 tools/GithubActions/sendWebhook/sendHooks.py "$DIFFERJSON"
