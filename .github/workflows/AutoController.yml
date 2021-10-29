@@ -3,7 +3,7 @@ name: AutoController@v2.0
 
 on:
   push:
-    branches: [ main ]
+    branches: [ auto ]
 # 触发器仅为主分支的push操作
 
 jobs:
