@@ -1,3 +1,0 @@
-## BiliBot
-
-# DynamticBot

@@ -1,6 +1,6 @@
 ## [Asdb](https://asdb.live) -- A-SOUL Live Clip Database  A-SOUL 非官方直播数据库 
 ### 数据库指路[A-Soul-Data](https://github.com/peterpei1186861238/A-Soul-Data)
-### [前端编译及说明](https://github.com/peterpei1186861238/A-Soul-Database/tree/main/build)
+### [前端编译及说明](https://github.com/A-Soul-Database/Web-Interface)
 ### 对于无法访问 Github 或访问缓慢的同学,请访问[Gitee](https://gitee.com/peterpei1186861238/A-Soul-Database)
 #### 简介
 A-Soul 简介
