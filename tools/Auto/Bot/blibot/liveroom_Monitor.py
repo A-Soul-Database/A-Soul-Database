@@ -37,13 +37,13 @@ class Bot:
                 url = "https://api.bilibili.com/x/space/acc/info?mid={uid}&jsonp=jsonp".format(uid=uid)
                 r = requests.get(url,headers=self.headers)
                 if r.json()["data"]["live_room"]["liveStatus"] == 1:
-                    print("{uid} is on streaming with title {status}".format(uid=uid,status=r.json()['data']["live_room"]["title"]))
+                    print("\r{uid} is on streaming with title {status}".format(uid=uid,status=r.json()['data']["live_room"]["title"]),end="")
                     self.result["onLive"] = True
                     if len(self.result["start_time"]) == 0:
                         self.result["start_time"] = time.strftime("%Y-%m-%d %H:%M:%S",time.localtime())
                         self.result["title"] = r.json()['data']["live_room"]["title"]
                 else:
-                    print("{uid} is not on streaming".format(uid=uid))
+                    print("\r{uid} is not on streaming".format(uid=uid),end="")
                     if self.result["onLive"]:
                         self.result["end_time"] = time.strftime("%Y-%m-%d %H:%M:%S",time.localtime())
                         print("LiveStream end with result ",self.result)

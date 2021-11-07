@@ -28,9 +28,9 @@ class Bot():
         while True:
             result = self.GetComments()
             if result["code"] == 1:
-                print(f"更新成功\n{result['contents']}")
+                print(f"\r更新成功\n{result['contents']}",end="")
             else:
-                print("没有新评论")
+                print("\r没有新评论",end="")
             time.sleep(intervel)
 
 
@@ -56,7 +56,7 @@ class Bot():
                     returning["contents"].append(r.json()["data"]["top"]["upper"]["content"]["message"])
                     returning["contents"].append(self.Comments_In_Floor(r.json()["data"]["top"]["upper"]["rpid"]))
             except TypeError:
-                print("没有置顶")
+                print("\r没有置顶",end="")
             #再看普通评论
             start = 0
             while True:
@@ -107,5 +107,5 @@ class Bot():
         return (r-add)^xor
 
 if __name__ == "__main__":
-    a = Bot("BV1b44y1i7Pb","53082699")
+    a = Bot("BV1kQ4y1m76U","53082699")
     a.Monitor()
