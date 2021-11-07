@@ -1,0 +1,21 @@
+name: DataSync@V1.0
+# Asdb自动化控制器
+
+on:
+  push:
+    branches: [ main ]
+# 触发器仅为主分支的push操作
+
+jobs:
+
+  Sync_To_Gitee:
+    # 同步至Gitee源
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+    - name: Sync To Gitee🐱‍👤
+      uses: abersheeran/sync-gitee-mirror@v1-beta
+      with:
+           repository: peterpei1186861238/A-Soul-Data
+           username: ${{ secrets.GITEEUSERNAME }}
+           password: ${{ secrets.GITEEPASSWORD }}
