@@ -3,6 +3,7 @@
 #### To Do List
 |Project|Stage|Content|wight|
 |------|------|------|------|
+|改进搜索逻辑|I0|使用Es进行搜索体系化|0.9|
 |自动部署|I0|可以做到半自动更新直播数据|0.7|
 |动态归档|I0|获取官号和五个成员的动态|0.9|
 |字幕模糊搜索|I0|通过拼音进行模糊搜索|0.7|
@@ -21,7 +22,7 @@
 **DEPARTED**        |GithubActions维护|I0(Very Important)|push之后在GitHub actions 对数据进行整理|0.9|      
 ```
 
-## Differ From The Original Version 
+## Updated
 - New Web
 - Timeline Jump
 - Gitee Sync
