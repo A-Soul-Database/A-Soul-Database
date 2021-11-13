@@ -46,7 +46,7 @@ class Auto:
         return result
 
 
-    def FindAllDirs(self,path:str="D:\projects/as\A-Soul-Data\db/2021",result:dict={"year":[],"months":[]})->dict:
+    def FindAllDirs(self,path:str="E:\projects/as\A-Soul-Data\db/2021",result:dict={"year":[],"months":[]})->dict:
         """
             遍历文件夹及子文件夹
         """
@@ -192,8 +192,9 @@ class Auto:
         for i in Indexer:
             if Cover_Json.get(i) ==None:
                 r = requests.get("https://api.bilibili.com/x/web-interface/view?bvid={i}".format(i=i),headers={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:94.0) Gecko/20100101 Firefox/'})
-                Cover_Json[i] = r.json()["data"]["pic"]
+                Cover_Json[i] = r.json()["data"]["pic"].replace("http","https")
                 Add_List.append(i)
+        open(self.path+"./Cover.json",'w',encoding="utf-8").write(str(Cover_Json).replace("'",'"'))
         logging.info("封面补全 已处理完成")
         return Add_List
 
