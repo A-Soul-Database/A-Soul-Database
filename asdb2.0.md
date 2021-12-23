@@ -1,7 +1,7 @@
 ### A-Soul Database 2.0 Project
 
 #### To Do List
-|Project|Stage|Content|wight|
+|Project|Stage|Content|weight|
 |------|------|------|------|
 |改进搜索逻辑|I0|使用Es进行搜索体系化|0.9|
 |自动部署|I0|可以做到半自动更新直播数据|0.7|
