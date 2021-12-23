@@ -17,6 +17,10 @@
 |字幕共享修改|I2|石墨文档共享修改字幕文件|0.9|
 |BiliExtensions|I2|Asdb的浏览器插件,功能待定|0|
 
+ - 专栏(支持投稿[里面包含一些合集])
+ - 主页修改
+ - 服务器状态查询
+
 ## Done
 ```bash
 **DEPARTED**        |GithubActions维护|I0(Very Important)|push之后在GitHub actions 对数据进行整理|0.9|      
