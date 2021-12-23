@@ -20,6 +20,11 @@
  - 专栏(支持投稿[里面包含一些合集])
  - 主页修改
  - 服务器状态查询
+ - 说话人识别
+ - Densent + Yolo + 向量储存图像识别
+ - 自动化运维(Vultr/DigitalOcean Create/Destory Console & Auto Depoly)
+ - 统计探针
+ - 视频片段下载
 
 ## Done
 ```bash
