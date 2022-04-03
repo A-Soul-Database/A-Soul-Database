@@ -1,3 +1,0 @@
-## Bots
-### BiliBot
-### DouYinBot
