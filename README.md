@@ -18,7 +18,7 @@ Asdb到目前为止有以下这些仓库,他们的链接和功能如下:
 | ------- | ------- |
 |[A-Soul-Database](https://github.com/A-Soul-Database/A-Soul-Database)|主仓库|
 |[JianYingActionsSrt](https://github.com/A-Soul-Database/JianYingActionsSrt)| 通过GithubActions进行字幕识别|
-|[PhotoSearch](https://github.com/A-Soul-Database/PhotoSearch)|在线根据图片识别某个场景 [地址](https://photo.asdb.live) [演示视频](https://www.bilibili.com/video/BV1Ug411A7z6)|
+|[PhotoSearch](https://github.com/A-Soul-Database/PhotoSearch)|在线根据图片识别某个场景 [地址](http://photo.asdb.live) [演示视频](https://www.bilibili.com/video/BV1Ug411A7z6)|
 |[Source-Sync](https://github.com/A-Soul-Database/Source-Sync)|自动对齐多个数据源的偏移量|
 |[A-Soul-Data](https://github.com/A-Soul-Database/A-Soul-Data)|数据主存放仓库|
 |[RangeDownloader](https://github.com/A-Soul-Database/RangeDownloader)|分段下载 允许只下载高清录播的一个片段 [演示视频](https://www.bilibili.com/video/BV1jR4y1M7jr)|
