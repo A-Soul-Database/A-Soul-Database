@@ -26,7 +26,7 @@ Asdb到目前为止有以下这些仓库,他们的链接和功能如下:
 |[Tools](https://github.com/A-Soul-Database/AutoTools)|处理数据时用到的小工具|
 |[Web-Interface](https://github.com/A-Soul-Database/Web-Interface)|前端代码|
 |[yolov5](https://github.com/A-Soul-Database/yolov5)|通过机器学习辨别Asoul人物、服饰(包含已训练的权重和数据集)|
-|[JianYingSrtServer](https://github.com/A-Soul-Database/JianYingSrtServer)|**（已归档）**在Windows Server 上识别字幕|  
+|[JianYingSrtServer](https://github.com/A-Soul-Database/JianYingSrtServer)|**（已归档）** 在Windows Server 上识别字幕|  
 
 #### 前端托管
 目前域名托管于 Github Pages,暂时重定向到Asoul Fan的国内服务器上。
